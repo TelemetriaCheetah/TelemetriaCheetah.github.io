@@ -24,6 +24,7 @@
 </head>
 
 <body class="body-red">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -39,8 +40,8 @@
                 </div><!--//branding-->
 
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-                    <li class="breadcrumb-item active">Ideias</li>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Início</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,207 +59,169 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Telemetria Cheetah</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Last updated: Mar 2nd, 2021</div>
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i>Início</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última atualização: 23 de março de 2021 por caiotbc</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
                         <div class="content-inner">
                             <section id="installation-section" class="doc-section">
-                                <h2 class="section-title">Diagrama de sensores</h2>
+                                <h1 id="sec1">Introdução</h1>
                                 <div id="step1"  class="section-block">
-                                    <h3 class="block-title">Visão Geral</h3>
-                                    <p>O diagrama abaixo representa uma possível configuração da integração entre os diversos sistemas sensoriais e o computador de bordo:
+                                    <p>
+                                        Essa documentação tem como objetivo demonstrar
+                                         os processos básicos necessários para o desenvolvimento dos softwares envolvidos na construção do
+                                        sistema supervisório do Cheetah E-Racing. Os procedimentos serão organizados em dois sistemas:
+                                        o <b>backend (código que roda no servidor) </b> e o <b>frontend (código que roda nos computadores clientes)</b>.:
                                     </p>
-                                    <a target="_blank"><img class="img-fluid" src="assets/images/conexao1.jpg" alt="Instance Theme" /></a>
-                                    <h6>Dispositivos:</h6>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Nome</th>
-                                                    <th>Tipo</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                  <th scope="row">MCU</th>
-                                                  <td>Microcontrolador</td>
-                                                  <td>ESP32</td>
-                                              </tr>
-                                              <tr>
-                                                  <th scope="row">GCS</th>
-                                                  <td>Estação de recepção de dados</td>
-                                                  <td>SiK/3DR telemetry radio</td>
-                                              </tr>
-                                              <tr>
-                                                  <th scope="row">COM</th>
-                                                  <td>Rádio de telemetria 915MHz</td>
-                                                  <td>SiK/3DR telemetry radio</td>
-                                              </tr>
-                                                <tr>
-                                                    <th scope="row">IMU</th>
-                                                    <td>Inertial Measurement Unit</td>
-                                                    <td>GY-80 / GY-521</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">IR1</th>
-                                                    <td>Infravermelho 1</td>
-                                                    <td>MLX90614</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">IR2</th>
-                                                    <td>Infravermelho 2</td>
-                                                    <td>MLX90614</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">IR3</th>
-                                                    <td>Infravermelho 3</td>
-                                                    <td>MLX90614</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">IR4</th>
-                                                    <td>Infravermelho 4</td>
-                                                    <td>MLX90614</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">IR5</th>
-                                                    <td>Infravermelho 5</td>
-                                                    <td>MLX90614</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">BRK</th>
-                                                    <td>Pressão de freios</td>
-                                                    <td>53CP08-02</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">TM1</th>
-                                                    <td>Temperatura 1</td>
-                                                    <td>DS18B20</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">TM2</th>
-                                                    <td>Temperatura 2</td>
-                                                    <td>DS18B20</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">GPS</th>
-                                                    <td>Sistema de posicionamento global</td>
-                                                    <td>Adafruit Ultimate Breakout V3</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">ASP</th>
-                                                    <td>Airspeed sensor (tubo pitot)</td>
-                                                    <td>MPXV7002DP</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">SDC</th>
-                                                    <td>Leitor de cartão SD</td>
-                                                    <td>Genérico</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">LCD</th>
-                                                    <td>Display de cristal líquido 16x2</td>
-                                                    <td>HD44780</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div><!--//table-responsive-->
-                            </section><!--//doc-section-->
-
-                            <section id="bancodedados" class="doc-section">
-                                <h2 class="section-title">Banco de dados</h2>
-                                <div id="maria"  class="section-block">
-                                  <h3 class="block-title">MariaDB</h3>
-                                  <p>Os dados serão armazenados em uma tabela MySQL, onde cada linha contém as informações de todos os sensores do carro em um instante de tempo. Assim, operações de banco de dados podem
-                                    ser aplicadas posteriormente para referenciar, analisar e transformar o conteúdo da tabela de acordo com as necessidades da equipe. Esse método possui algumas vantagens interessantes:
-                                  </p>
-                                  <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <ul class="list">
-                    										<li> <b>Banco de dados centralizado:</b> Vários usuários podem acessar as informações ao mesmo tempo, de locais diferentes e até mesmo redes diferentes;</li>
-                    										<li> <b>Baixo overhead no MCU:</b> Operações computacionalmente intensas com os dados, como filtragem e interpolação, podem ser realizadas no servidor onde
-                                        se encontra o banco de dados. Essa divisão de tarefas poupa ciclos de processamento e memória do computador embarcado; </li>
-                    										<li> <b>Separação código/dados:</b> O uso de um banco de dados externo garante a segurança dos dados em caso de falhas e travamentos. Além disso, permite que o código
-                                        seja mudado sem alterar os dados ou sua estrutura;
-                                        </li>
-                    										<li> <b>Escalabilidade:</b> Adicionar ou remover sensores no futuro é muito simples - basta remover ou adicionar colunas na tabela. Até 4096 grandezas distintas podem
-                                        ser armazenadas em uma única tabela.</li>
-                    									</ul>
-                                    </div>
-                                  </div>
-                                  <p>No entanto, essa estratégia também traz algumas desvantagens:
-                                  </p>
-                                  <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <ul class="list">
-                    										<li> <b>Integridade dos dados:</b> Discos-rígidos falham, memórias se corrompem e fontes de alimentação pegam fogo. Esses são apenas alguns exemplos
-                                        de cenários que podem levar à perda total das informações armazenadas. Portanto, é essencial colocar em prática uma estratégia de backup eficiente para evitar imprevistos;</li>
-                                        <li> <b>Segurança dos dados:</b> A rede, o sistema operacional e o software de servidor sobre os quais se encontra o banco de dados devem ser protegidos contra acesso não
-                                          autorizado. Isso requer verificações rigorosas de portas no firewall, atualizações de segurança frequentes e testes de penetrabilidade periódicos. É importante também
-                                          garantir que pessoas não autorizadas nunca tenham acesso físico à infrastrutura de rede;</li>
-                    									</ul>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div id="phpmyadmin"  class="section-block">
-                                  <h3 class="block-title">PHPMyAdmin</h3>
+                                    <h3 class="block-title" id="s1">Git</h3>
+                                    <p>
+                                        O primeiro passo para trabalhar no sistema supervisório é obter o código. É possível baixar como um .zip no github
+                                        da equipe, porém isso torna difícil o controle de versionamento e a organização entre os membros. Assim, a melhor maneira é instalar
+                                        o git no PC e fazer um clone do seu fork do repositório.
+                                    </p>
+                                    <h3 class="block-title" id="s2">Instalando o git</h3>
+                                    <h5 class="block-title" id="m1">Linux</h5>
+                                    <p>
+                                        O jeito mais rápido de instalar o git é utilizando o gerenciador de pacotes da sua distribuição. Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+                                        executar como superusuário:
+                                        <div class="code-block">
+                                          <pre><code class="language-git">sudo apt update && sudo apt install git</code></pre>
+                                        </div><!--//code-block-->
+                                        Em sistemas RHEL/Cent OS, o comando é:
+                                        <div class="code-block">
+                                          <pre><code class="language-git">sudo yum install git</code></pre>
+                                        </div><!--//code-block-->
+                                    </p>
+                                    <h5 class="block-title" id="m2">Windows</h5>
+                                    <p>
+                                        Para instalar o git no Windows, siga as instruções no site oficial:<br><br>
+                                        <a href="https://git-scm.com/" class="btn btn-red">Git SCM</a>
+                                    </p>
+                                    <br>
+                                    <h3 class="block-title" id="s3">Criando um fork</h3>
+                                    <p>
+                                        Após criar uma conta no github, acesse a página do supervisório do cheetah:
+                                        <div class="github-btn mb-2">
+                                              <a class="github-button" href="https://github.com/TelemetriaCheetah/Supervisorio" data-size="large" aria-label="">Supervisório</a>
+                      	                </div>
+                                        Em seguida, basta clicar no botão de "fork":<br><br>
+                                        <a target="_blank"><img class="img-fluid" src="assets/images/print1.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a><br><br>
+                                        O fork é uma cópia do repositório vinculada à sua conta de usuário, e é nele que as modificações devem ser feitas. Alterar o código utilizando
+                                        a conta do cheetah diretamente é uma prática que deve ser evitada ao máximo, pois impossibilita o controle do responsável por cada modificação.
+                                    </p>
+                                    <h3 class="block-title" id="s4">Criando chaves SSH</h3>
+                                    <p>
+                                        Para enviar seu código ao github, é necessário se autenticar no site. A autenticação por usuário/senha está sendo desativada aos poucos, e deixará de
+                                        funcionar em breve (Se você está lendo isto no futuro, é provável que já tenha sido desativada). Portanto, é necessário utilizar outro método de autenticação,
+                                        e uma maneira simples de fazer isso é adicionando chaves SSH à sua conta do github. Para gerar um par de chaves pública/privada, abra o terminal / powershell e
+                                        execute o comando:
+                                        <pre><code class="language-git">ssh-keygen</code></pre>
+                                        O par de chaves gerado é salvo por padrão na sua pasta de usuário dentro de .ssh . Caso a pasta esteja oculta, vocẽ deve habilitar a opção de visualizar arquivos
+                                        ocultos no seu gerenciador de arquivos. Dentro da pasta, abra o arquivo de chave pública (o que termina com .pub) e copie seu conteúdo. Em seguida, vá até a sua
+                                        página do github e siga os passos:<br>
+                                        <div class="col-md-6 col-12">
+                                           <ol class="list">
+                                             <li>Abra as configurações da conta<br><br><a target="_blank"><img class="img-fluid" src="assets/images/print2.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a></li>
+                                             <li>Vá até a opção de chaves SSH e GPG<br><br><a target="_blank"><img class="img-fluid" src="assets/images/print3.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a></li>
+                                             <li>Clique em adicionar nova chave SSH<br><br><a target="_blank"><img class="img-fluid" src="assets/images/print4.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a></li>
+                                             <li>Dê um título de sua preferência e cole a chave pública copiada no campo key<br><br><a target="_blank"><img class="img-fluid" src="assets/images/print5.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a></li>
+                                           </ol>
+                                       </div>
+                                    </p>
+                                    <h3 class="block-title" id="s5">Clonando o repositório</h3>
+                                    <p>
+                                        Para criar uma cópia local do seu repositório, copie o link no botão "code", lembrando que é necessário selecionar a opção "SSH":<br>
+                                        <a target="_blank"><img class="img-fluid" src="assets/images/print6.png" alt="ERA PRA TER UMA IMAGEM AQ HEIN" /></a><br><br>
+                                        Em seguida, abra o terminal / git shell (o git shell pode ser aberto clicando com o botão direito do mouse em um espaço branco dentro de uma pasta qualquer do Windows) e execute o comando:
+                                        <pre><code class="language-git">git clone &ltcole o link que você copiou aqui&gt </code></pre>
+                                    </p>
+                                    <h3 class="block-title" id="s6">Git Commit</h3>
+                                    <p>
+                                        Após realizar as alterações no código local, é necessário enviá-las ao repositório remoto (github). Para isso, abra o terminal / git shell dentro da pasta clonada e execute os comandos:
+                                        <pre><code class="language-git">git add -A </code></pre>
+                                        <pre><code class="language-git">git commit -m "Escreva aqui uma mensagem breve explicando as alterações realizadas desde o último commit" </code></pre>
+                                        <pre><code class="language-git">git push origin main </code></pre>
+                                        Caso queira ver quais alterações fazem parte ou não do commit, use o comando
+                                        <pre><code class="language-git">git status</code></pre>
+                                    </p>
+                                    <h3 class="block-title" id="s7">Atualizando o repositório</h3>
+                                    <p>
+                                        Para garantir que você está trabalhando na versão mais recente do código, é necessário sincronizar o seu fork com o repositório original (comumente chamado de upstream). Para isso,
+                                        adicione o repositório original no seu git:
+                                        <pre><code class="language-git">git remote add upstream git@github.com:TelemetriaCheetah/Supervisorio.git</code></pre>
+                                        <pre><code class="language-git">git fetch upstream</code></pre>
+                                        Feito isso, você deve executar o comando abaixo toda vez que alguma alteração for realizada por outra pessoa no repositório do Cheetah:
+                                        <pre><code class="language-git">git pull upstream main</code></pre>
+                                    </p>
+                                    <h3 class="block-title" id="s8">Criando um pull request</h3>
+                                    <p>
+                                        Finalmente, para submeter suas alterações para o repositório upstream, basta criar um pull request clicando em "pull requests" e em seguida "criar novo pull request".
+                                        O request deve ser aprovado pelo mantenedor do repositório oficial do Cheetah.
+                                    </p>
+                                </div><!--//content-inner-->
+                                <h1 id="sec2">Instalando o node</h1>
+                                <div id="step2">
+                                  A tecnologia principal utilizada para o backend do sistema supervisório é o node.js:<br><br>
+                                  <h5 class="block-title" id="m3">Linux</h5>
+                                  Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+                                  executar como superusuário:
+                                  <div class="code-block">
+                                    <pre><code class="language-git">sudo apt update && sudo apt install nodejs</code></pre>
+                                  </div><!--//code-block-->
+                                  <h5 class="block-title" id="m4">Windows</h5>
+                                  Para instalar o node no Windows, siga as instruções no site oficial:<br><br>
+                                  <a href="https://nodejs.org/en/download/" class="btn btn-red">node.js</a><br><br>
+                                  <h1 id="sec3">Instalando o MySQL</h1>
+                                  <h5 class="block-title" id="m3">Linux</h5>
+                                  Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+                                  executar como superusuário:
+                                  <pre><code class="language-git">sudo apt update && sudo apt install apache2 mariadb-server phpmyadmin</code></pre>
+                                  <h5 class="block-title" id="m3">Windows</h5>
+                                  No Windows, é possível baixar pacotes que incluem todas as ferramentas necessárias para rodar um servidor apache com MySQL/MariaDB e php
+                                  em um único executável. Um exemplo recomendado é o WAMP (Windows Apache MySQL PHP) server, que pode ser baixado no link:<br><br>
+                                  <a href="https://www.wampserver.com/en/" class="btn btn-red">WAMP Server</a><br><br>
+                                  <br><br>
+                                  <h1 id="sec4">Tutoriais de programação</h1><br>
                                   <p>
-                                    Para facilitar o gerenciamento das informações, será utlizado o PHPMyAdmin. Esse software é uma interface gráfica para o banco de dados, permitindo realizar as operações
-                                    SQL de maneira intuitiva e rápida:
+                                    O sistema supervisório é escrito utilizando javascript para o frontend e backend, portanto javascript é a linguagem que deve ser o foco dos estudos. Para
+                                    a formatação do site são utilizados HTML5 e CSS, e portanto é necessário possuir conhecimento dessas linguagens também. Além disso,
+                                    os dados coletados são armazenados em um banco de dados MySQL, e familiaridade com queries SQL é bastante útil. Seguem abaixo alguns links relevantes sobre os assuntos:<br><br>
+                                    <a href="https://www.wampserver.com/en/" class="btn btn-red">URI Online Judge - para treinar algoritmos e básico de programação </a><br><br>
+                                    <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics" class="btn btn-red">JavaScript básico - documentação da Mozilla</a><br><br>
+                                    <a href="https://www.youtube.com/watch?v=vrSEt5J4q2Y&list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp" class="btn btn-red">Curso javascript básico - youtube </a><br><br>
+                                    <a href="https://www.youtube.com/watch?v=CjQMi8mv2Do" class="btn btn-red">Introdução ao node.js - youtube</a><br><br>
+                                    <a href="https://www.youtube.com/watch?v=BhJu05tUo-M" class="btn btn-red">Introdução ao MySQL - youtube </a><br><br>
+                                    <a href="https://www.youtube.com/watch?v=Em0R3csNMVE&list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R" class="btn btn-red">Introdução HTML5 e CSS - youtube </a><br><br>
                                   </p>
-                                  <a target="_blank"><img class="img-fluid" src="assets/images/PHPMYADMIN.png" alt="Instance Theme" /></a>
                                 </div>
                             </section>
-
-                            <section id="dashboard" class="doc-section">
-                                <h2 class="section-title">Dashboard</h2>
-                                <div id="step1"  class="section-block">
-                                    <h3 class="block-title">Objetivo</h3>
-                                    <p>Um dashboard deve apresentar todas as informações críticas em uma interface clara e acessível. Dados mais importantes devem receber mais destaque do que dados não críticos,
-                                    e o sistema deve ser capaz de identificar falhas no veículo e alertar o operador de forma inconfundível e rápida: alarmes, cores vibrantes, notificações, etc.</p>
-                                    <h3 class="block-title">Exemplo</h3>
-                                    <a target="_blank"><img class="img-fluid" src="assets/images/dash.png" alt="Instance Theme" /></a>
-                                </div>
-                            </section>
-
-                            <section id="installation-section" class="doc-section">
-                                <h2 class="section-title">Rádio</h2>
-                                <div id="step1"  class="section-block">
-                                    <h3 class="block-title">Objetivo</h3>
-                                    <p>A conexão com a estação de controle deve possuir alcance suficiente para garantir uma transmissão estável e de baixa latência. Alguns modelos de rádio que atendem a esses requisistos são:</p>
-
-                                    <a target="_blank"><img class="img-fluid" src="assets/images/dash.png" alt="Instance Theme" /></a>
-                                </div>
-                            </section>
-
-                        </div><!--//content-inner-->
+                        </div>
                     </div><!--//doc-content-->
                     <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
                         <div id="doc-nav" class="doc-nav">
 
 	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
-	                                <a class="nav-link scrollto" href="#installation-section">Diagrama de sensores</a>
+	                                <a class="nav-link scrollto" href="#sec1">Introdução</a>
                                     <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#step1">Visão Geral</a>
+                                        <a class="nav-link scrollto" href="#s1">Git</a>
+                                        <a class="nav-link scrollto" href="#s2">Instalando o git</a>
+                                        <a class="nav-link scrollto" href="#s3">Criando um fork</a>
+                                        <a class="nav-link scrollto" href="#s4">Criando chaves SSH</a>
+                                        <a class="nav-link scrollto" href="#s5">Clonando o repositório</a>
+                                        <a class="nav-link scrollto" href="#s6">Git commit</a>
+                                        <a class="nav-link scrollto" href="#s7">Atualizando o repositório</a>
+                                        <a class="nav-link scrollto" href="#s8">Criando um pull request</a>
                                     </nav><!--//nav-->
-	                                <a class="nav-link scrollto" href="#bancodedados">Banco de Dados</a>
-                                    <nav class="doc-sub-menu nav flex-column">
-                                        <a class="nav-link scrollto" href="#maria">MariaDB</a>
-                                        <a class="nav-link scrollto" href="#phpmyadmin">PHPMyAdmin</a>
-                                    </nav><!--//nav-->
-	                                <a class="nav-link scrollto" href="#dashboard">Dashboard</a>
+	                                <a class="nav-link scrollto" href="#sec2">Instalando o node</a>
+	                                <a class="nav-link scrollto" href="#sec3">Instalando o MySQL</a>
+	                                <a class="nav-link scrollto" href="#sec4">Tutoriais de programação</a>
 	                            </nav><!--//doc-menu-->
-
                         </div>
                     </div><!--//doc-sidebar-->
                 </div><!--//doc-body-->
             </div><!--//container-->
         </div><!--//doc-wrapper-->
-
-
-
     </div><!--//page-wrapper-->
 
     <footer id="footer" class="footer text-center">
