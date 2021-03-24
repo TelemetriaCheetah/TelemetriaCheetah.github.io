@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="pt" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Supervisório &mdash; Documentação Wiki Cheetah </title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="prev" title="Sensores" href="sensores.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #FF0000" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Wiki Cheetah
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Supervisório</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#manual-do-usuario">Manual do usuário</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dashboard">Dashboard</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#visao-geral">Visão Geral</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uso">Uso</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-do-desenvolvedor">Manual do desenvolvedor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#servidor">Servidor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#banco-de-dados">Banco de dados</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cliente">Cliente</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wiki Cheetah</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Supervisório</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/supervisorio.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="supervisorio">
+<h1>Supervisório<a class="headerlink" href="#supervisorio" title="Link permanente para este título">¶</a></h1>
+<p>O sistema supervisório da equipe é o programa responsável por armazenar, apresentar e analisar as informações de telemetria fornecidas pelos sensores do
+veículo, fornecendo feedbacks essenciais para os outros subsistemas durante as fases de construção, testes e competição. Esses dados são coletados por
+microcontroladores especializados no carro e enviados por comunicação sem fio (telemetria em tempo real) ou guardados em um cartão SD de bordo para aquisição posterior,
+e ao serem recebidos pelo supervisório são transferidos para um banco de dados relacional localizado no servidor próprio do Cheetah E-Racing.</p>
+<div class="section" id="manual-do-usuario">
+<h2>Manual do usuário<a class="headerlink" href="#manual-do-usuario" title="Link permanente para este título">¶</a></h2>
+<p>Esse pequeno tutorial é destinado à qualquer membro do Cheetah que deseje utilizar o sistema de telemetria nos dispostivos oficiais da equipe ou em seu próprio equipamento pessoal.</p>
+<div class="section" id="dashboard">
+<h3>Dashboard<a class="headerlink" href="#dashboard" title="Link permanente para este título">¶</a></h3>
+<div class="section" id="visao-geral">
+<h4>Visão Geral<a class="headerlink" href="#visao-geral" title="Link permanente para este título">¶</a></h4>
+<p>Foto aq</p>
+</div>
+<div class="section" id="uso">
+<h4>Uso<a class="headerlink" href="#uso" title="Link permanente para este título">¶</a></h4>
+<p>precisa do supervisório primeiro rs</p>
+</div>
+</div>
+</div>
+<div class="section" id="manual-do-desenvolvedor">
+<h2>Manual do desenvolvedor<a class="headerlink" href="#manual-do-desenvolvedor" title="Link permanente para este título">¶</a></h2>
+<p>Essa seção busca documentar todo o código do sistema supervisório para torná-lo facilmente acessível a qualquer membro do Cheetah E-Racing interessado no seu funcionamento.
+Nenhum conhecimento prévio é estritamente necessário para acompanhá-lo, porém qualquer experiência prévia com linguagens de programação e desenvolvimento web será útil.</p>
+<div class="section" id="servidor">
+<h3>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h3>
+</div>
+<div class="section" id="banco-de-dados">
+<h3>Banco de dados<a class="headerlink" href="#banco-de-dados" title="Link permanente para este título">¶</a></h3>
+</div>
+<div class="section" id="cliente">
+<h3>Cliente<a class="headerlink" href="#cliente" title="Link permanente para este título">¶</a></h3>
+<p>as</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="sensores.html" class="btn btn-neutral float-left" title="Sensores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Cheetah E-Racing.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
