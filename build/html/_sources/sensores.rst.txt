@@ -38,3 +38,31 @@ Datasheet
 -------------
 
 https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf
+
+LCD
+===================
+
+Descrição
+------------
+
+Display LED mais o LCD genérico, QC2004A. Comunicação pela interface I2C, pinos
+SCL e SDA,  com endereçamento individual. Fixado no painel do carro e ligado,
+pelo chicote, direto para aplaca central.
+
+Uso
+-----
+
+O modulo funciona com uma tensão de 5V.
+Pinos utilizados são: Vcc 5V ; GND; SCL; SDA.
+
+Objetivo
+------------
+
+O display LCD é nada mais que um LED que mostra dados. Localizado no painel do carro
+para que posamos mostrar ao piloto dados que achamos importantes que ele esteja
+constantemente ciente. Os dados são decididos pela equipe.
+
+Datasheet
+-------------
+
+FINJE Q TEM UMA DATASHEET AQ
