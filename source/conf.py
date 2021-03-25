@@ -69,6 +69,13 @@ html_css_files = [
     'custom.css',
 ]
 
+html_logo = 'images/cheetah251.png'
+
+html_theme_options = {
+    'logo_only': True,
+    'display_version': True,
+    'style_nav_header_background': '#eb4034'
+}
 
 
 pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
