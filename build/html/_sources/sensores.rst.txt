@@ -23,7 +23,7 @@ Descrição
 ------------
 
 São usados 2 sensores de temperatura do modelo DS18B20 da Dallas Semiconductors, posicionados no início e no final do duto de ar
-. Esse sensor usa a comunicação `Dallas OneWire <https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html>`_.
+. Esse sensor usa a comunicação `OneWire <https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html>`__.
 
 *Especificações e características*
 
@@ -33,9 +33,6 @@ São usados 2 sensores de temperatura do modelo DS18B20 da Dallas Semiconductors
 * Precisão: ±0,5° celsius
 * Resolução: 9 ou 12 bits (configurável)
 * Período de atualização: menor que 750ms
-* Encapsulamento em aço inoxidável
-* Dimensão do encapsulamento: 6mm x 50mm
-* Comprimento do cabo: 1m
 
 Uso
 -----
@@ -109,6 +106,10 @@ discos de freio. Os sensores utilizam comunicação `I²C <http://www.univasf.ed
 * Tensão de operação: 3VDC
 * Dimensões: 17 x 11,5 x 6 mm
 
+.. warning::
+  O sensor vem calibrado de fábrica para trabalhar com objetos com emissividade 1. É necessário alterar esse valor
+  de acordo com a emissividade do material medido.
+
 Uso
 -----
 
@@ -162,7 +163,184 @@ O objetivo do sensor é saber a temperatura dos freios durante a corrida para qu
 de freios possa conferir com os dados teóricos e ver a porcentagem de erro.
 O sensor sabe a temperatura especifica e a do ambiente.
 
+Indutivo
+==========================
 
+Usamos 4 sensores indutivos do modelo PS2-12GI50-E2-Ex fabricante Sense, com
+comunicação `OneWire <https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html>`__. Usado para saber a velocidade de cada pneu,
+ficam acoplados um em cada roda perto dos furos da roda fônica,
+não é necessário um conector especifico irão para o chicote e do chicote para as placas.
+
+Descrição
+------------
+
+*Especificações e características*
+
+* `Datasheet <https://www.sense.com.br/produtos/detalhes/10398/por/1/1/sensores/sensores-indutivos-tubulares-standard/PS2-12GI50-E2-Ex>`__
+* Tensão de alimentação: 10 a 30Vcc
+* Ripple: ±10 %
+* Corrente de consumo: <10 mA
+* Diâmetro: 	M12
+* Distancia sensora: 2 mm
+* Montagem 	Embutida
+* Histerese: ± 5 %
+* Repetibilidade: 	<0,01 mm
+* Distancia operacional: 1,62 mm
+* Alvo padrão: 12x12 mm
+* Peso: 	110 g
+
+Uso
+-----
+
+O sensor funciona com uma tensão de 12V, utilizam-se resistores para diminuir e enviar um sinal de 3v para o microcontrolador,
+também é necessário ficar uma distância de 3mm (Verificar datasheet). Recebemos as informações a partir de interrupções, logo temos varias maneiras de saber sua velocidade como:
+
+.. image:: images/indutivo_formula.png
+  :align: center
+
+Mas no programa usamos a velocidade a partir de funções de tempo.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+    /*
+    Analog input, analog output, serial output
+
+    Reads an analog input pin, maps the result to a range from 0 to 255 and uses
+    the result to set the pulse width modulation (PWM) of an output pin.
+    Also prints the results to the Serial Monitor.
+
+    The circuit:
+    - potentiometer connected to analog pin 0.
+      Center pin of the potentiometer goes to the analog pin.
+      side pins of the potentiometer go to +5V and ground
+    - LED connected from digital pin 9 to ground
+
+    created 29 Dec. 2008
+    modified 9 Apr 2012
+    by Tom Igoe
+
+    This example code is in the public domain.
+
+    http://www.arduino.cc/en/Tutorial/AnalogInOutSerial
+  */
+
+  // These constants won't change. They're used to give names to the pins used:
+  const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+  const int analogOutPin = 9; // Analog output pin that the LED is attached to
+
+  int sensorValue = 0;        // value read from the pot
+  int outputValue = 0;        // value output to the PWM (analog out)
+
+  void setup() {
+    // initialize serial communications at 9600 bps:
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    // read the analog in value:
+    sensorValue = analogRead(analogInPin);
+    // map it to the range of the analog out:
+    outputValue = map(sensorValue, 0, 1023, 0, 255);
+    // change the analog out value:
+    analogWrite(analogOutPin, outputValue);
+
+    // print the results to the Serial Monitor:
+    Serial.print("sensor = ");
+    Serial.print(sensorValue);
+    Serial.print("\t output = ");
+    Serial.println(outputValue);
+
+    // wait 2 milliseconds before the next loop for the analog-to-digital
+    // converter to settle after the last reading:
+    delay(2);
+  }
+
+Objetivo
+------------
+
+Objetivo do sensor Indutivo é saber a velocidade média, análises gerais como ponto de frenagens,
+acelerações, comparações de voltas para a correção de pilotagem
+
+Relógio de tempo real
+==========================
+
+Descrição
+------------
+O módulo de relógio em tempo real fornece informações precisas de horário para o microcontrolador embarcado,
+através do protocolo `I²C <http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf>`_.
+*Especificações e características*
+
+* `Datasheet <https://datasheets.maximintegrated.com/en/ds/DS1307.pdf>`__
+* Computa segundos, minutos, horas, dias da semana, dias do mês, meses e anos (de 2000 a 2099).
+* 56 bytes de SRAM que podem ser usadas como RAM extendida do microcontrolador.
+* Circuito de detecção de falha de energia.
+* Consome menos de 500nA no modo bateria com oscilador em funcionamento.
+* Faixa de temperatura: -40°C a +85°C.
+* Dimensões: 27 x 28 x 8,4mm
+
+Uso
+-----
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+  //Programa : Relogio com modulo RTC DS1307
+  //Autor : FILIPEFLOP
+
+  //Carrega a biblioteca do RTC DS1307
+  #include <DS1307.h>
+
+  //Modulo RTC DS1307 ligado as portas A4 e A5 do Arduino
+  DS1307 rtc(A4, A5);
+
+  void setup()
+  {
+    //Aciona o relogio
+    rtc.halt(false);
+
+    //As linhas abaixo setam a data e hora do modulo
+    //e podem ser comentada apos a primeira utilizacao
+    rtc.setDOW(FRIDAY);      //Define o dia da semana
+    rtc.setTime(20, 37, 0);     //Define o horario
+    rtc.setDate(6, 6, 2014);   //Define o dia, mes e ano
+
+    //Definicoes do pino SQW/Out
+    rtc.setSQWRate(SQW_RATE_1);
+    rtc.enableSQW(true);
+
+    Serial.begin(9600);
+  }
+
+  void loop()
+  {
+    //Mostra as informações no Serial Monitor
+    Serial.print("Hora : ");
+    Serial.print(rtc.getTimeStr());
+    Serial.print(" ");
+    Serial.print("Data : ");
+    Serial.print(rtc.getDateStr(FORMAT_SHORT));
+    Serial.print(" ");
+    Serial.println(rtc.getDOWStr(FORMAT_SHORT));
+
+    //Aguarda 1 segundo e repete o processo
+    delay (1000);
+  }
+
+
+Objetivo
+------------
+
+O RTC é essencialmente utilizado na organização dos dados, fornecendo um horário e
+uma data com precisão e baixo consumo.  Informando ano, mês, dia, hora(formato 12 ou 24),
+minuto e segundo, com as devidas correções de mês e ano. Em caso de falha de energia
+ele automaticamente aciona a bateria para evitar perda de dados.
 
 Diagrama de conexões
 =====================
@@ -177,3 +355,4 @@ Referências
 * https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-temperatura-ds18b20-prova-dagua-do-tipo-sonda
 * https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/
 * https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/
+* https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/

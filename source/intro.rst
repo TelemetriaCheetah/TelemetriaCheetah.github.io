@@ -64,7 +64,7 @@ página do github e siga os passos:
   Caso a pasta esteja oculta, vocẽ deve habilitar a opção de visualizar arquivos
   ocultos no seu gerenciador de arquivos.
 
-Abra as configurações da conta
+Abra as configurações da contas
 
 .. image:: images/print2.png
   :align: center
