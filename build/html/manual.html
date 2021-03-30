@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Bem vindo à Wiki do Cheetah E-Racing! &mdash; Documentação Wiki Cheetah </title>
+  <title>Manual do usuário &mdash; Documentação Wiki Cheetah </title>
   
 
   
@@ -42,7 +42,7 @@
     
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
-    <link rel="next" title="Introdução" href="intro.html" /> 
+    <link rel="prev" title="Supervisório" href="supervisorio.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -56,7 +56,7 @@
           
 
           
-            <a href="#">
+            <a href="index.html">
           
 
           
@@ -90,11 +90,19 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supervisorio.html">Supervisório</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manual do usuário</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#servidor">Servidor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dashboard">Dashboard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#visao-geral">Visão Geral</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#uso">Uso</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -110,7 +118,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Wiki Cheetah</a>
+          <a href="index.html">Wiki Cheetah</a>
         
       </nav>
 
@@ -141,15 +149,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Bem vindo à Wiki do Cheetah E-Racing!</li>
+      <li>Manual do usuário</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/manual.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,43 +170,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="bem-vindo-a-wiki-do-cheetah-e-racing">
-<h1>Bem vindo à Wiki do Cheetah E-Racing!<a class="headerlink" href="#bem-vindo-a-wiki-do-cheetah-e-racing" title="Link permanente para este título">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#git">Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#instalando-o-node">Instalando o node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#instalando-o-mysql">Instalando o MySQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#tutoriais-de-programacao">Tutoriais de programação</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#bibliotecas-arduino">Bibliotecas (Arduino)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#temperatura-dutos-de-ar">Temperatura - Dutos de ar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#temperatura-freios">Temperatura - Freios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#indutivo">Indutivo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#relogio-de-tempo-real">Relógio de tempo real</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#unidade-de-medida-inercial">Unidade de medida inercial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#display-lcd">Display LCD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#pressao-de-freios">Pressão de freios</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#sensor-de-carga">Sensor de carga</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#gps">GPS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#diagrama-de-conexoes">Diagrama de conexões</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sensores.html#referencias">Referências</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="supervisorio.html">Supervisório</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="supervisorio.html#servidor">Servidor</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#servidor">Servidor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#dashboard">Dashboard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#uso">Uso</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="manual-do-usuario">
+<h1>Manual do usuário<a class="headerlink" href="#manual-do-usuario" title="Link permanente para este título">¶</a></h1>
+<p>O sistema supervisório da equipe é o programa responsável por armazenar, apresentar e analisar as informações de telemetria fornecidas pelos sensores do
+veículo, fornecendo feedbacks essenciais para os outros subsistemas durante as fases de construção, testes e competição. Esses dados são coletados por
+microcontroladores especializados no carro e enviados por comunicação sem fio (telemetria em tempo real) ou guardados em um cartão SD de bordo para aquisição posterior,
+e ao serem recebidos pelo supervisório são transferidos para um banco de dados relacional localizado no servidor próprio do Cheetah E-Racing.</p>
+<p>Esse pequeno tutorial é destinado à qualquer membro do Cheetah que deseje utilizar o sistema de telemetria nos dispostivos oficiais da equipe ou em seu próprio equipamento pessoal.</p>
+<div class="section" id="servidor">
+<h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
+<p>O servidor utiliza o node.js para as funções de conexão serial, comunicação com o banco de dados e gerenciamento de páginas estáticas. Para inicializar o servidor,
+execute o comando</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
+</pre></div>
+</td></tr></table></div>
+<p>no diretório raiz, e aguarde o processo de instalação dos módulos. Após a conclusão, inicialize o servidor usando</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
+</pre></div>
+</td></tr></table></div>
+<p>A porta configurada para conexões é a 2000, para acessar a página inicial do supervisório utilize a url <a class="reference external" href="http:/">http:/</a>/&lt;endereço-ip-do-servidor&gt;:2000.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">O endereço ip pode ser substituído por localhost nos casos onde a máquina do servidor é a mesma do cliente.</p>
+</div>
+</div>
+<div class="section" id="dashboard">
+<h2>Dashboard<a class="headerlink" href="#dashboard" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="visao-geral">
+<h3>Visão Geral<a class="headerlink" href="#visao-geral" title="Link permanente para este título">¶</a></h3>
+<p>Foto aq</p>
+</div>
+</div>
+<div class="section" id="uso">
+<h2>Uso<a class="headerlink" href="#uso" title="Link permanente para este título">¶</a></h2>
+<p>precisa do supervisório primeiro rs</p>
 </div>
 </div>
 
@@ -208,7 +213,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="intro.html" class="btn btn-neutral float-right" title="Introdução" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="supervisorio.html" class="btn btn-neutral float-left" title="Supervisório" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
