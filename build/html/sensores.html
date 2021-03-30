@@ -35,6 +35,7 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -122,11 +123,47 @@
 <li class="toctree-l3"><a class="reference internal" href="#id13">Objetivo</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#unidade-de-medida-inercial">Unidade de medida inercial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Descrição</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Uso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Código de teste (Arduino IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Objetivo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#display-lcd">Display LCD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Descrição</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Uso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Código de teste (Arduino IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Objetivo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pressao-de-freios">Pressão de freios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Descrição</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Uso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">Código de teste (Arduino IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Objetivo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sensor-de-carga">Sensor de carga</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id26">Descrição</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Uso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Código de teste (Arduino IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Objetivo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gps">GPS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id30">Descrição</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Uso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">Código de teste (Arduino IDE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Objetivo</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#diagrama-de-conexoes">Diagrama de conexões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#referencias">Referências</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="supervisorio.html">Supervisório</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a></li>
 </ul>
 
             
@@ -216,7 +253,7 @@ a extração dos arquivos que devem ser baixados nos links abaixo para a pasta A
 <h3>Descrição<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h3>
 <p>São usados 2 sensores de temperatura do modelo DS18B20 da Dallas Semiconductors, posicionados no início e no final do duto de ar
 . Esse sensor usa a comunicação <a class="reference external" href="https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html">OneWire</a>.</p>
-<p><em>Especificações e características</em></p>
+<p><strong>Especificações e características</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">Datasheet</a></li>
 <li>Tensão de operação: 3 – 5,5VDC</li>
@@ -301,7 +338,7 @@ forma sendo verificada a eficiência dos dutos no carro.</p>
 <p>Há no carro 4 sensores infravermelhos, que são sensores de temperatura do modelo
 mlx90614 e fabricante Melexis, posicionados em cada roda próximo aos
 discos de freio. Os sensores utilizam comunicação <a class="reference external" href="http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf">I²C</a>.</p>
-<p><em>Especificações e características</em></p>
+<p><strong>Especificações e características</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://img.filipeflop.com/files/download/Datasheet_MLX90614.pdf">Datasheet</a></li>
 <li>Sensor de temperatura IR infravermelho</li>
@@ -410,7 +447,7 @@ ficam acoplados um em cada roda perto dos furos da roda fônica,
 não é necessário um conector especifico irão para o chicote e do chicote para as placas.</p>
 <div class="section" id="id5">
 <h3>Descrição<a class="headerlink" href="#id5" title="Link permanente para este título">¶</a></h3>
-<p><em>Especificações e características</em></p>
+<p><strong>Especificações e características</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://www.sense.com.br/produtos/detalhes/10398/por/1/1/sensores/sensores-indutivos-tubulares-standard/PS2-12GI50-E2-Ex">Datasheet</a></li>
 <li>Tensão de alimentação: 10 a 30Vcc</li>
@@ -552,8 +589,8 @@ acelerações, comparações de voltas para a correção de pilotagem</p>
 <div class="section" id="id9">
 <h3>Descrição<a class="headerlink" href="#id9" title="Link permanente para este título">¶</a></h3>
 <p>O módulo de relógio em tempo real fornece informações precisas de horário para o microcontrolador embarcado,
-através do protocolo <a class="reference external" href="http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf">I²C</a>.
-<em>Especificações e características</em></p>
+através do protocolo <a class="reference external" href="http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf">I²C</a>.</p>
+<p><strong>Especificações e características</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://datasheets.maximintegrated.com/en/ds/DS1307.pdf">Datasheet</a></li>
 <li>Computa segundos, minutos, horas, dias da semana, dias do mês, meses e anos (de 2000 a 2099).</li>
@@ -661,6 +698,353 @@ minuto e segundo, com as devidas correções de mês e ano. Em caso de falha de 
 ele automaticamente aciona a bateria para evitar perda de dados.</p>
 </div>
 </div>
+<div class="section" id="unidade-de-medida-inercial">
+<h2>Unidade de medida inercial<a class="headerlink" href="#unidade-de-medida-inercial" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id14">
+<h3>Descrição<a class="headerlink" href="#id14" title="Link permanente para este título">¶</a></h3>
+<p>Modelo da placa, GY-80(um multi-sensor, IMU), função do acelerômetro, CI ADXL345 (3-Axis Digital Accelerometer).
+Comunicação pela interface I2C, pinos SCL e SDA, com endereçamento individual. Como o modulo vai direto na placa central,
+não se utiliza conector.</p>
+<p><strong>Especificações e características</strong></p>
+<ul class="simple">
+<li>Protocolo de comunicação      I2C</li>
+<li>Chip Acelerômetro     ADXL345</li>
+<li>Endereço I2C  0x53</li>
+<li>Faixa do Acelerômetro         ±2, ±4, ±8, ±16g</li>
+<li>Chip Giroscópio       L3G4200D</li>
+<li>Endereço I2C  0x69</li>
+<li>Faixa do Giroscópio   ±250, 500, 2000°/s</li>
+<li>Chip Magnetômetro     HMC5883L</li>
+<li>Endereço I2C  0x1E</li>
+<li>Chip Barômetro        BMP085</li>
+<li>Endereço I2C  0x77</li>
+<li>Tensão de operação    3,3-5V</li>
+<li>Peso  5g</li>
+<li>Dimensões     25,8 x 16,8mm</li>
+<li><a class="reference external" href="https://storage.googleapis.com/baudaeletronicadatasheet/ADXL345.pdf">Datasheet Acelerômetro</a></li>
+<li><a class="reference external" href="https://storage.googleapis.com/baudaeletronicadatasheet/L3G4200D.pdf">Datasheet Giroscópio</a></li>
+<li><a class="reference external" href="https://storage.googleapis.com/baudaeletronicadatasheet/HMC5883L.pdf">Datasheet Bússola</a></li>
+<li><a class="reference external" href="https://storage.googleapis.com/baudaeletronicadatasheet/BMP085.pdf">Datasheet Barômetro</a></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>Uso<a class="headerlink" href="#id15" title="Link permanente para este título">¶</a></h3>
+</div>
+<div class="section" id="id16">
+<h3>Código de teste (Arduino IDE)<a class="headerlink" href="#id16" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Programa : Teste Giroscopio L3G4200D</span>
+<span class="c1">// Adaptacoes : Arduino e Cia</span>
+<span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp"></span>
+<span class="cp">#define CTRL_REG1 0x20</span>
+<span class="cp">#define CTRL_REG2 0x21</span>
+<span class="cp">#define CTRL_REG3 0x22</span>
+<span class="cp">#define CTRL_REG4 0x23</span>
+<span class="cp">#define CTRL_REG5 0x24</span>
+<span class="c1">//Endereco I2C do L3G4200D</span>
+<span class="kt">int</span> <span class="n">L3G4200D_Address</span> <span class="o">=</span> <span class="mi">105</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">z</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="n">Wire</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Inicializando o L3G4200D&quot;</span><span class="p">);</span>
+  <span class="c1">// Configura o L3G4200 para 200, 500 ou 2000 graus/seg</span>
+  <span class="n">setupL3G4200D</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+  <span class="c1">// Aguarda a resposta do sensor</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">1500</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Atualiza os valores de X, Y e Z</span>
+  <span class="n">getGyroValues</span><span class="p">();</span>
+  <span class="c1">// Mostra os valores no serial monitor</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;X:&quot;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; Y:&quot;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; Z:&quot;</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
+  <span class="c1">// Aguarda 100ms e reinicia o processo</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">getGyroValues</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Rotina para leitura dos valores de X, Y e Z</span>
+  <span class="n">byte</span> <span class="n">xMSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x29</span><span class="p">);</span>
+  <span class="n">byte</span> <span class="n">xLSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x28</span><span class="p">);</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="n">xMSB</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">xLSB</span><span class="p">);</span>
+  <span class="n">byte</span> <span class="n">yMSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x2B</span><span class="p">);</span>
+  <span class="n">byte</span> <span class="n">yLSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x2A</span><span class="p">);</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="p">((</span><span class="n">yMSB</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">yLSB</span><span class="p">);</span>
+  <span class="n">byte</span> <span class="n">zMSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x2D</span><span class="p">);</span>
+  <span class="n">byte</span> <span class="n">zLSB</span> <span class="o">=</span> <span class="n">readRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="mh">0x2C</span><span class="p">);</span>
+  <span class="n">z</span> <span class="o">=</span> <span class="p">((</span><span class="n">zMSB</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">zLSB</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">setupL3G4200D</span><span class="p">(</span><span class="kt">int</span> <span class="n">scale</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//From  Jim Lindblom of Sparkfun&#39;s code</span>
+  <span class="c1">// Enable x, y, z and turn off power down:</span>
+  <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG1</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00001111</span><span class="p">);</span>
+  <span class="c1">// If you&#39;d like to adjust/use the HPF, you can edit the line below to configure CTRL_REG2:</span>
+  <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG2</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00000000</span><span class="p">);</span>
+  <span class="c1">// Configure CTRL_REG3 to generate data ready interrupt on INT2</span>
+  <span class="c1">// No interrupts used on INT1, if you&#39;d like to configure INT1</span>
+  <span class="c1">// or INT2 otherwise, consult the datasheet:</span>
+  <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG3</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00001000</span><span class="p">);</span>
+  <span class="c1">// CTRL_REG4 controls the full-scale range, among other things:</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">scale</span> <span class="o">==</span> <span class="mi">250</span><span class="p">){</span>
+    <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG4</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00000000</span><span class="p">);</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">scale</span> <span class="o">==</span> <span class="mi">500</span><span class="p">){</span>
+    <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG4</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00010000</span><span class="p">);</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG4</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00110000</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// CTRL_REG5 controls high-pass filtering of outputs, use it</span>
+  <span class="c1">// if you&#39;d like:</span>
+  <span class="n">writeRegister</span><span class="p">(</span><span class="n">L3G4200D_Address</span><span class="p">,</span> <span class="n">CTRL_REG5</span><span class="p">,</span> <span class="mi">0</span><span class="n">b00000000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">writeRegister</span><span class="p">(</span><span class="kt">int</span> <span class="n">deviceAddress</span><span class="p">,</span> <span class="n">byte</span> <span class="n">address</span><span class="p">,</span> <span class="n">byte</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">deviceAddress</span><span class="p">);</span> <span class="c1">// start transmission to device</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">address</span><span class="p">);</span>       <span class="c1">// send register address</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>         <span class="c1">// send value to write</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>     <span class="c1">// end transmission</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">readRegister</span><span class="p">(</span><span class="kt">int</span> <span class="n">deviceAddress</span><span class="p">,</span> <span class="n">byte</span> <span class="n">address</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">deviceAddress</span><span class="p">);</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">address</span><span class="p">);</span> <span class="c1">// register to read</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+    <span class="n">Wire</span><span class="p">.</span><span class="n">requestFrom</span><span class="p">(</span><span class="n">deviceAddress</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// read a byte</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">Wire</span><span class="p">.</span><span class="n">available</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// waiting</span>
+    <span class="p">}</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id17">
+<h3>Objetivo<a class="headerlink" href="#id17" title="Link permanente para este título">¶</a></h3>
+<p>Colocar o motivo do uso do sensor e para que ele valida, ou seja deixar exposto a informação. Exemplo: Um dos itens para validar os sidepods
+(dutos) é verificar o quão efetivo é o resfriamento da caixa de bateria, local para onde estão voltados os dutos. Para isso é necessário 02
+sensores DS18B20 para dois testes diferentes: no primeiro, que será realizado avaliando somente um duto de cada vez, um sensor seria colocado
+na entrada do duto e o outro na saída, para que seja obtida a diferença entre essas temperaturas. Dessa forma é possível verificar a geometria
+escolhida dos dutos comparando com dados de simulações. No segundo teste os sensores serão colocados nas laterais da caixa de bateria,
+onde incide o ar vindo dos dutos. Assim serão coletados os dados de temperatura da caixa de baterias com e sem dutos. Dessa forma sendo verificada a eficiência dos dutos no carro.</p>
+</div>
+</div>
+<div class="section" id="display-lcd">
+<h2>Display LCD<a class="headerlink" href="#display-lcd" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id18">
+<h3>Descrição<a class="headerlink" href="#id18" title="Link permanente para este título">¶</a></h3>
+<p>Display LED mais o LCD genérico, QC2004A. Comunicação pela interface I2C, pinos SCL e SDA,  com endereçamento individual. Fixado no painel do carro e ligado, pelo chicote, direto para aplaca central.</p>
+<p><strong>Especificações e características</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="as">Datasheet</a></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>Uso<a class="headerlink" href="#id19" title="Link permanente para este título">¶</a></h3>
+<p>O modulo funciona com uma tensão de 5V.
+Pinos utilizados são: Vcc 5V ; GND; SCL; SDA.</p>
+</div>
+<div class="section" id="id20">
+<h3>Código de teste (Arduino IDE)<a class="headerlink" href="#id20" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id21">
+<h3>Objetivo<a class="headerlink" href="#id21" title="Link permanente para este título">¶</a></h3>
+<p>O display LCD é nada mais que um LED que mostra dados. Localizado no painel do carro para que
+posamos mostrar ao piloto dados que achamos importantes que ele esteja constantemente ciente. Os dados são decididos pela equipe.</p>
+</div>
+</div>
+<div class="section" id="pressao-de-freios">
+<h2>Pressão de freios<a class="headerlink" href="#pressao-de-freios" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id22">
+<h3>Descrição<a class="headerlink" href="#id22" title="Link permanente para este título">¶</a></h3>
+<p>Sensor de pressão de freios modelo 53CP08 – 02 fabricante Sensata, utilizasse 2 sensores
+um em cada linha de freios, do lado esquerdo inferior próximo ao pedal o outro próximo
+da roda traseira, é necessário utilizar um conector de 3 vias para fixá-lo no carro. (VCC, GND, AN)</p>
+<p><strong>Especificações e características</strong></p>
+<p><a class="reference external" href="https://br.mouser.com/Sensata-Technologies/Sensors/Pressure-Sensors/_/N-6g7qc?P=1y9lxqe">https://br.mouser.com/Sensata-Technologies/Sensors/Pressure-Sensors/_/N-6g7qc?P=1y9lxqe</a> (Loja da fabricante)
+<a class="reference external" href="https://br.mouser.com/datasheet/2/657/ourproducts_2cp_datasheet-1511045.pdf">https://br.mouser.com/datasheet/2/657/ourproducts_2cp_datasheet-1511045.pdf</a> (Datasheet do modelo semelhante)
+<a class="reference external" href="https://www.tomodatipecas.com.br/produto/256228/conector-com-chicote-3-vias-sensor-de-posicao-da-borboleta-pressostato-ar-condicionado-fiat-vw-ford-gm-ete-7741">https://www.tomodatipecas.com.br/produto/256228/conector-com-chicote-3-vias-sensor-de-posicao-da-borboleta-pressostato-ar-condicionado-fiat-vw-ford-gm-ete-7741</a> (Tipo de conector)</p>
+<img alt="_images/cebolinha.png" class="align-center" src="_images/cebolinha.png" />
+<ul class="simple">
+<li><a class="reference external" href="as">Datasheet</a></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h3>Uso<a class="headerlink" href="#id23" title="Link permanente para este título">¶</a></h3>
+<p>Ele funciona com VCC de 5v, GND e Sinal, pode-se saber o valor da pressão usando a função map, como a equação VOUT /VCC= (0.01*PIN[Bar G]+ 0.1)
+(Verificar o datasheet).Para isso é necessário que a linha de freios esteja sangrada para ter a força necessária de pressão já que não é possível fazer outro teste de mesa.</p>
+</div>
+<div class="section" id="id24">
+<h3>Código de teste (Arduino IDE)<a class="headerlink" href="#id24" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id25">
+<h3>Objetivo<a class="headerlink" href="#id25" title="Link permanente para este título">¶</a></h3>
+<p>O objetivo do sensor e verificar se os freios e a linha estão cumprindo com as expectativas da subequipe de freios.</p>
+</div>
+</div>
+<div class="section" id="sensor-de-carga">
+<h2>Sensor de carga<a class="headerlink" href="#sensor-de-carga" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id26">
+<h3>Descrição<a class="headerlink" href="#id26" title="Link permanente para este título">¶</a></h3>
+<p>Verificar o datasheet</p>
+<p><strong>Especificações e características</strong></p>
+<p><a class="reference external" href="http://blog.eletrogate.com/balanca-digital-com-arduino-aprenda-a-usar-a-celula-de-carga/">http://blog.eletrogate.com/balanca-digital-com-arduino-aprenda-a-usar-a-celula-de-carga/</a>
+<a class="reference external" href="https://www.baudaeletronica.com.br/sensor-de-peso-50kg-celula-de-carga.html">https://www.baudaeletronica.com.br/sensor-de-peso-50kg-celula-de-carga.html</a></p>
+<ul class="simple">
+<li><a class="reference external" href="as">Datasheet</a></li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h3>Uso<a class="headerlink" href="#id27" title="Link permanente para este título">¶</a></h3>
+</div>
+<div class="section" id="id28">
+<h3>Código de teste (Arduino IDE)<a class="headerlink" href="#id28" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id29">
+<h3>Objetivo<a class="headerlink" href="#id29" title="Link permanente para este título">¶</a></h3>
+<p>Objetivo do sensor é cruzar informações junto com o sensor de pressão de freios, para validar e relacionar a força que é aplicada com a pressão que a linha chega, já que temos a relação de pedal e o diâmetro do êmbolo do CM.</p>
+</div>
+</div>
+<div class="section" id="gps">
+<h2>GPS<a class="headerlink" href="#gps" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id30">
+<h3>Descrição<a class="headerlink" href="#id30" title="Link permanente para este título">¶</a></h3>
+<p>Modelo do modulo do sensor GPS, Adafruit Ultimatr GPS Breakout V3. Comunicação pela interface serial, pinos TX e RX. Como o modulo vai direto na placa central, não se utiliza conector.</p>
+<p><strong>Especificações e características</strong></p>
+<p><a class="reference external" href="https://learn.adafruit.com/adafruit-ultimate-gps/downloads">https://learn.adafruit.com/adafruit-ultimate-gps/downloads</a> (datasheetes)</p>
+<ul class="simple">
+<li><a class="reference external" href="as">Datasheet</a></li>
+</ul>
+</div>
+<div class="section" id="id31">
+<h3>Uso<a class="headerlink" href="#id31" title="Link permanente para este título">¶</a></h3>
+<p>O modulo funciona com uma tensão tanto de 3.3V, quanto de 5V.
+Pinos utilizados são: Vcc(3.3V ou 5V) ; GND; TX; RX;
+Para a melhor recepção do sinal no modulo, se utiliza uma antena externa. Porém mesmo assim em diversos locais ocorre falha na recepção.</p>
+</div>
+<div class="section" id="id32">
+<h3>Código de teste (Arduino IDE)<a class="headerlink" href="#id32" title="Link permanente para este título">¶</a></h3>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="id33">
+<h3>Objetivo<a class="headerlink" href="#id33" title="Link permanente para este título">¶</a></h3>
+<p>O GPS fornece diversos dados para serem coletados, o modulo é um receptor de dados do NMEA. Podemos obter o tempo(ano,  mês, dia, hora, minuto e segundo). Além da localização(latitude, longitude, altitude e ângulo), em que podemos mapear o percurso do veiculo. Também é medido a velocidade  em knots.</p>
+</div>
+</div>
 <div class="section" id="diagrama-de-conexoes">
 <h2>Diagrama de conexões<a class="headerlink" href="#diagrama-de-conexoes" title="Link permanente para este título">¶</a></h2>
 <img alt="_images/diagrama.png" class="align-center" src="_images/diagrama.png" />
@@ -668,7 +1052,9 @@ ele automaticamente aciona a bateria para evitar perda de dados.</p>
 <div class="section" id="referencias">
 <h2>Referências<a class="headerlink" href="#referencias" title="Link permanente para este título">¶</a></h2>
 <ul class="simple">
+<li><a class="reference external" href="https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-adaptador-i2c-para-display-lcd-16x2-20x4">https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-adaptador-i2c-para-display-lcd-16x2-20x4</a></li>
 <li><a class="reference external" href="https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-temperatura-ds18b20-prova-dagua-do-tipo-sonda">https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-temperatura-ds18b20-prova-dagua-do-tipo-sonda</a></li>
+<li><a class="reference external" href="https://www.arduinoecia.com.br/sensor-gy-80-arduino-acelerometro-bussola-barometro/">https://www.arduinoecia.com.br/sensor-gy-80-arduino-acelerometro-bussola-barometro/</a></li>
 <li><a class="reference external" href="https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/">https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/</a></li>
 <li><a class="reference external" href="https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/">https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/</a></li>
 <li><a class="reference external" href="https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/">https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/</a></li>

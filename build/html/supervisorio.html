@@ -35,12 +35,14 @@
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
         <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Pesquisar" href="search.html" />
+    <link rel="next" title="Manual do usuário" href="manual.html" />
     <link rel="prev" title="Sensores" href="sensores.html" /> 
 </head>
 
@@ -93,22 +95,39 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Supervisório</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#manual-do-usuario">Manual do usuário</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dashboard">Dashboard</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#visao-geral">Visão Geral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#servidor">Servidor</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modulos">Módulos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuracao">Configuração</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#config-json">config.json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#password-json">password.json</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cheetahlinkparser">CheetahLinkParser</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#uso">Uso</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemplo">Exemplo</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cheetahlinkformatter">CheetahLinkFormatter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Uso</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Exemplo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setdata">setData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getanalogarray">getAnalogArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getdigitalarray">getDigitalArray</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#databasehandler">DatabaseHandler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Uso</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Exemplo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constructor">constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getsensorarray">getSensorArray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#insertintodatabase">insertIntoDatabase</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#manual-do-desenvolvedor">Manual do desenvolvedor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#servidor">Servidor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#banco-de-dados">Banco de dados</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cliente">Cliente</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a></li>
 </ul>
 
             
@@ -178,38 +197,195 @@
             
   <div class="section" id="supervisorio">
 <h1>Supervisório<a class="headerlink" href="#supervisorio" title="Link permanente para este título">¶</a></h1>
-<p>O sistema supervisório da equipe é o programa responsável por armazenar, apresentar e analisar as informações de telemetria fornecidas pelos sensores do
-veículo, fornecendo feedbacks essenciais para os outros subsistemas durante as fases de construção, testes e competição. Esses dados são coletados por
-microcontroladores especializados no carro e enviados por comunicação sem fio (telemetria em tempo real) ou guardados em um cartão SD de bordo para aquisição posterior,
-e ao serem recebidos pelo supervisório são transferidos para um banco de dados relacional localizado no servidor próprio do Cheetah E-Racing.</p>
-<div class="section" id="manual-do-usuario">
-<h2>Manual do usuário<a class="headerlink" href="#manual-do-usuario" title="Link permanente para este título">¶</a></h2>
-<p>Esse pequeno tutorial é destinado à qualquer membro do Cheetah que deseje utilizar o sistema de telemetria nos dispostivos oficiais da equipe ou em seu próprio equipamento pessoal.</p>
-<div class="section" id="dashboard">
-<h3>Dashboard<a class="headerlink" href="#dashboard" title="Link permanente para este título">¶</a></h3>
-<div class="section" id="visao-geral">
-<h4>Visão Geral<a class="headerlink" href="#visao-geral" title="Link permanente para este título">¶</a></h4>
-<p>Foto aq</p>
+<p>Nessa seção está documentado o código do sistema supervisório para torná-lo facilmente acessível a qualquer membro do Cheetah E-Racing interessado no seu funcionamento.
+Nenhum conhecimento prévio é estritamente necessário para acompanhá-lo, porém qualquer experiência com linguagens de programação e desenvolvimento web será útil.</p>
+<div class="section" id="servidor">
+<h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
+<p>O processo de instalação e inicialização do servidor segue os mesmos passos apresentados na seção de manual do usuário.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>Para facilitar o processo de desenvolvimento, recomenda-se a utilização do <a class="reference external" href="https://www.npmjs.com/package/nodemon">nodemon</a>. O nodemon é um módulo do node.js que reinicia automaticamente o servidor
+quando algum dos arquivos javascript for alterado, e pode ser ativado utilizando o comando abaixo ao invés do mostrado no manual do usuário:</p>
+<div class="last highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">nodemon</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
+</pre></div>
+</td></tr></table></div>
 </div>
+<div class="section" id="modulos">
+<h3>Módulos<a class="headerlink" href="#modulos" title="Link permanente para este título">¶</a></h3>
+<p>A lista abaixo contém os módulos necessários para a execução do sistema supervisório e uma breve descrição dos seus objetivos:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://expressjs.com/pt-br/">express.js e http - Criação de um servidor http</a>;</li>
+<li><a class="reference external" href="https:/Conexãocomobancodedados/socket.io/">socket.io - Conexões WebSocket entre servidor e cliente</a>;</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/mysql">mysql - Conexão com o banco de dados</a>;</li>
+<li><a class="reference external" href="https://www.npmjs.com/package/serialport">serialport e readline - Comunicação UART com o rádio</a>;</li>
+<li><a class="reference external" href="https://nodejs.org/api/path.html">path - Operações com arquivos e caminhos no servidor</a>;</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Não é necessário (e nem recomendado) instalar os módulos manualmenete, eles já são automaticamente baixados pelo npm install.</p>
+</div>
+</div>
+<div class="section" id="configuracao">
+<h3>Configuração<a class="headerlink" href="#configuracao" title="Link permanente para este título">¶</a></h3>
+<p>Arquivos .json são usados facilitar a edição e visualização das configurações do servidor:</p>
+<div class="section" id="config-json">
+<h4>config.json<a class="headerlink" href="#config-json" title="Link permanente para este título">¶</a></h4>
+<p>Arquivo de configurações gerais</p>
+<ul class="simple">
+<li><strong>qtdMedicao</strong> <em>(inteiro)</em>: Quantidade de sensores de medição</li>
+<li><strong>qtdDiscretos</strong> <em>(inteiro)</em>: Quantidade de sensores discretos</li>
+</ul>
+</div>
+<div class="section" id="password-json">
+<h4>password.json<a class="headerlink" href="#password-json" title="Link permanente para este título">¶</a></h4>
+<p>Arquivo com as configurações do banco de dados. Este arquivo não está disponível no github por questões de segurança, e pode
+ser encontrado no teams da equipe.</p>
+<ul class="simple">
+<li><strong>host</strong> <em>(string)</em>: Endereço IPv4 do servidor MySQL/MariaDB</li>
+<li><strong>user</strong> <em>(string)</em>: Nome de usuário</li>
+<li><strong>password</strong> <em>(string)</em>: Senha do usuário</li>
+<li><strong>database</strong> <em>(string)</em>: Nome do banco de dados usado</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">O nome do banco de dados é fixo em algumas partes do código e deve ser configurado como <em>telemetriaCheetah</em>. Há planos para permitir outros nomes no futuro, mas no momento o uso de qualquer outro identificador resultará em uma falha do servidor.</p>
+</div>
+</div>
+</div>
+<div class="section" id="cheetahlinkparser">
+<h3>CheetahLinkParser<a class="headerlink" href="#cheetahlinkparser" title="Link permanente para este título">¶</a></h3>
+<p>A classe <em>CheetahLinkParser</em> recebe os dados do rádio e os converte para dois vetores com os valores dos sensores discretos e de medição. Sua
+implementação é baseada na classe <a class="reference external" href="https://serialport.io/docs/api-parser-byte-length/">ByteLength</a> do módulo <a class="reference external" href="https://www.npmjs.com/package/serialport">serialport</a>,
+e inspirada na classe <a class="reference external" href="https://github.com/Tesla-UFMG/Interface/blob/master/api-mode-parser.js">api-mode-parser.js</a> da equipe <a class="reference external" href="https://github.com/Tesla-UFMG">Tesla UFMG</a>.</p>
 <div class="section" id="uso">
 <h4>Uso<a class="headerlink" href="#uso" title="Link permanente para este título">¶</a></h4>
-<p>precisa do supervisório primeiro rs</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
+<span class="k">new</span> <span class="nx">CheetahLinkParser</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><em>options.length: number</em> - quantidade de bytes emitidos em cada evento</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Aviso</p>
+<blockquote>
+<div>O número de bytes passado como argumento deve ser o mesmo emitido pelo módulo serial. Esse valor pode ser consultado diretamente no código do MCU de telemetria (placa frontal) ou calculado utilizando a fórmula:</div></blockquote>
+<div class="last math notranslate nohighlight">
+\[qtdBytesSerial = (qtdSensoresMedicao \times 2 + qtdSensoresDiscretos/8) + 2\]</div>
+</div>
+</div>
+<div class="section" id="exemplo">
+<h4>Exemplo<a class="headerlink" href="#exemplo" title="Link permanente para este título">¶</a></h4>
+<p>O código abaixo imprime os dados recebidos da porta <strong>/dev/ttyACM0</strong> em conjuntos de 8 bits (notação hexadecimal):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">serialport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;serialport&quot;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ttyPort</span> <span class="o">=</span> <span class="s2">&quot;/dev/ttyACM0&quot;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">serialport</span><span class="p">(</span><span class="nx">ttyPort</span><span class="p">,{</span><span class="nx">baudRate</span><span class="o">:</span><span class="mi">9600</span><span class="p">});</span>
+<span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="k">new</span> <span class="nx">CheetahLinkParser</span><span class="p">({</span><span class="nx">length</span><span class="o">:</span> <span class="mi">12</span><span class="p">}));</span>
+<span class="nx">parser</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="manual-do-desenvolvedor">
-<h2>Manual do desenvolvedor<a class="headerlink" href="#manual-do-desenvolvedor" title="Link permanente para este título">¶</a></h2>
-<p>Essa seção busca documentar todo o código do sistema supervisório para torná-lo facilmente acessível a qualquer membro do Cheetah E-Racing interessado no seu funcionamento.
-Nenhum conhecimento prévio é estritamente necessário para acompanhá-lo, porém qualquer experiência prévia com linguagens de programação e desenvolvimento web será útil.</p>
-<div class="section" id="servidor">
-<h3>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h3>
+<div class="section" id="cheetahlinkformatter">
+<h3>CheetahLinkFormatter<a class="headerlink" href="#cheetahlinkformatter" title="Link permanente para este título">¶</a></h3>
+<p>A classe <em>CheetahLinkFormatter</em> é responsável por tratar os dados recebidos do rádio.</p>
+<div class="section" id="id1">
+<h4>Uso<a class="headerlink" href="#id1" title="Link permanente para este título">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
+</pre></div>
 </div>
-<div class="section" id="banco-de-dados">
-<h3>Banco de dados<a class="headerlink" href="#banco-de-dados" title="Link permanente para este título">¶</a></h3>
 </div>
-<div class="section" id="cliente">
-<h3>Cliente<a class="headerlink" href="#cliente" title="Link permanente para este título">¶</a></h3>
-<p>as</p>
+<div class="section" id="id2">
+<h4>Exemplo<a class="headerlink" href="#id2" title="Link permanente para este título">¶</a></h4>
+<p>O código abaixo imprime um vetor contendo os valores de todos os sensores discretos recebidos do rádio.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
+<span class="nx">parser</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="nx">serial</span><span class="p">.</span><span class="nx">setData</span><span class="p">(</span><span class="nx">data</span> <span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">qtdMedicao</span> <span class="p">,</span> <span class="nx">config</span><span class="p">.</span><span class="nx">qtdDiscretos</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">serial</span><span class="p">.</span><span class="nx">getDigitalArray</span><span class="p">());</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setdata">
+<h4>setData<a class="headerlink" href="#setdata" title="Link permanente para este título">¶</a></h4>
+<p>Insere dados brutos no objeto</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">setData</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">nAnalog</span><span class="p">,</span> <span class="nx">nDigital</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Argumentos:</strong></p>
+<ol class="arabic simple">
+<li><strong>data</strong> <em>(objeto)</em> - Objeto contendo os dados do parser serial;</li>
+<li><strong>nAnalog</strong> <em>(inteiro)</em> - Quantidade de sensores de medição obtida do arquivo config.json</li>
+<li><strong>nDigital</strong> <em>(inteiro)</em> - Quantidade de sensores discretos obtida do arquivo config.json</li>
+</ol>
+</div>
+<div class="section" id="getanalogarray">
+<h4>getAnalogArray<a class="headerlink" href="#getanalogarray" title="Link permanente para este título">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">getAnalogArray</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Retorna um vetor de inteiros com os valores de todos os sensores de medição</p>
+</div>
+<div class="section" id="getdigitalarray">
+<h4>getDigitalArray<a class="headerlink" href="#getdigitalarray" title="Link permanente para este título">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">getDigitalArray</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Retorna um vetor de inteiros com os valores de todos os sensores discretos</p>
+</div>
+</div>
+<div class="section" id="databasehandler">
+<h3>DatabaseHandler<a class="headerlink" href="#databasehandler" title="Link permanente para este título">¶</a></h3>
+<p>Lida com as operações de banco de dados</p>
+<div class="admonition warning">
+<p class="first admonition-title">Aviso</p>
+<p class="last">Esta classe ainda está sendo implementada e portanto é sujeita a mudanças significativas em um futuro próximo. Garanta que seu código está atualizado!</p>
+</div>
+<div class="section" id="id3">
+<h4>Uso<a class="headerlink" href="#id3" title="Link permanente para este título">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Exemplo<a class="headerlink" href="#id4" title="Link permanente para este título">¶</a></h4>
+<p>Este exemplo imprime um vetor com todos os valores do sensor de medição nº 0 disponíveis no banco de dados</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">db</span><span class="p">.</span><span class="nx">getSensorArray</span><span class="p">(</span><span class="s2">&quot;A&quot;</span> <span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="constructor">
+<h4>constructor<a class="headerlink" href="#constructor" title="Link permanente para este título">¶</a></h4>
+<p>O constructor da classe inicializa a conexão com o banco de dados utilizando as configurações dos arquivos json.</p>
+</div>
+<div class="section" id="getsensorarray">
+<h4>getSensorArray<a class="headerlink" href="#getsensorarray" title="Link permanente para este título">¶</a></h4>
+<p>Retorna um vetor de inteiros com todos os valores do sensor disponíveis no banco de dados</p>
+<p><strong>Argumentos:</strong></p>
+<ol class="arabic simple">
+<li><strong>sensorType</strong> <em>(string)</em> - «A» = sensor de medição ; «D» = sensor discreto</li>
+<li><strong>sensorCode</strong> <em>(inteiro)</em> - id do sensor (consultar config.json em caso de dúvida)</li>
+</ol>
+</div>
+<div class="section" id="insertintodatabase">
+<h4>insertIntoDatabase<a class="headerlink" href="#insertintodatabase" title="Link permanente para este título">¶</a></h4>
+<p>Insere dados no banco de dados.</p>
+<p><strong>Argumentos:</strong></p>
+<ol class="arabic simple">
+<li><strong>analogSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores de medição</li>
+<li><strong>digitalSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores discretos</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -220,6 +396,7 @@ Nenhum conhecimento prévio é estritamente necessário para acompanhá-lo, por�
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="manual.html" class="btn btn-neutral float-right" title="Manual do usuário" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="sensores.html" class="btn btn-neutral float-left" title="Sensores" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

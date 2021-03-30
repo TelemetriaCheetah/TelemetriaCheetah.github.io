@@ -25,7 +25,7 @@ Descrição
 São usados 2 sensores de temperatura do modelo DS18B20 da Dallas Semiconductors, posicionados no início e no final do duto de ar
 . Esse sensor usa a comunicação `OneWire <https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/1796.html>`__.
 
-*Especificações e características*
+**Especificações e características**
 
 * `Datasheet <https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf>`__
 * Tensão de operação: 3 – 5,5VDC
@@ -94,7 +94,7 @@ Há no carro 4 sensores infravermelhos, que são sensores de temperatura do mode
 mlx90614 e fabricante Melexis, posicionados em cada roda próximo aos
 discos de freio. Os sensores utilizam comunicação `I²C <http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf>`_.
 
-*Especificações e características*
+**Especificações e características**
 
 * `Datasheet <https://img.filipeflop.com/files/download/Datasheet_MLX90614.pdf>`__
 * Sensor de temperatura IR infravermelho
@@ -174,7 +174,7 @@ não é necessário um conector especifico irão para o chicote e do chicote par
 Descrição
 ------------
 
-*Especificações e características*
+**Especificações e características**
 
 * `Datasheet <https://www.sense.com.br/produtos/detalhes/10398/por/1/1/sensores/sensores-indutivos-tubulares-standard/PS2-12GI50-E2-Ex>`__
 * Tensão de alimentação: 10 a 30Vcc
@@ -266,13 +266,14 @@ Objetivo do sensor Indutivo é saber a velocidade média, análises gerais como 
 acelerações, comparações de voltas para a correção de pilotagem
 
 Relógio de tempo real
-==========================
+====================================
 
 Descrição
 ------------
 O módulo de relógio em tempo real fornece informações precisas de horário para o microcontrolador embarcado,
 através do protocolo `I²C <http://www.univasf.edu.br/~romulo.camara/novo/wp-content/uploads/2013/11/Barramento-e-Protocolo-I2C.pdf>`_.
-*Especificações e características*
+
+**Especificações e características**
 
 * `Datasheet <https://datasheets.maximintegrated.com/en/ds/DS1307.pdf>`__
 * Computa segundos, minutos, horas, dias da semana, dias do mês, meses e anos (de 2000 a 2099).
@@ -342,17 +343,298 @@ uma data com precisão e baixo consumo.  Informando ano, mês, dia, hora(formato
 minuto e segundo, com as devidas correções de mês e ano. Em caso de falha de energia
 ele automaticamente aciona a bateria para evitar perda de dados.
 
+Unidade de medida inercial
+==================================
+
+Descrição
+------------
+
+Modelo da placa, GY-80(um multi-sensor, IMU), função do acelerômetro, CI ADXL345 (3-Axis Digital Accelerometer).
+Comunicação pela interface I2C, pinos SCL e SDA, com endereçamento individual. Como o modulo vai direto na placa central,
+não se utiliza conector.
+
+**Especificações e características**
+
+* Protocolo de comunicação 	I2C
+* Chip Acelerômetro 	ADXL345
+* Endereço I2C 	0x53
+* Faixa do Acelerômetro 	±2, ±4, ±8, ±16g
+* Chip Giroscópio 	L3G4200D
+* Endereço I2C 	0x69
+* Faixa do Giroscópio 	±250, 500, 2000°/s
+* Chip Magnetômetro 	HMC5883L
+* Endereço I2C 	0x1E
+* Chip Barômetro 	BMP085
+* Endereço I2C 	0x77
+* Tensão de operação 	3,3-5V
+* Peso 	5g
+* Dimensões 	25,8 x 16,8mm
+
+* `Datasheet Acelerômetro <https://storage.googleapis.com/baudaeletronicadatasheet/ADXL345.pdf>`__
+* `Datasheet Giroscópio <https://storage.googleapis.com/baudaeletronicadatasheet/L3G4200D.pdf>`__
+* `Datasheet Bússola <https://storage.googleapis.com/baudaeletronicadatasheet/HMC5883L.pdf>`__
+* `Datasheet Barômetro <https://storage.googleapis.com/baudaeletronicadatasheet/BMP085.pdf>`__
+
+Uso
+-----
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+  // Programa : Teste Giroscopio L3G4200D
+  // Adaptacoes : Arduino e Cia
+  #include <Wire.h>
+  #define CTRL_REG1 0x20
+  #define CTRL_REG2 0x21
+  #define CTRL_REG3 0x22
+  #define CTRL_REG4 0x23
+  #define CTRL_REG5 0x24
+  //Endereco I2C do L3G4200D
+  int L3G4200D_Address = 105;
+  int x;
+  int y;
+  int z;
+  void setup()
+  {
+    Wire.begin();
+    Serial.begin(9600);
+    Serial.println("Inicializando o L3G4200D");
+    // Configura o L3G4200 para 200, 500 ou 2000 graus/seg
+    setupL3G4200D(2000);
+    // Aguarda a resposta do sensor
+    delay(1500);
+  }
+  void loop()
+  {
+    // Atualiza os valores de X, Y e Z
+    getGyroValues();
+    // Mostra os valores no serial monitor
+    Serial.print("X:");
+    Serial.print(x);
+    Serial.print(" Y:");
+    Serial.print(y);
+    Serial.print(" Z:");
+    Serial.println(z);
+    // Aguarda 100ms e reinicia o processo
+    delay(100);
+  }
+  void getGyroValues()
+  {
+    // Rotina para leitura dos valores de X, Y e Z
+    byte xMSB = readRegister(L3G4200D_Address, 0x29);
+    byte xLSB = readRegister(L3G4200D_Address, 0x28);
+    x = ((xMSB << 8) | xLSB);
+    byte yMSB = readRegister(L3G4200D_Address, 0x2B);
+    byte yLSB = readRegister(L3G4200D_Address, 0x2A);
+    y = ((yMSB << 8) | yLSB);
+    byte zMSB = readRegister(L3G4200D_Address, 0x2D);
+    byte zLSB = readRegister(L3G4200D_Address, 0x2C);
+    z = ((zMSB << 8) | zLSB);
+  }
+  int setupL3G4200D(int scale)
+  {
+    //From  Jim Lindblom of Sparkfun's code
+    // Enable x, y, z and turn off power down:
+    writeRegister(L3G4200D_Address, CTRL_REG1, 0b00001111);
+    // If you'd like to adjust/use the HPF, you can edit the line below to configure CTRL_REG2:
+    writeRegister(L3G4200D_Address, CTRL_REG2, 0b00000000);
+    // Configure CTRL_REG3 to generate data ready interrupt on INT2
+    // No interrupts used on INT1, if you'd like to configure INT1
+    // or INT2 otherwise, consult the datasheet:
+    writeRegister(L3G4200D_Address, CTRL_REG3, 0b00001000);
+    // CTRL_REG4 controls the full-scale range, among other things:
+    if(scale == 250){
+      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00000000);
+    }else if(scale == 500){
+      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00010000);
+    }else{
+      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00110000);
+    }
+    // CTRL_REG5 controls high-pass filtering of outputs, use it
+    // if you'd like:
+    writeRegister(L3G4200D_Address, CTRL_REG5, 0b00000000);
+  }
+  void writeRegister(int deviceAddress, byte address, byte val)
+  {
+      Wire.beginTransmission(deviceAddress); // start transmission to device
+      Wire.write(address);       // send register address
+      Wire.write(val);         // send value to write
+      Wire.endTransmission();     // end transmission
+  }
+  int readRegister(int deviceAddress, byte address)
+  {
+      int v;
+      Wire.beginTransmission(deviceAddress);
+      Wire.write(address); // register to read
+      Wire.endTransmission();
+      Wire.requestFrom(deviceAddress, 1); // read a byte
+      while(!Wire.available())
+      {
+          // waiting
+      }
+      v = Wire.read();
+      return v;
+  }
+
+Objetivo
+------------
+
+Colocar o motivo do uso do sensor e para que ele valida, ou seja deixar exposto a informação. Exemplo: Um dos itens para validar os sidepods
+(dutos) é verificar o quão efetivo é o resfriamento da caixa de bateria, local para onde estão voltados os dutos. Para isso é necessário 02
+sensores DS18B20 para dois testes diferentes: no primeiro, que será realizado avaliando somente um duto de cada vez, um sensor seria colocado
+na entrada do duto e o outro na saída, para que seja obtida a diferença entre essas temperaturas. Dessa forma é possível verificar a geometria
+escolhida dos dutos comparando com dados de simulações. No segundo teste os sensores serão colocados nas laterais da caixa de bateria,
+onde incide o ar vindo dos dutos. Assim serão coletados os dados de temperatura da caixa de baterias com e sem dutos. Dessa forma sendo verificada a eficiência dos dutos no carro.
+
+Display LCD
+==========================
+
+Descrição
+------------
+
+Display LED mais o LCD genérico, QC2004A. Comunicação pela interface I2C, pinos SCL e SDA,  com endereçamento individual. Fixado no painel do carro e ligado, pelo chicote, direto para aplaca central.
+
+**Especificações e características**
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+O modulo funciona com uma tensão de 5V.
+Pinos utilizados são: Vcc 5V ; GND; SCL; SDA.
+
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+O display LCD é nada mais que um LED que mostra dados. Localizado no painel do carro para que
+posamos mostrar ao piloto dados que achamos importantes que ele esteja constantemente ciente. Os dados são decididos pela equipe.
+
+
+Pressão de freios
+==========================
+
+Descrição
+------------
+
+Sensor de pressão de freios modelo 53CP08 – 02 fabricante Sensata, utilizasse 2 sensores
+um em cada linha de freios, do lado esquerdo inferior próximo ao pedal o outro próximo
+da roda traseira, é necessário utilizar um conector de 3 vias para fixá-lo no carro. (VCC, GND, AN)
+
+**Especificações e características**
+
+https://br.mouser.com/Sensata-Technologies/Sensors/Pressure-Sensors/_/N-6g7qc?P=1y9lxqe (Loja da fabricante)
+https://br.mouser.com/datasheet/2/657/ourproducts_2cp_datasheet-1511045.pdf (Datasheet do modelo semelhante)
+https://www.tomodatipecas.com.br/produto/256228/conector-com-chicote-3-vias-sensor-de-posicao-da-borboleta-pressostato-ar-condicionado-fiat-vw-ford-gm-ete-7741 (Tipo de conector)
+
+.. image:: images/cebolinha.png
+  :align: center
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+Ele funciona com VCC de 5v, GND e Sinal, pode-se saber o valor da pressão usando a função map, como a equação VOUT /VCC= (0.01*PIN[Bar G]+ 0.1)
+(Verificar o datasheet).Para isso é necessário que a linha de freios esteja sangrada para ter a força necessária de pressão já que não é possível fazer outro teste de mesa.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+O objetivo do sensor e verificar se os freios e a linha estão cumprindo com as expectativas da subequipe de freios.
+
+Sensor de carga
+==========================
+
+Descrição
+------------
+
+Verificar o datasheet
+
+**Especificações e características**
+
+http://blog.eletrogate.com/balanca-digital-com-arduino-aprenda-a-usar-a-celula-de-carga/
+https://www.baudaeletronica.com.br/sensor-de-peso-50kg-celula-de-carga.html
+
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+Objetivo do sensor é cruzar informações junto com o sensor de pressão de freios, para validar e relacionar a força que é aplicada com a pressão que a linha chega, já que temos a relação de pedal e o diâmetro do êmbolo do CM.
+
+GPS
+==========================
+
+Descrição
+------------
+
+Modelo do modulo do sensor GPS, Adafruit Ultimatr GPS Breakout V3. Comunicação pela interface serial, pinos TX e RX. Como o modulo vai direto na placa central, não se utiliza conector.
+
+**Especificações e características**
+
+https://learn.adafruit.com/adafruit-ultimate-gps/downloads (datasheetes)
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+O modulo funciona com uma tensão tanto de 3.3V, quanto de 5V.
+Pinos utilizados são: Vcc(3.3V ou 5V) ; GND; TX; RX;
+Para a melhor recepção do sinal no modulo, se utiliza uma antena externa. Porém mesmo assim em diversos locais ocorre falha na recepção.
+
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+O GPS fornece diversos dados para serem coletados, o modulo é um receptor de dados do NMEA. Podemos obter o tempo(ano,  mês, dia, hora, minuto e segundo). Além da localização(latitude, longitude, altitude e ângulo), em que podemos mapear o percurso do veiculo. Também é medido a velocidade  em knots. 
+
+
 Diagrama de conexões
-=====================
+======================
 
 .. image:: images/diagrama.png
   :align: center
 
-
 Referências
 ================
 
+* https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-adaptador-i2c-para-display-lcd-16x2-20x4
 * https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-temperatura-ds18b20-prova-dagua-do-tipo-sonda
+* https://www.arduinoecia.com.br/sensor-gy-80-arduino-acelerometro-bussola-barometro/
 * https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/
 * https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/
 * https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/
