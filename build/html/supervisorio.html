@@ -95,6 +95,31 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Supervisório</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#git">Git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instalando-o-git">Instalando o git</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-um-fork">Criando um fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-chaves-ssh">Criando chaves SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clonando-o-repositorio">Clonando o repositório</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-commit">Git Commit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atualizando-o-repositorio">Atualizando o repositório</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-um-pull-request">Criando um pull request</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#instalando-o-node">Instalando o node</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#instalando-o-mysql">Instalando o MySQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tutoriais-de-programacao">Tutoriais de programação</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#servidor">Servidor</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modulos">Módulos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configuracao">Configuração</a><ul>
@@ -108,16 +133,16 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cheetahlinkformatter">CheetahLinkFormatter</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">Uso</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Exemplo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Uso</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Exemplo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setdata">setData</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#getanalogarray">getAnalogArray</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#getdigitalarray">getDigitalArray</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#databasehandler">DatabaseHandler</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Uso</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">Exemplo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">Uso</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">Exemplo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#constructor">constructor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#getsensorarray">getSensorArray</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#insertintodatabase">insertIntoDatabase</a></li>
@@ -199,6 +224,148 @@
 <h1>Supervisório<a class="headerlink" href="#supervisorio" title="Link permanente para este título">¶</a></h1>
 <p>Nessa seção está documentado o código do sistema supervisório para torná-lo facilmente acessível a qualquer membro do Cheetah E-Racing interessado no seu funcionamento.
 Nenhum conhecimento prévio é estritamente necessário para acompanhá-lo, porém qualquer experiência com linguagens de programação e desenvolvimento web será útil.</p>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Link permanente para este título">¶</a></h2>
+<p>O primeiro passo para trabalhar no sistema supervisório é obter o código. É possível baixar como um .zip no github
+da equipe, porém isso torna difícil o controle de versionamento e a organização entre os membros. Assim, a melhor maneira é instalar
+o git no PC e fazer um clone do seu fork do repositório.</p>
+<div class="section" id="instalando-o-git">
+<h3>Instalando o git<a class="headerlink" href="#instalando-o-git" title="Link permanente para este título">¶</a></h3>
+<div class="section" id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Link permanente para este título">¶</a></h4>
+<p>O jeito mais rápido de instalar o git é utilizando o gerenciador de pacotes da sua distribuição. Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+executar como superusuário:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install git
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link permanente para este título">¶</a></h4>
+<p>Para instalar o git no Windows, siga as instruções no site oficial: <a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a></p>
+</div>
+</div>
+<div class="section" id="criando-um-fork">
+<h3>Criando um fork<a class="headerlink" href="#criando-um-fork" title="Link permanente para este título">¶</a></h3>
+<p>Após criar uma conta no github, acesse a página do supervisório do cheetah: <a class="reference external" href="https://github.com/TelemetriaCheetah/Supervisorio">https://github.com/TelemetriaCheetah/Supervisorio</a>
+Em seguida, basta clicar no botão de fork</p>
+<img alt="_images/print1.png" class="align-center" src="_images/print1.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">O fork é uma cópia do repositório vinculada à sua conta de usuário, e é nele que as modificações devem ser feitas. Alterar o código utilizando
+a conta do cheetah diretamente é uma prática que deve ser evitada ao máximo, pois impossibilita o controle do responsável por cada modificação.</p>
+</div>
+</div>
+<div class="section" id="criando-chaves-ssh">
+<h3>Criando chaves SSH<a class="headerlink" href="#criando-chaves-ssh" title="Link permanente para este título">¶</a></h3>
+<p>Para enviar seu código ao github, é necessário se autenticar no site. A autenticação por usuário/senha está sendo desativada aos poucos, e deixará de
+funcionar em breve (Se você está lendo isto no futuro, é provável que já tenha sido desativada). Portanto, é necessário utilizar outro método de autenticação,
+e uma maneira simples de fazer isso é adicionando chaves SSH à sua conta do github. Para gerar um par de chaves pública/privada, abra o terminal / powershell e
+execute o comando:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>ssh-keygen
+</pre></div>
+</td></tr></table></div>
+<p>O par de chaves gerado é salvo por padrão na sua pasta de usuário dentro de .ssh . Dentro da pasta, abra o arquivo de chave pública (o que termina com .pub) e copie seu conteúdo. Em seguida, vá até a sua
+página do github e siga os passos:</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Caso a pasta esteja oculta, vocẽ deve habilitar a opção de visualizar arquivos
+ocultos no seu gerenciador de arquivos.</p>
+</div>
+<p>Abra as configurações da contas</p>
+<img alt="_images/print2.png" class="align-center" src="_images/print2.png" />
+<p>Vá até a opção de chaves SSH e GPG</p>
+<img alt="_images/print3.png" class="align-center" src="_images/print3.png" />
+<p>Clique em adicionar nova chave SSH</p>
+<img alt="_images/print4.png" class="align-center" src="_images/print4.png" />
+<p>Dê um título de sua preferência e cole a chave pública copiada no campo key</p>
+<img alt="_images/print5.png" class="align-center" src="_images/print5.png" />
+</div>
+<div class="section" id="clonando-o-repositorio">
+<h3>Clonando o repositório<a class="headerlink" href="#clonando-o-repositorio" title="Link permanente para este título">¶</a></h3>
+<p>Para criar uma cópia local do seu repositório, copie o link no botão «code», lembrando que é necessário selecionar a opção «SSH»:</p>
+<img alt="_images/print6.png" class="align-center" src="_images/print6.png" />
+<p>Em seguida, abra o terminal / git shell (o git shell pode ser aberto clicando com o botão direito do mouse em um espaço branco dentro de uma pasta qualquer do Windows) e execute o comando:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git clone &lt;cole o link que você copiou aqui&gt;
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="git-commit">
+<h3>Git Commit<a class="headerlink" href="#git-commit" title="Link permanente para este título">¶</a></h3>
+<p>Após realizar as alterações no código local, é necessário enviá-las ao repositório remoto (github). Para isso, abra o terminal / git shell dentro da pasta clonada e execute os comandos:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git add -A
+git commit -m <span class="s2">&quot;Escreva aqui uma mensagem breve explicando as alterações realizadas desde o último commit&quot;</span>
+git push origin main
+</pre></div>
+</td></tr></table></div>
+<p>Caso queira ver quais alterações fazem parte ou não do commit, use o comando</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="atualizando-o-repositorio">
+<h3>Atualizando o repositório<a class="headerlink" href="#atualizando-o-repositorio" title="Link permanente para este título">¶</a></h3>
+<p>Para garantir que você está trabalhando na versão mais recente do código, é necessário sincronizar o seu fork com o repositório original (comumente chamado de upstream). Para isso,
+adicione o repositório original no seu git:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git remote add upstream &lt;link para repositório <span class="k">do</span> cheetah&gt;
+git fetch upstream
+</pre></div>
+</td></tr></table></div>
+<p>Feito isso, você deve executar o comando abaixo toda vez que alguma alteração for realizada por outra pessoa no repositório do Cheetah:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git pull upstream main
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="criando-um-pull-request">
+<h3>Criando um pull request<a class="headerlink" href="#criando-um-pull-request" title="Link permanente para este título">¶</a></h3>
+<p>Finalmente, para submeter suas alterações para o repositório upstream, basta criar um pull request clicando em «pull requests» e em seguida «criar novo pull request».
+O request deve ser aprovado pelo mantenedor do repositório oficial do Cheetah.</p>
+</div>
+</div>
+<div class="section" id="instalando-o-node">
+<h2>Instalando o node<a class="headerlink" href="#instalando-o-node" title="Link permanente para este título">¶</a></h2>
+<p>A tecnologia principal utilizada para o backend do sistema supervisório é o node.js:</p>
+<div class="section" id="id1">
+<h3>Linux<a class="headerlink" href="#id1" title="Link permanente para este título">¶</a></h3>
+<p>Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+executar como superusuário:
+sudo apt update &amp;&amp; sudo apt install nodejs</p>
+</div>
+<div class="section" id="id2">
+<h3>Windows<a class="headerlink" href="#id2" title="Link permanente para este título">¶</a></h3>
+<p>Para instalar o node no Windows, siga as instruções no site oficial: <a class="reference external" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+</div>
+</div>
+<div class="section" id="instalando-o-mysql">
+<h2>Instalando o MySQL<a class="headerlink" href="#instalando-o-mysql" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="id3">
+<h3>Linux<a class="headerlink" href="#id3" title="Link permanente para este título">¶</a></h3>
+<p>Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
+executar como superusuário:</p>
+<p>sudo apt update &amp;&amp; sudo apt install apache2 mariadb-server phpmyadmin</p>
+</div>
+<div class="section" id="id4">
+<h3>Windows<a class="headerlink" href="#id4" title="Link permanente para este título">¶</a></h3>
+<p>No Windows, é possível baixar pacotes que incluem todas as ferramentas necessárias para rodar um servidor apache com MySQL/MariaDB e php
+em um único executável. Um exemplo recomendado é o WAMP (Windows Apache MySQL PHP) server, que pode ser baixado no link: <a class="reference external" href="https://www.wampserver.com/en/">https://www.wampserver.com/en/</a></p>
+</div>
+</div>
+<div class="section" id="tutoriais-de-programacao">
+<h2>Tutoriais de programação<a class="headerlink" href="#tutoriais-de-programacao" title="Link permanente para este título">¶</a></h2>
+<p>O sistema supervisório é escrito utilizando javascript para o frontend e backend, portanto javascript é a linguagem que deve ser o foco dos estudos. Para
+a formatação do site são utilizados HTML5 e CSS, e portanto é necessário possuir conhecimento dessas linguagens também. Além disso,
+os dados coletados são armazenados em um banco de dados MySQL, e familiaridade com queries SQL é bastante útil. Seguem abaixo alguns links relevantes sobre os assuntos:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.urionlinejudge.com.br">https://www.urionlinejudge.com.br</a> URI Online Judge - para treinar algoritmos e básico de programação</li>
+<li><a class="reference external" href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics">https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics</a> JavaScript básico - documentação da Mozilla</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp">https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp</a> Curso javascript básico - youtube</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=CjQMi8mv2Do">https://www.youtube.com/watch?v=CjQMi8mv2Do</a> Introdução ao node.js - youtube</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=BhJu05tUo-M">https://www.youtube.com/watch?v=BhJu05tUo-M</a> Introdução ao MySQL - youtube</li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R">https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R</a> Introdução HTML5 e CSS - youtube</li>
+</ul>
+</div>
 <div class="section" id="servidor">
 <h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
 <p>O processo de instalação e inicialização do servidor segue os mesmos passos apresentados na seção de manual do usuário.</p>
@@ -293,15 +460,15 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <div class="section" id="cheetahlinkformatter">
 <h3>CheetahLinkFormatter<a class="headerlink" href="#cheetahlinkformatter" title="Link permanente para este título">¶</a></h3>
 <p>A classe <em>CheetahLinkFormatter</em> é responsável por tratar os dados recebidos do rádio.</p>
-<div class="section" id="id1">
-<h4>Uso<a class="headerlink" href="#id1" title="Link permanente para este título">¶</a></h4>
+<div class="section" id="id5">
+<h4>Uso<a class="headerlink" href="#id5" title="Link permanente para este título">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h4>Exemplo<a class="headerlink" href="#id2" title="Link permanente para este título">¶</a></h4>
+<div class="section" id="id6">
+<h4>Exemplo<a class="headerlink" href="#id6" title="Link permanente para este título">¶</a></h4>
 <p>O código abaixo imprime um vetor contendo os valores de todos os sensores discretos recebidos do rádio.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
@@ -348,15 +515,15 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <p class="first admonition-title">Aviso</p>
 <p class="last">Esta classe ainda está sendo implementada e portanto é sujeita a mudanças significativas em um futuro próximo. Garanta que seu código está atualizado!</p>
 </div>
-<div class="section" id="id3">
-<h4>Uso<a class="headerlink" href="#id3" title="Link permanente para este título">¶</a></h4>
+<div class="section" id="id7">
+<h4>Uso<a class="headerlink" href="#id7" title="Link permanente para este título">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h4>Exemplo<a class="headerlink" href="#id4" title="Link permanente para este título">¶</a></h4>
+<div class="section" id="id8">
+<h4>Exemplo<a class="headerlink" href="#id8" title="Link permanente para este título">¶</a></h4>
 <p>Este exemplo imprime um vetor com todos os valores do sensor de medição nº 0 disponíveis no banco de dados</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
