@@ -171,8 +171,14 @@
   <div class="section" id="introducao">
 <h1>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
 <p>O sistema de telemetria do CE-21 é projetado para receber, interpretar e visualizar dados diagnósticos do veículo equipe durante os testes e competições.
-A figura abaixo mostra uma versão simplificada da arquitetura implementada:</p>
-<a class="reference internal image-reference" href="_images/overview.png"><img alt="_images/overview.png" class="align-center" src="_images/overview.png" style="width: 300px;" /></a>
+O hardware é composto por 6 placas de circuito:</p>
+<ol class="arabic simple">
+<li><strong>Telemetria frontal:</strong> Montada no painel do carro. É responsável por coletar dados de sensores da região frontal e é conectada ao display LCD;</li>
+<li><strong>Telemetria traseira:</strong> Montada nos tubos de chassi na traseira do veículo. É a principal placa de telemetria, coleta todos os dados e os envia por rádio para os computadores conectados;</li>
+<li><strong>Placas das rodas:</strong> São montadas em cada roda do carro e recebem dados dos sensores de rotação e temperatura dos discos de freio.</li>
+</ol>
+<p>O diagrama abaixo mostra uma versão simplificada da arquitetura implementada:</p>
+<a class="reference internal image-reference" href="_images/overview.png"><img alt="_images/overview.png" class="align-center" src="_images/overview.png" style="width: 320px;" /></a>
 <div class="section" id="modos-de-operacao">
 <h2>Modos de operação<a class="headerlink" href="#modos-de-operacao" title="Link permanente para este título">¶</a></h2>
 <p>O software é desenvolvido para trabalhar em 3 modos distintos:</p>
@@ -660,7 +666,7 @@ A figura abaixo mostra uma versão simplificada da arquitetura implementada:</p>
 </div>
 <div class="section" id="diagrama-de-blocos">
 <h2>Diagrama de blocos<a class="headerlink" href="#diagrama-de-blocos" title="Link permanente para este título">¶</a></h2>
-<img alt="_images/blocos.png" class="align-center" src="_images/blocos.png" />
+<a class="reference internal image-reference" href="_images/blocos.png"><img alt="_images/blocos.png" class="align-center" src="_images/blocos.png" style="width: 600px;" /></a>
 </div>
 </div>
 
