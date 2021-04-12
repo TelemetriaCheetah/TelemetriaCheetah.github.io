@@ -391,3 +391,8 @@ A tabela abaixo lista todos os sensores registrados:
     - Sensor hall
     - Saída do sensor hall
     - Circuito de segurança
+
+Diagrama de blocos
+==========================
+.. image:: images/blocos.png
+  :align: center
