@@ -95,6 +95,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introdução</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#modos-de-operacao">Modos de operação</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dados-coletados">Dados coletados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diagrama-de-blocos">Diagrama de blocos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
@@ -170,8 +171,14 @@
   <div class="section" id="introducao">
 <h1>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
 <p>O sistema de telemetria do CE-21 é projetado para receber, interpretar e visualizar dados diagnósticos do veículo equipe durante os testes e competições.
-A figura abaixo mostra uma versão simplificada da arquitetura implementada:</p>
-<a class="reference internal image-reference" href="_images/overview.png"><img alt="_images/overview.png" class="align-center" src="_images/overview.png" style="width: 300px;" /></a>
+O hardware é composto por 6 placas de circuito:</p>
+<ol class="arabic simple">
+<li><strong>Telemetria frontal:</strong> Montada no painel do carro. É responsável por coletar dados de sensores da região frontal e é conectada ao display LCD;</li>
+<li><strong>Telemetria traseira:</strong> Montada nos tubos de chassi na traseira do veículo. É a principal placa de telemetria, coleta todos os dados e os envia por rádio para os computadores conectados;</li>
+<li><strong>Placas das rodas:</strong> São montadas em cada roda do carro e recebem dados dos sensores de rotação e temperatura dos discos de freio.</li>
+</ol>
+<p>O diagrama abaixo mostra uma versão simplificada da arquitetura implementada:</p>
+<a class="reference internal image-reference" href="_images/overview.png"><img alt="_images/overview.png" class="align-center" src="_images/overview.png" style="width: 320px;" /></a>
 <div class="section" id="modos-de-operacao">
 <h2>Modos de operação<a class="headerlink" href="#modos-de-operacao" title="Link permanente para este título">¶</a></h2>
 <p>O software é desenvolvido para trabalhar em 3 modos distintos:</p>
@@ -194,68 +201,472 @@ A figura abaixo mostra uma versão simplificada da arquitetura implementada:</p>
 <caption><span class="caption-text">Discretos</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="11%" />
-<col width="26%" />
-<col width="32%" />
-<col width="32%" />
+<col width="28%" />
+<col width="33%" />
+<col width="28%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
 <th class="head">Nome</th>
-<th class="head">Grandeza medida</th>
-<th class="head">Sensor empregado</th>
+<th class="head">Descrição</th>
+<th class="head">Subsistema</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>SD1</td>
 <td>Inertia Switch</td>
-<td>chave simples</td>
-<td>sei n rs</td>
+<td>Detecção de impacto</td>
+<td>Circuito de desligamento</td>
 </tr>
 <tr class="row-odd"><td>SD2</td>
-<td>Brake Over Travel Switch</td>
-<td>chave simples</td>
-<td>sei n rs</td>
+<td>BOTS (Brake Over Travel Switch)</td>
+<td>Curso do pedal de freio</td>
+<td>Circuito de desligamento</td>
+</tr>
+<tr class="row-even"><td>SD3</td>
+<td>Sinal do BMS (Battery Managenent System)</td>
+<td>Verificação de erro do BMS</td>
+<td>Circuito de desligamento</td>
+</tr>
+<tr class="row-odd"><td>SD4</td>
+<td>Sinal do IMD (Insulation Monitoring Device)</td>
+<td>Verificação de erro do IMD</td>
+<td>Circuito de desligamento</td>
+</tr>
+<tr class="row-even"><td>SD5</td>
+<td>Latch do BSPD</td>
+<td>Estado do latch do BSPD</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SD6</td>
+<td>Latch do BMS</td>
+<td>Estado do latch do BMS</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-even"><td>SD7</td>
+<td>Latch do IMD</td>
+<td>Estado do latch do IMD</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SD8</td>
+<td>Reset mestre</td>
+<td>Estado do reset mestre</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-even"><td>SD9</td>
+<td>Reset secundário</td>
+<td>Estado do reset secundário</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SD10</td>
+<td>Estado do circuito de desligamento</td>
+<td>Monitora a saída do circuito de desligamento</td>
+<td>Circuito de segurança</td>
 </tr>
 </tbody>
 </table>
 <table border="1" class="colwidths-given docutils" id="id2">
 <caption><span class="caption-text">Medição</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="11%" />
-<col width="26%" />
-<col width="32%" />
-<col width="32%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
 <th class="head">Nome</th>
-<th class="head">Grandeza medida</th>
-<th class="head">Sensor empregado</th>
+<th class="head">Descrição</th>
+<th class="head">Subsistema</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>SA1</td>
 <td>Throttle Position Sensor</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<td>Porcentagem de atuação do pedal do acelerador</td>
+<td>Powertrain</td>
 </tr>
 <tr class="row-odd"><td>SA2</td>
 <td>Throttle Position Sensor</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<td>Porcentagem de atuação do pedal do acelerador</td>
+<td>Powertrain</td>
 </tr>
 <tr class="row-even"><td>SA3</td>
 <td>Brake System Encoder</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<td>Porcentagem de atuação do pedal de freio</td>
+<td>Powertrain</td>
 </tr>
 <tr class="row-odd"><td>SA4</td>
-<td>Sensor Indutivo</td>
-<td>Pulsos elétricos</td>
-<td>sei n rs</td>
+<td>Sensor reflexivo infravermelho</td>
+<td>Rotação da roda frontal direita</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA5</td>
+<td>Sensor reflexivo infravermelho</td>
+<td>Rotação da roda frontal esquerda</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA6</td>
+<td>Sensor reflexivo infravermelho</td>
+<td>Rotação da roda traseira direita</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA7</td>
+<td>Sensor reflexivo infravermelho</td>
+<td>Rotação da roda traseira esquerda</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA8</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura do centro do disco de freio frontal direito</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA9</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura da borda do disco de freio frontal direito</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA10</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura do centro do disco de freio frontal esquerdo</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA11</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura da borda do disco de freio frontal esquerdo</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA12</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura do centro do disco de freio traseiro direito</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA13</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura da borda do disco de freio traseiro direito</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA14</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura do centro do disco de freio traseiro esquerdo</td>
+<td>Freios</td>
+</tr>
+<tr class="row-even"><td>SA15</td>
+<td>Sensor de temperatura infravermelho</td>
+<td>Temperatura da borda do disco de freio traseiro esquerdo</td>
+<td>Freios</td>
+</tr>
+<tr class="row-odd"><td>SA16</td>
+<td>Encoder do volante</td>
+<td>Ângulo de rotação do volante</td>
+<td>Suspensão</td>
+</tr>
+<tr class="row-even"><td>SA17</td>
+<td>Latitude (GNSS)</td>
+<td>Valor da latitude obtida por satélite</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA18</td>
+<td>Longitude (GNSS)</td>
+<td>Valor da longitude obtida por satélite</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA19</td>
+<td>Contagem de satélites (GNSS)</td>
+<td>Número de satélites da constelação na linha de visada</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA20</td>
+<td>HDOP (GNSS)</td>
+<td>Diluição horizontal de precisão da constelação</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA21</td>
+<td>Acelerômetro (IMU)</td>
+<td>Valor da aceleração no eixo X</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA22</td>
+<td>Acelerômetro (IMU)</td>
+<td>Valor da aceleração no eixo Y</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA23</td>
+<td>Acelerômetro (IMU)</td>
+<td>Valor da aceleração no eixo Z</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA24</td>
+<td>Giroscópio (IMU)</td>
+<td>Valor da velocidade angular em relação ao eixo X</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA25</td>
+<td>Giroscópio (IMU)</td>
+<td>Valor da velocidade angular em relação ao eixo Y</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA26</td>
+<td>Giroscópio (IMU)</td>
+<td>Valor da velocidade angular em relação ao eixo Z</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA27</td>
+<td>Magnetômetro (IMU)</td>
+<td>Valor da intensidade do campo magnético no eixo X</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA28</td>
+<td>Magnetômetro (IMU)</td>
+<td>Valor da intensidade do campo magnético no eixo Y</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA29</td>
+<td>Magnetômetro (IMU)</td>
+<td>Valor da intensidade do campo magnético no eixo Z</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA30</td>
+<td>Temperatura (IMU)</td>
+<td>Temperatura da placa de telemetria traseira</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA31</td>
+<td>Corrente (BMS)</td>
+<td>Corrente total do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA32</td>
+<td>Tensão instantânea (BMS)</td>
+<td>Tensão atual do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA33</td>
+<td>Tensão aberta (BMS)</td>
+<td>Tensão de circuito aberto do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA34</td>
+<td>SOC (BMS)</td>
+<td>Estado de carga do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA35</td>
+<td>SSOC (BMS)</td>
+<td>Estado de carga simulado do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA36</td>
+<td>Amp hours (BMS)</td>
+<td>Capacidade do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA37</td>
+<td>Health (BMS)</td>
+<td>Estado de saúde do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA38</td>
+<td>Temperatura alta (BMS)</td>
+<td>Temperatura da célula mais quente</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA39</td>
+<td>Temperatura baixa (BMS)</td>
+<td>Temperatura da célula mais fria</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA40</td>
+<td>Temperatura média (BMS)</td>
+<td>Temperatura média das células</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA41</td>
+<td>Temperatura interna (BMS)</td>
+<td>Temperatura interna do BMS</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA42</td>
+<td>Tensão alta (BMS)</td>
+<td>Maior tensão registrada no acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA43</td>
+<td>Tensão baixa (BMS)</td>
+<td>Menor tensão registrada no acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA44</td>
+<td>Tensão média (BMS)</td>
+<td>Média das tensões das células</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA45</td>
+<td>Resistência alta (BMS)</td>
+<td>Maior resistência interna registrada no acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA46</td>
+<td>Resistência baixa (BMS)</td>
+<td>Menor resistência interna registrada no acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA47</td>
+<td>Resistência média (BMS)</td>
+<td>Média das resistências internas das células</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA48</td>
+<td>IDs temperatura (BMS)</td>
+<td>Identificadores das células com maior e menor temperatura</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA49</td>
+<td>IDs tensão (BMS)</td>
+<td>Identificadores das células com maior e menor tensão</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA50</td>
+<td>IDs resistência (BMS)</td>
+<td>Identificadores das células com maior e menor resistência</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA51</td>
+<td>Fan speed (BMS)</td>
+<td>Velocidade do ventilador do acumulador</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA52</td>
+<td>12V (BMS)</td>
+<td>Tensão de alimentação do BMS</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA53</td>
+<td>Isolamento (BMS)</td>
+<td>Medida de Shortest wave</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA54</td>
+<td>ADC1 (BMS)</td>
+<td>Medida do ADC1</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA55</td>
+<td>Tensão GLV</td>
+<td>Tensão na bateria de baixa tensão</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-odd"><td>SA56</td>
+<td>RPM (Inversor)</td>
+<td>Rotação do motor (P0002)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA57</td>
+<td>Corrente (Inversor)</td>
+<td>Corrente do motor (P0003)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA58</td>
+<td>Frequência (Inversor)</td>
+<td>Frequência do motor (P0005)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA59</td>
+<td>Estado (Inversor)</td>
+<td>Estado do Inversor (P0006)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA60</td>
+<td>Tensão (Inversor)</td>
+<td>Tensão de saída do inversor (P0007)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA61</td>
+<td>Velocidade (Inversor)</td>
+<td>Velocidade do veículo (P0008)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA62</td>
+<td>Torque (Inversor)</td>
+<td>Torque no motor (P0009)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA63</td>
+<td>Temperatura (Inversor)</td>
+<td>Temperatura do MOSFET (P0030)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA64</td>
+<td>Temperatura (Inversor)</td>
+<td>Temperatura do MOSFET 2 (P0033)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA65</td>
+<td>Temperatura (Inversor)</td>
+<td>Temperatura do ar interno (P0034)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA66</td>
+<td>Sobrecarga (Inversor)</td>
+<td>Sobrecarga do motor (P0037)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA67</td>
+<td>Alarme (Inversor)</td>
+<td>Alarme atual (P0048)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA68</td>
+<td>Falha atual (Inversor)</td>
+<td>Número da falha atual (P0049)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-even"><td>SA69</td>
+<td>Falha anterior (Inversor)</td>
+<td>Última falha registrada (P0050)</td>
+<td>Powertrain</td>
+</tr>
+<tr class="row-odd"><td>SA70</td>
+<td>Sensor Hall GLV</td>
+<td>Corrente na bateria de baixa</td>
+<td>Telemetria</td>
+</tr>
+<tr class="row-even"><td>SA71</td>
+<td>IMD PWM</td>
+<td>Saída PWM do IMD</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SA71</td>
+<td>IMD PWM</td>
+<td>Saída PWM do IMD</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-even"><td>SA72</td>
+<td>Setpoint do cebolinha</td>
+<td>Tensão de comparação do cebolinha</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SA73</td>
+<td>Setpoint do sensor hall</td>
+<td>Tensão de comparação do sensor hall</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-even"><td>SA74</td>
+<td>Cebolinha</td>
+<td>Saída do cebolinha</td>
+<td>Circuito de segurança</td>
+</tr>
+<tr class="row-odd"><td>SA75</td>
+<td>Sensor hall</td>
+<td>Saída do sensor hall</td>
+<td>Circuito de segurança</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="diagrama-de-blocos">
+<h2>Diagrama de blocos<a class="headerlink" href="#diagrama-de-blocos" title="Link permanente para este título">¶</a></h2>
+<a class="reference internal image-reference" href="_images/blocos.png"><img alt="_images/blocos.png" class="align-center" src="_images/blocos.png" style="width: 600px;" /></a>
 </div>
 </div>
 
