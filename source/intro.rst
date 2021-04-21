@@ -1,7 +1,7 @@
 Introdução
 ************************
 
-O sistema de telemetria do CE-21 é projetado para receber, interpretar e visualizar dados diagnósticos do veículo equipe durante os testes e competições.
+O sistema de telemetria do CE-21 é projetado para receber, interpretar e visualizar dados diagnósticos do veículo da equipe durante os testes e competições.
 O hardware é composto por 6 placas de circuito:
 
 #. **Telemetria frontal:** Montada no painel do carro. É responsável por coletar dados de sensores da região frontal e é conectada ao display LCD;
@@ -82,6 +82,34 @@ A tabela abaixo lista todos os sensores registrados:
      - Estado do circuito de desligamento
      - Monitora a saída do circuito de desligamento
      - Circuito de segurança
+   * - SD11
+     - TSMS
+     - Chave do sistema de tração
+     - Circuito de desligamento
+   * - SD12
+     - GLVMS
+     - Chave do sistema de baixa tensão
+     - Circuito de desligamento
+   * - SD13
+     - Botão direito
+     - Botão de desligamento
+     - Circuito de desligamento
+   * - SD14
+     - Interlock da bateria
+     - Interlock da bateria
+     - Circuito de desligamento
+   * - SD15
+     - Botão esquerdo
+     - Botão de desligamento
+     - Circuito de desligamento
+   * - SD16
+     - Interlock do HVD
+     - Interlock do HVD
+     - Circuito de desligamento
+   * - SD17
+     - Botão frontal
+     - Botão de desligamento
+     - Circuito de desligamento
 
 
 .. list-table:: Medição
@@ -399,6 +427,6 @@ A tabela abaixo lista todos os sensores registrados:
 
 Diagrama de blocos
 ==========================
-.. image:: images/blocos.png
+.. image:: images/sensors.png
   :align: center
   :width: 600
