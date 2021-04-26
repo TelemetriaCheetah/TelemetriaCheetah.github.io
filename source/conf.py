@@ -30,8 +30,7 @@ author = 'Caio Tacito'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_rtd_theme",
-    'rst2pdf.pdfbuilder'
+    "sphinx_rtd_theme"  
 ]
 
 

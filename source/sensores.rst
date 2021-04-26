@@ -178,7 +178,7 @@ Descrição
 
 * `Datasheet <https://www.sense.com.br/produtos/detalhes/10398/por/1/1/sensores/sensores-indutivos-tubulares-standard/PS2-12GI50-E2-Ex>`__
 * Tensão de alimentação: 10 a 30Vcc
-* Ripple: ±10 %
+* Ripple: ±12 %
 * Corrente de consumo: <10 mA
 * Diâmetro: 	M12
 * Distancia sensora: 2 mm

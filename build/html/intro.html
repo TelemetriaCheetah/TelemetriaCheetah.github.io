@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="pt" >
+<html class="writer-html5" lang="pt" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,12 +30,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -176,83 +174,83 @@ A figura abaixo mostra uma versão simplificada da arquitetura implementada:</p>
 <h2>Modos de operação<a class="headerlink" href="#modos-de-operacao" title="Link permanente para este título">¶</a></h2>
 <p>O software é desenvolvido para trabalhar em 3 modos distintos:</p>
 <ol class="arabic simple">
-<li><strong>Tempo Real</strong>: É utilizado nos testes e competições para receber as informações coletadas dos sensores enquanto o carro está na pista. A transmissão de dados ocorre via rádio e vários dispositivos (clientes) podem se conectar ao servidor ao mesmo tempo, permitindo que vários membros da equipe trabalhem em conjunto monitorando indicadores vitais do veículo. Para possibilitar análises posteriores, esse modo também salva todos os valores recebidos no banco de dados da equipe.</li>
-<li><strong>Simulação</strong>: A simulação trabalha com dados coletados e armazenados no banco de dados do servidor, recebidos do rádio (em condições normais) ou importados do cartão de memória embarcado (em caso de perda de sinal de rádio / backup). Esse modo permite que o usuário escolha um intervalo de tempo específico, como por exemplo uma volta na pista, e veja todos os dados relevantes do período em forma de gráficos.</li>
-<li><strong>Espectador</strong>: O modo espectador é uma versão especial do modo de tempo real que mostra apenas algumas informações do sistema de telemetria. Pode ser utilizado para permitir que não-membros possam acompanhar dados não-confidenciais do veículo durante um teste através de uma rede WiFi específica.</li>
+<li><p><strong>Tempo Real</strong>: É utilizado nos testes e competições para receber as informações coletadas dos sensores enquanto o carro está na pista. A transmissão de dados ocorre via rádio e vários dispositivos (clientes) podem se conectar ao servidor ao mesmo tempo, permitindo que vários membros da equipe trabalhem em conjunto monitorando indicadores vitais do veículo. Para possibilitar análises posteriores, esse modo também salva todos os valores recebidos no banco de dados da equipe.</p></li>
+<li><p><strong>Simulação</strong>: A simulação trabalha com dados coletados e armazenados no banco de dados do servidor, recebidos do rádio (em condições normais) ou importados do cartão de memória embarcado (em caso de perda de sinal de rádio / backup). Esse modo permite que o usuário escolha um intervalo de tempo específico, como por exemplo uma volta na pista, e veja todos os dados relevantes do período em forma de gráficos.</p></li>
+<li><p><strong>Espectador</strong>: O modo espectador é uma versão especial do modo de tempo real que mostra apenas algumas informações do sistema de telemetria. Pode ser utilizado para permitir que não-membros possam acompanhar dados não-confidenciais do veículo durante um teste através de uma rede WiFi específica.</p></li>
 </ol>
 </div>
 <div class="section" id="dados-coletados">
 <h2>Dados coletados<a class="headerlink" href="#dados-coletados" title="Link permanente para este título">¶</a></h2>
 <p>Para garantir a organização do software, utiliza-se um código universal específico para cada sensor:</p>
 <ul class="simple">
-<li>Primeira letra: “S”;</li>
-<li>Segunda letra: “A” para sensores de medição ou “D” para sensores discretos;</li>
-<li>Número: Um número inteiro único que identifica o sensor.</li>
+<li><p>Primeira letra: “S”;</p></li>
+<li><p>Segunda letra: “A” para sensores de medição ou “D” para sensores discretos;</p></li>
+<li><p>Número: Um número inteiro único que identifica o sensor.</p></li>
 </ul>
 <p>A tabela abaixo lista todos os sensores registrados:</p>
-<table border="1" class="colwidths-given docutils" id="id1">
+<table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Discretos</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="11%" />
-<col width="26%" />
-<col width="32%" />
-<col width="32%" />
+<col style="width: 11%" />
+<col style="width: 26%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Nome</th>
-<th class="head">Grandeza medida</th>
-<th class="head">Sensor empregado</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Nome</p></th>
+<th class="head"><p>Grandeza medida</p></th>
+<th class="head"><p>Sensor empregado</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>SD1</td>
-<td>Inertia Switch</td>
-<td>chave simples</td>
-<td>sei n rs</td>
+<tbody>
+<tr class="row-even"><td><p>SD1</p></td>
+<td><p>Inertia Switch</p></td>
+<td><p>chave simples</p></td>
+<td><p>sei n rs</p></td>
 </tr>
-<tr class="row-odd"><td>SD2</td>
-<td>Brake Over Travel Switch</td>
-<td>chave simples</td>
-<td>sei n rs</td>
+<tr class="row-odd"><td><p>SD2</p></td>
+<td><p>Brake Over Travel Switch</p></td>
+<td><p>chave simples</p></td>
+<td><p>sei n rs</p></td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="colwidths-given docutils" id="id2">
+<table class="colwidths-given docutils align-default" id="id2">
 <caption><span class="caption-text">Medição</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="11%" />
-<col width="26%" />
-<col width="32%" />
-<col width="32%" />
+<col style="width: 11%" />
+<col style="width: 26%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Nome</th>
-<th class="head">Grandeza medida</th>
-<th class="head">Sensor empregado</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Código</p></th>
+<th class="head"><p>Nome</p></th>
+<th class="head"><p>Grandeza medida</p></th>
+<th class="head"><p>Sensor empregado</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>SA1</td>
-<td>Throttle Position Sensor</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<tbody>
+<tr class="row-even"><td><p>SA1</p></td>
+<td><p>Throttle Position Sensor</p></td>
+<td><p>Resistência</p></td>
+<td><p>sei n rs</p></td>
 </tr>
-<tr class="row-odd"><td>SA2</td>
-<td>Throttle Position Sensor</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<tr class="row-odd"><td><p>SA2</p></td>
+<td><p>Throttle Position Sensor</p></td>
+<td><p>Resistência</p></td>
+<td><p>sei n rs</p></td>
 </tr>
-<tr class="row-even"><td>SA3</td>
-<td>Brake System Encoder</td>
-<td>Resistência</td>
-<td>sei n rs</td>
+<tr class="row-even"><td><p>SA3</p></td>
+<td><p>Brake System Encoder</p></td>
+<td><p>Resistência</p></td>
+<td><p>sei n rs</p></td>
 </tr>
-<tr class="row-odd"><td>SA4</td>
-<td>Sensor Indutivo</td>
-<td>Pulsos elétricos</td>
-<td>sei n rs</td>
+<tr class="row-odd"><td><p>SA4</p></td>
+<td><p>Sensor Indutivo</p></td>
+<td><p>Pulsos elétricos</p></td>
+<td><p>sei n rs</p></td>
 </tr>
 </tbody>
 </table>

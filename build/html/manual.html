@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="pt" >
+<html class="writer-html5" lang="pt" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,12 +30,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -181,17 +179,17 @@ e ao serem recebidos pelo supervisório são transferidos para um banco de dados
 <h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
 <p>O servidor utiliza o node.js para as funções de conexão serial, comunicação com o banco de dados e gerenciamento de páginas estáticas. Para inicializar o servidor,
 execute o comando</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
 </pre></div>
 </td></tr></table></div>
 <p>no diretório raiz, e aguarde o processo de instalação dos módulos. Após a conclusão, inicialize o servidor usando</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
 </pre></div>
 </td></tr></table></div>
 <p>A porta configurada para conexões é a 2000, para acessar a página inicial do supervisório utilize a url <a class="reference external" href="http:/">http:/</a>/&lt;endereço-ip-do-servidor&gt;:2000.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">O endereço ip pode ser substituído por localhost nos casos onde a máquina do servidor é a mesma do cliente.</p>
+<p class="admonition-title">Nota</p>
+<p>O endereço ip pode ser substituído por localhost nos casos onde a máquina do servidor é a mesma do cliente.</p>
 </div>
 </div>
 <div class="section" id="dashboard">
