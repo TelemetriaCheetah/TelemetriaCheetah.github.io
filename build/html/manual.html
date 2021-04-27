@@ -1,11 +1,10 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt" >
+<html class="writer-html4" lang="pt" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Manual do usuário &mdash; Documentação Wiki Cheetah </title>
@@ -31,10 +30,12 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -169,42 +170,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="manual-do-usuario">
+  <div class="section" id="manual-do-usuario">
 <h1>Manual do usuário<a class="headerlink" href="#manual-do-usuario" title="Link permanente para este título">¶</a></h1>
 <p>O sistema supervisório da equipe é o programa responsável por armazenar, apresentar e analisar as informações de telemetria fornecidas pelos sensores do
 veículo, fornecendo feedbacks essenciais para os outros subsistemas durante as fases de construção, testes e competição. Esses dados são coletados por
 microcontroladores especializados no carro e enviados por comunicação sem fio (telemetria em tempo real) ou guardados em um cartão SD de bordo para aquisição posterior,
 e ao serem recebidos pelo supervisório são transferidos para um banco de dados relacional localizado no servidor próprio do Cheetah E-Racing.</p>
 <p>Esse pequeno tutorial é destinado à qualquer membro do Cheetah que deseje utilizar o sistema de telemetria nos dispostivos oficiais da equipe ou em seu próprio equipamento pessoal.</p>
-<section id="servidor">
+<div class="section" id="servidor">
 <h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
 <p>O servidor utiliza o node.js para as funções de conexão serial, comunicação com o banco de dados e gerenciamento de páginas estáticas. Para inicializar o servidor,
 execute o comando</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
 </pre></div>
 </td></tr></table></div>
 <p>no diretório raiz, e aguarde o processo de instalação dos módulos. Após a conclusão, inicialize o servidor usando</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">node</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
 </pre></div>
 </td></tr></table></div>
 <p>A porta configurada para conexões é a 2000, para acessar a página inicial do supervisório utilize a url <a class="reference external" href="http:/">http:/</a>/&lt;endereço-ip-do-servidor&gt;:2000.</p>
 <div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>O endereço ip pode ser substituído por localhost nos casos onde a máquina do servidor é a mesma do cliente.</p>
+<p class="first admonition-title">Nota</p>
+<p class="last">O endereço ip pode ser substituído por localhost nos casos onde a máquina do servidor é a mesma do cliente.</p>
 </div>
-</section>
-<section id="dashboard">
+</div>
+<div class="section" id="dashboard">
 <h2>Dashboard<a class="headerlink" href="#dashboard" title="Link permanente para este título">¶</a></h2>
-<section id="visao-geral">
+<div class="section" id="visao-geral">
 <h3>Visão Geral<a class="headerlink" href="#visao-geral" title="Link permanente para este título">¶</a></h3>
 <p>Foto aq</p>
-</section>
-</section>
-<section id="uso">
+</div>
+</div>
+<div class="section" id="uso">
 <h2>Uso<a class="headerlink" href="#uso" title="Link permanente para este título">¶</a></h2>
 <p>precisa do supervisório primeiro rs</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
