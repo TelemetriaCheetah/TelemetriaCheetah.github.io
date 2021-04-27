@@ -606,7 +606,7 @@ https://www.embarcados.com.br/modulo-tiny-rtc-i2c-parte-1/ (Datasheet do modelo 
 Uso
 -----
 
-O modulo funciona com uma tensão de 5V.
+O modulo funciona com uma tensão de 5V..
 Pinos utilizados são: Vcc 5V; GND; MOSI; MISO; SCLK; CS(SS). Cada microcontrolador tem pinos pré-selecionado, o indicador no código da serie(grupo) dos pinos é indicada pelo CS.
 
 
