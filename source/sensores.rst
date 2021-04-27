@@ -588,6 +588,7 @@ Objetivo
 ------------
 
 Objetivo do sensor é cruzar informações junto com o sensor de pressão de freios, para validar e relacionar a força que é aplicada com a pressão que a linha chega, já que temos a relação de pedal e o diâmetro do êmbolo do CM.
+
 SD
 ==========================
 
