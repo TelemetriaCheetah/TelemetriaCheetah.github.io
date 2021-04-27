@@ -425,6 +425,29 @@ A tabela abaixo lista todos os sensores registrados:
     - Saída do sensor hall
     - Circuito de segurança
 
+Comunicação CAN
+====================
+
+
+
+.. list-table:: CAN
+  :widths: 1 1 1 1 1 1
+  :header-rows: 1
+
+  * - ID
+    - Microcontrolador
+    - Mensagem 1
+    - Mensagem 2
+    - Mensagem 3
+    - Mensagem 4
+
+  * - 0x00
+    - TPS
+    - Mensagem 1
+    - Mensagem 2
+    - Mensagem 3
+    - Mensagem 4
+
 Diagrama de blocos
 ==========================
 .. image:: images/sensors.png
