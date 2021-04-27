@@ -697,6 +697,11 @@ O hardware é composto por 6 placas de circuito:</p>
 <td>Saída do sensor hall</td>
 <td>Circuito de segurança</td>
 </tr>
+<tr class="row-even"><td>SA76</td>
+<td>Cebolinha</td>
+<td>Saída do cebolinha</td>
+<td>Circuito de segurança</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -724,10 +729,159 @@ O hardware é composto por 6 placas de circuito:</p>
 <tbody valign="top">
 <tr class="row-even"><td>0x00</td>
 <td>TPS</td>
-<td>Mensagem 1</td>
-<td>Mensagem 2</td>
-<td>Mensagem 3</td>
-<td>Mensagem 4</td>
+<td>TPS 1 (SA1)</td>
+<td>TPS 2 (SA2)</td>
+<td>BSE (SA3)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>0x01</td>
+<td>Roda Frontal Esquerda</td>
+<td>Temperatura Roda (SA10)</td>
+<td>Temperatura Roda (SA11)</td>
+<td>Rotação (SA5)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>0x02</td>
+<td>Roda Frontal Direita</td>
+<td>Temperatura Roda (SA8)</td>
+<td>Temperatura Roda (SA9)</td>
+<td>Rotação (SA4)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>0x03</td>
+<td>Roda Traseira Esquerda</td>
+<td>Temperatura Roda (SA14)</td>
+<td>Temperatura Roda (SA15)</td>
+<td>Rotação (SA7)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>0x04</td>
+<td>Roda Traseira Direita</td>
+<td>Temperatura Roda (SA12)</td>
+<td>Temperatura Roda (SA13)</td>
+<td>Rotação (SA6)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>0x05</td>
+<td>Telemetria Frontal</td>
+<td>SD1 + SD2 + SD17</td>
+<td>Volante (SA16)</td>
+<td>Cebolinha Frontal (SA76)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>0x06</td>
+<td>Circuito de Segurança</td>
+<td>SD3 … SD10</td>
+<td>IMD PWM (SA71)</td>
+<td>Setpoint Cebolinha (SA72)</td>
+<td>Setpoint Hall (SA73)</td>
+</tr>
+<tr class="row-odd"><td>0x07</td>
+<td>Circuito de Segurança</td>
+<td>Cebolinha (SA74)</td>
+<td>Sensor Hall (SA75)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>0x08</td>
+<td>BMS</td>
+<td>Corrente (SA31)</td>
+<td>Tensão Instantânea (SA32)</td>
+<td>Tensão de C.Aberto (SA33)</td>
+<td>State of Charge (SA34)</td>
+</tr>
+<tr class="row-odd"><td>0x09</td>
+<td>BMS</td>
+<td>S State of Charge (SA35)</td>
+<td>Capacidade Restante (SA36)</td>
+<td>Health (SA37)</td>
+<td>Maior Temperatura (SA38)</td>
+</tr>
+<tr class="row-even"><td>0x10</td>
+<td>BMS</td>
+<td>Menor Temperatura (SA39)</td>
+<td>Temperatura Média (SA40)</td>
+<td>Temperatura Interna (SA41)</td>
+<td>Maior Tensão (SA42)</td>
+</tr>
+<tr class="row-odd"><td>0x11</td>
+<td>BMS</td>
+<td>Menor Tensão (SA43)</td>
+<td>Tensão Média (SA44)</td>
+<td>Maior Resistência (SA45)</td>
+<td>Menor Resistência (SA46)</td>
+</tr>
+<tr class="row-even"><td>0x12</td>
+<td>BMS</td>
+<td>Resistência Média (SA47)</td>
+<td>IDs Temperatura (SA48)</td>
+<td>IDs Tensão (SA49)</td>
+<td>IDs Resistência (SA50)</td>
+</tr>
+<tr class="row-odd"><td>0x13</td>
+<td>BMS</td>
+<td>Fan Speed (SA51)</td>
+<td>Tensão de entrada (SA52)</td>
+<td>Isolamento (SA53)</td>
+<td>ADC1 (SA54)</td>
+</tr>
+<tr class="row-even"><td>0x14</td>
+<td>Inversor</td>
+<td>RPM (SA56)</td>
+<td>Corrente (SA57)</td>
+<td>Frequência (SA58)</td>
+<td>Estado (SA59)</td>
+</tr>
+<tr class="row-odd"><td>0x15</td>
+<td>Inversor</td>
+<td>Tensão saída (SA60)</td>
+<td>Velocidade (SA61)</td>
+<td>Torque (SA62)</td>
+<td>Temperatura FET1 (SA63)</td>
+</tr>
+<tr class="row-even"><td>0x16</td>
+<td>Inversor</td>
+<td>Temperatura FET2 (SA64)</td>
+<td>Temperatura Interna (SA65)</td>
+<td>Sobrecarga (SA66)</td>
+<td>Alarme (SA67)</td>
+</tr>
+<tr class="row-odd"><td>0x17</td>
+<td>Inversor</td>
+<td>Falha Atual (SA68)</td>
+<td>Falha Anterior (SA69)</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>

@@ -424,11 +424,13 @@ A tabela abaixo lista todos os sensores registrados:
     - Sensor hall
     - Saída do sensor hall
     - Circuito de segurança
+  * - SA76
+    - Cebolinha
+    - Saída do cebolinha
+    - Circuito de segurança
 
 Comunicação CAN
 ====================
-
-
 
 .. list-table:: CAN
   :widths: 1 1 1 1 1 1
@@ -443,10 +445,113 @@ Comunicação CAN
 
   * - 0x00
     - TPS
-    - Mensagem 1
-    - Mensagem 2
-    - Mensagem 3
-    - Mensagem 4
+    - TPS 1 (SA1)
+    - TPS 2 (SA2)
+    - BSE (SA3)
+    - -
+
+  * - 0x01
+    - Roda Frontal Esquerda
+    - Temperatura Roda (SA10)
+    - Temperatura Roda (SA11)
+    - Rotação (SA5)
+    - -
+  * - 0x02
+    - Roda Frontal Direita
+    - Temperatura Roda (SA8)
+    - Temperatura Roda (SA9)
+    - Rotação (SA4)
+    - -
+  * - 0x03
+    - Roda Traseira Esquerda
+    - Temperatura Roda (SA14)
+    - Temperatura Roda (SA15)
+    - Rotação (SA7)
+    - -
+  * - 0x04
+    - Roda Traseira Direita
+    - Temperatura Roda (SA12)
+    - Temperatura Roda (SA13)
+    - Rotação (SA6)
+    - -
+  * - 0x05
+    - Telemetria Frontal
+    - SD1 + SD2 + SD17
+    - Volante (SA16)
+    - Cebolinha Frontal (SA76)
+    - -
+  * - 0x06
+    - Circuito de Segurança
+    - SD3 ... SD10
+    - IMD PWM (SA71)
+    - Setpoint Cebolinha (SA72)
+    - Setpoint Hall (SA73)
+  * - 0x07
+    - Circuito de Segurança
+    - Cebolinha (SA74)
+    - Sensor Hall (SA75)
+    - -
+    - -
+  * - 0x08
+    - BMS
+    - Corrente (SA31)
+    - Tensão Instantânea (SA32)
+    - Tensão de C.Aberto (SA33)
+    - State of Charge (SA34)
+  * - 0x09
+    - BMS
+    - S State of Charge (SA35)
+    - Capacidade Restante (SA36)
+    - Health (SA37)
+    - Maior Temperatura (SA38)
+  * - 0x10
+    - BMS
+    - Menor Temperatura (SA39)
+    - Temperatura Média (SA40)
+    - Temperatura Interna (SA41)
+    - Maior Tensão (SA42)
+  * - 0x11
+    - BMS
+    - Menor Tensão (SA43)
+    - Tensão Média (SA44)
+    - Maior Resistência (SA45)
+    - Menor Resistência (SA46)
+  * - 0x12
+    - BMS
+    - Resistência Média (SA47)
+    - IDs Temperatura (SA48)
+    - IDs Tensão (SA49)
+    - IDs Resistência (SA50)
+  * - 0x13
+    - BMS
+    - Fan Speed (SA51)
+    - Tensão de entrada (SA52)
+    - Isolamento (SA53)
+    - ADC1 (SA54)
+  * - 0x14
+    - Inversor
+    - RPM (SA56)
+    - Corrente (SA57)
+    - Frequência (SA58)
+    - Estado (SA59)
+  * - 0x15
+    - Inversor
+    - Tensão saída (SA60)
+    - Velocidade (SA61)
+    - Torque (SA62)
+    - Temperatura FET1 (SA63)
+  * - 0x16
+    - Inversor
+    - Temperatura FET2 (SA64)
+    - Temperatura Interna (SA65)
+    - Sobrecarga (SA66)
+    - Alarme (SA67)
+  * - 0x17
+    - Inversor
+    - Falha Atual (SA68)
+    - Falha Anterior (SA69)
+    - -
+    - -
 
 Diagrama de blocos
 ==========================
