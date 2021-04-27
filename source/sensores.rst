@@ -601,10 +601,7 @@ Modelo do modulo do sensor SD genérico, com micro SD da SanDisk. Comunicação 
 
 https://www.embarcados.com.br/modulo-tiny-rtc-i2c-parte-1/ (Datasheet do modelo semelhante)
 
-.. image:: images/cebolinha.png
-  :align: center
 
-* `Datasheet <as>`__
 
 Uso
 -----
