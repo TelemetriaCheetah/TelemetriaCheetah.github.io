@@ -539,6 +539,21 @@ https://www.tomodatipecas.com.br/produto/256228/conector-com-chicote-3-vias-sens
 
 .. image:: images/cebolinha.png
   :align: center
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+Ele funciona com VCC de 5v, GND e Sinal, pode-se saber o valor da pressão usando a função map, como a equação VOUT /VCC= (0.01*PIN[Bar G]+ 0.1)
+(Verificar o datasheet).Para isso é necessário que a linha de freios esteja sangrada para ter a força necessária de pressão já que não é possível fazer outro teste de mesa.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+  
   //Biblioteca
   //.h
   #ifndef PRESSAOFREIOS_H	//Verificar a existencia de outra biblioteca com esse nome
@@ -577,23 +592,9 @@ https://www.tomodatipecas.com.br/produto/256228/conector-com-chicote-3-vias-sens
 		return getPress;
 	}
 	
-int TesteFreios::getAnalog(){
-	return analogRead(_PIN);
-}
-
-* `Datasheet <as>`__
-
-Uso
------
-
-Ele funciona com VCC de 5v, GND e Sinal, pode-se saber o valor da pressão usando a função map, como a equação VOUT /VCC= (0.01*PIN[Bar G]+ 0.1)
-(Verificar o datasheet).Para isso é necessário que a linha de freios esteja sangrada para ter a força necessária de pressão já que não é possível fazer outro teste de mesa.
-
-Código de teste (Arduino IDE)
---------------------------------
-
-.. code-block:: c++
-  :linenos:
+  int TesteFreios::getAnalog(){
+    return analogRead(_PIN);
+  }
 
 Objetivo
 ------------
@@ -662,6 +663,35 @@ Objetivo
 ------------
 
 O GPS fornece diversos dados para serem coletados, o modulo é um receptor de dados do NMEA. Podemos obter o tempo(ano,  mês, dia, hora, minuto e segundo). Além da localização(latitude, longitude, altitude e ângulo), em que podemos mapear o percurso do veiculo. Também é medido a velocidade  em knots.
+
+Encolder
+==========================
+
+Descrição
+------------
+
+Encoder é um sensores eletro-mecânicos, cuja funcionalidade é transformar movimento mecânico angular ou linear em uma série de pulsos analógicos ou digitais elétricos.
+
+**Especificações e características**
+
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+Com a utilização de encoders, é possível quantizar distâncias, controlar velocidades, medir ângulos, número de rotações, realizar posicionamentos, rotacionar braços robóticos e etc.
+Como exemplo no Cheetah medimos o angulo de rotação do volante do carro.
 
 
 Diagrama de conexões
