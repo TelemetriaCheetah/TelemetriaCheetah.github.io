@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="pt" >
+<html class="writer-html5" lang="pt" >
 <head>
   <meta charset="utf-8" />
   
@@ -30,12 +30,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/translations.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -235,7 +234,7 @@ o git no PC e fazer um clone do seu fork do repositório.</p>
 <h4>Linux<a class="headerlink" href="#linux" title="Link permanente para este título">¶</a></h4>
 <p>O jeito mais rápido de instalar o git é utilizando o gerenciador de pacotes da sua distribuição. Em sistemas baseados em debian (Ubuntu/Pop OS/Mint/Raspberry PI OS), basta
 executar como superusuário:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install git
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>sudo apt update <span class="o">&amp;&amp;</span> sudo apt install git
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -250,8 +249,8 @@ executar como superusuário:</p>
 Em seguida, basta clicar no botão de fork</p>
 <img alt="_images/print1.png" class="align-center" src="_images/print1.png" />
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">O fork é uma cópia do repositório vinculada à sua conta de usuário, e é nele que as modificações devem ser feitas. Alterar o código utilizando
+<p class="admonition-title">Nota</p>
+<p>O fork é uma cópia do repositório vinculada à sua conta de usuário, e é nele que as modificações devem ser feitas. Alterar o código utilizando
 a conta do cheetah diretamente é uma prática que deve ser evitada ao máximo, pois impossibilita o controle do responsável por cada modificação.</p>
 </div>
 </div>
@@ -261,14 +260,14 @@ a conta do cheetah diretamente é uma prática que deve ser evitada ao máximo, 
 funcionar em breve (Se você está lendo isto no futuro, é provável que já tenha sido desativada). Portanto, é necessário utilizar outro método de autenticação,
 e uma maneira simples de fazer isso é adicionando chaves SSH à sua conta do github. Para gerar um par de chaves pública/privada, abra o terminal / powershell e
 execute o comando:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>ssh-keygen
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>ssh-keygen
 </pre></div>
 </td></tr></table></div>
 <p>O par de chaves gerado é salvo por padrão na sua pasta de usuário dentro de .ssh . Dentro da pasta, abra o arquivo de chave pública (o que termina com .pub) e copie seu conteúdo. Em seguida, vá até a sua
 página do github e siga os passos:</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Caso a pasta esteja oculta, vocẽ deve habilitar a opção de visualizar arquivos
+<p class="admonition-title">Nota</p>
+<p>Caso a pasta esteja oculta, vocẽ deve habilitar a opção de visualizar arquivos
 ocultos no seu gerenciador de arquivos.</p>
 </div>
 <p>Abra as configurações da contas</p>
@@ -285,22 +284,22 @@ ocultos no seu gerenciador de arquivos.</p>
 <p>Para criar uma cópia local do seu repositório, copie o link no botão «code», lembrando que é necessário selecionar a opção «SSH»:</p>
 <img alt="_images/print6.png" class="align-center" src="_images/print6.png" />
 <p>Em seguida, abra o terminal / git shell (o git shell pode ser aberto clicando com o botão direito do mouse em um espaço branco dentro de uma pasta qualquer do Windows) e execute o comando:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git clone &lt;cole o link que você copiou aqui&gt;
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>git clone &lt;cole o link que você copiou aqui&gt;
 </pre></div>
 </td></tr></table></div>
 </div>
 <div class="section" id="git-commit">
 <h3>Git Commit<a class="headerlink" href="#git-commit" title="Link permanente para este título">¶</a></h3>
 <p>Após realizar as alterações no código local, é necessário enviá-las ao repositório remoto (github). Para isso, abra o terminal / git shell dentro da pasta clonada e execute os comandos:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git add -A
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>git add -A
 git commit -m <span class="s2">&quot;Escreva aqui uma mensagem breve explicando as alterações realizadas desde o último commit&quot;</span>
 git push origin main
 </pre></div>
 </td></tr></table></div>
 <p>Caso queira ver quais alterações fazem parte ou não do commit, use o comando</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git status
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -308,13 +307,13 @@ git push origin main
 <h3>Atualizando o repositório<a class="headerlink" href="#atualizando-o-repositorio" title="Link permanente para este título">¶</a></h3>
 <p>Para garantir que você está trabalhando na versão mais recente do código, é necessário sincronizar o seu fork com o repositório original (comumente chamado de upstream). Para isso,
 adicione o repositório original no seu git:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git remote add upstream &lt;link para repositório <span class="k">do</span> cheetah&gt;
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>git remote add upstream &lt;link para repositório <span class="k">do</span> cheetah&gt;
 git fetch upstream
 </pre></div>
 </td></tr></table></div>
 <p>Feito isso, você deve executar o comando abaixo toda vez que alguma alteração for realizada por outra pessoa no repositório do Cheetah:</p>
-<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git pull upstream main
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>git pull upstream main
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -358,22 +357,22 @@ em um único executável. Um exemplo recomendado é o WAMP (Windows Apache MySQL
 a formatação do site são utilizados HTML5 e CSS, e portanto é necessário possuir conhecimento dessas linguagens também. Além disso,
 os dados coletados são armazenados em um banco de dados MySQL, e familiaridade com queries SQL é bastante útil. Seguem abaixo alguns links relevantes sobre os assuntos:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://www.urionlinejudge.com.br">https://www.urionlinejudge.com.br</a> URI Online Judge - para treinar algoritmos e básico de programação</li>
-<li><a class="reference external" href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics">https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics</a> JavaScript básico - documentação da Mozilla</li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp">https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp</a> Curso javascript básico - youtube</li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=CjQMi8mv2Do">https://www.youtube.com/watch?v=CjQMi8mv2Do</a> Introdução ao node.js - youtube</li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=BhJu05tUo-M">https://www.youtube.com/watch?v=BhJu05tUo-M</a> Introdução ao MySQL - youtube</li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R">https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R</a> Introdução HTML5 e CSS - youtube</li>
+<li><p><a class="reference external" href="https://www.urionlinejudge.com.br">https://www.urionlinejudge.com.br</a> URI Online Judge - para treinar algoritmos e básico de programação</p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics">https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics</a> JavaScript básico - documentação da Mozilla</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp">https://www.youtube.com/watch?v=vrSEt5J4q2Y&amp;list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp</a> Curso javascript básico - youtube</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=CjQMi8mv2Do">https://www.youtube.com/watch?v=CjQMi8mv2Do</a> Introdução ao node.js - youtube</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=BhJu05tUo-M">https://www.youtube.com/watch?v=BhJu05tUo-M</a> Introdução ao MySQL - youtube</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R">https://www.youtube.com/watch?v=Em0R3csNMVE&amp;list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R</a> Introdução HTML5 e CSS - youtube</p></li>
 </ul>
 </div>
 <div class="section" id="servidor">
 <h2>Servidor<a class="headerlink" href="#servidor" title="Link permanente para este título">¶</a></h2>
 <p>O processo de instalação e inicialização do servidor segue os mesmos passos apresentados na seção de manual do usuário.</p>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
+<p class="admonition-title">Nota</p>
 <p>Para facilitar o processo de desenvolvimento, recomenda-se a utilização do <a class="reference external" href="https://www.npmjs.com/package/nodemon">nodemon</a>. O nodemon é um módulo do node.js que reinicia automaticamente o servidor
 quando algum dos arquivos javascript for alterado, e pode ser ativado utilizando o comando abaixo ao invés do mostrado no manual do usuário:</p>
-<div class="last highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">nodemon</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">nodemon</span> <span class="n">https</span><span class="p">.</span><span class="n">js</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -381,15 +380,15 @@ quando algum dos arquivos javascript for alterado, e pode ser ativado utilizando
 <h3>Módulos<a class="headerlink" href="#modulos" title="Link permanente para este título">¶</a></h3>
 <p>A lista abaixo contém os módulos necessários para a execução do sistema supervisório e uma breve descrição dos seus objetivos:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://expressjs.com/pt-br/">express.js e http - Criação de um servidor http</a>;</li>
-<li><a class="reference external" href="https:/Conexãocomobancodedados/socket.io/">socket.io - Conexões WebSocket entre servidor e cliente</a>;</li>
-<li><a class="reference external" href="https://www.npmjs.com/package/mysql">mysql - Conexão com o banco de dados</a>;</li>
-<li><a class="reference external" href="https://www.npmjs.com/package/serialport">serialport e readline - Comunicação UART com o rádio</a>;</li>
-<li><a class="reference external" href="https://nodejs.org/api/path.html">path - Operações com arquivos e caminhos no servidor</a>;</li>
+<li><p><a class="reference external" href="https://expressjs.com/pt-br/">express.js e http - Criação de um servidor http</a>;</p></li>
+<li><p><a class="reference external" href="https:/Conexãocomobancodedados/socket.io/">socket.io - Conexões WebSocket entre servidor e cliente</a>;</p></li>
+<li><p><a class="reference external" href="https://www.npmjs.com/package/mysql">mysql - Conexão com o banco de dados</a>;</p></li>
+<li><p><a class="reference external" href="https://www.npmjs.com/package/serialport">serialport e readline - Comunicação UART com o rádio</a>;</p></li>
+<li><p><a class="reference external" href="https://nodejs.org/api/path.html">path - Operações com arquivos e caminhos no servidor</a>;</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">Não é necessário (e nem recomendado) instalar os módulos manualmenete, eles já são automaticamente baixados pelo npm install.</p>
+<p class="admonition-title">Nota</p>
+<p>Não é necessário (e nem recomendado) instalar os módulos manualmenete, eles já são automaticamente baixados pelo npm install.</p>
 </div>
 </div>
 <div class="section" id="configuracao">
@@ -399,8 +398,8 @@ quando algum dos arquivos javascript for alterado, e pode ser ativado utilizando
 <h4>config.json<a class="headerlink" href="#config-json" title="Link permanente para este título">¶</a></h4>
 <p>Arquivo de configurações gerais</p>
 <ul class="simple">
-<li><strong>qtdMedicao</strong> <em>(inteiro)</em>: Quantidade de sensores de medição</li>
-<li><strong>qtdDiscretos</strong> <em>(inteiro)</em>: Quantidade de sensores discretos</li>
+<li><p><strong>qtdMedicao</strong> <em>(inteiro)</em>: Quantidade de sensores de medição</p></li>
+<li><p><strong>qtdDiscretos</strong> <em>(inteiro)</em>: Quantidade de sensores discretos</p></li>
 </ul>
 </div>
 <div class="section" id="password-json">
@@ -408,14 +407,14 @@ quando algum dos arquivos javascript for alterado, e pode ser ativado utilizando
 <p>Arquivo com as configurações do banco de dados. Este arquivo não está disponível no github por questões de segurança, e pode
 ser encontrado no teams da equipe.</p>
 <ul class="simple">
-<li><strong>host</strong> <em>(string)</em>: Endereço IPv4 do servidor MySQL/MariaDB</li>
-<li><strong>user</strong> <em>(string)</em>: Nome de usuário</li>
-<li><strong>password</strong> <em>(string)</em>: Senha do usuário</li>
-<li><strong>database</strong> <em>(string)</em>: Nome do banco de dados usado</li>
+<li><p><strong>host</strong> <em>(string)</em>: Endereço IPv4 do servidor MySQL/MariaDB</p></li>
+<li><p><strong>user</strong> <em>(string)</em>: Nome de usuário</p></li>
+<li><p><strong>password</strong> <em>(string)</em>: Senha do usuário</p></li>
+<li><p><strong>database</strong> <em>(string)</em>: Nome do banco de dados usado</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">O nome do banco de dados é fixo em algumas partes do código e deve ser configurado como <em>telemetriaCheetah</em>. Há planos para permitir outros nomes no futuro, mas no momento o uso de qualquer outro identificador resultará em uma falha do servidor.</p>
+<p class="admonition-title">Nota</p>
+<p>O nome do banco de dados é fixo em algumas partes do código e deve ser configurado como <em>telemetriaCheetah</em>. Há planos para permitir outros nomes no futuro, mas no momento o uso de qualquer outro identificador resultará em uma falha do servidor.</p>
 </div>
 </div>
 </div>
@@ -426,29 +425,30 @@ implementação é baseada na classe <a class="reference external" href="https:/
 e inspirada na classe <a class="reference external" href="https://github.com/Tesla-UFMG/Interface/blob/master/api-mode-parser.js">api-mode-parser.js</a> da equipe <a class="reference external" href="https://github.com/Tesla-UFMG">Tesla UFMG</a>.</p>
 <div class="section" id="uso">
 <h4>Uso<a class="headerlink" href="#uso" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
 <span class="k">new</span> <span class="nx">CheetahLinkParser</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><em>options.length: number</em> - quantidade de bytes emitidos em cada evento</li>
+<li><p><em>options.length: number</em> - quantidade de bytes emitidos em cada evento</p></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Aviso</p>
+<p class="admonition-title">Aviso</p>
 <blockquote>
-<div>O número de bytes passado como argumento deve ser o mesmo emitido pelo módulo serial. Esse valor pode ser consultado diretamente no código do MCU de telemetria (placa frontal) ou calculado utilizando a fórmula:</div></blockquote>
-<div class="last math notranslate nohighlight">
+<div><p>O número de bytes passado como argumento deve ser o mesmo emitido pelo módulo serial. Esse valor pode ser consultado diretamente no código do MCU de telemetria (placa frontal) ou calculado utilizando a fórmula:</p>
+</div></blockquote>
+<div class="math notranslate nohighlight">
 \[qtdBytesSerial = (qtdSensoresMedicao \times 2 + qtdSensoresDiscretos/8) + 2\]</div>
 </div>
 </div>
 <div class="section" id="exemplo">
 <h4>Exemplo<a class="headerlink" href="#exemplo" title="Link permanente para este título">¶</a></h4>
 <p>O código abaixo imprime os dados recebidos da porta <strong>/dev/ttyACM0</strong> em conjuntos de 8 bits (notação hexadecimal):</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">serialport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;serialport&quot;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">ttyPort</span> <span class="o">=</span> <span class="s2">&quot;/dev/ttyACM0&quot;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">serialport</span><span class="p">(</span><span class="nx">ttyPort</span><span class="p">,{</span><span class="nx">baudRate</span><span class="o">:</span><span class="mi">9600</span><span class="p">});</span>
-<span class="kr">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="k">new</span> <span class="nx">CheetahLinkParser</span><span class="p">({</span><span class="nx">length</span><span class="o">:</span> <span class="mi">12</span><span class="p">}));</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">CheetahLinkParser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkParser&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">serialport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;serialport&quot;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">ttyPort</span> <span class="o">=</span> <span class="s2">&quot;/dev/ttyACM0&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">serialport</span><span class="p">(</span><span class="nx">ttyPort</span><span class="p">,{</span><span class="nx">baudRate</span><span class="o">:</span><span class="mf">9600</span><span class="p">});</span>
+<span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="k">new</span> <span class="nx">CheetahLinkParser</span><span class="p">({</span><span class="nx">length</span><span class="o">:</span> <span class="mf">12</span><span class="p">}));</span>
 <span class="nx">parser</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span>
 <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -462,7 +462,7 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <p>A classe <em>CheetahLinkFormatter</em> é responsável por tratar os dados recebidos do rádio.</p>
 <div class="section" id="id5">
 <h4>Uso<a class="headerlink" href="#id5" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -470,7 +470,7 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <div class="section" id="id6">
 <h4>Exemplo<a class="headerlink" href="#id6" title="Link permanente para este título">¶</a></h4>
 <p>O código abaixo imprime um vetor contendo os valores de todos os sensores discretos recebidos do rádio.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">CheetahLinkFormatter</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/CheetahLinkFormatter&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">serial</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CheetahLinkFormatter</span><span class="p">();</span>
 <span class="nx">parser</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span>
 <span class="p">{</span>
@@ -488,9 +488,9 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 </div>
 <p><strong>Argumentos:</strong></p>
 <ol class="arabic simple">
-<li><strong>data</strong> <em>(objeto)</em> - Objeto contendo os dados do parser serial;</li>
-<li><strong>nAnalog</strong> <em>(inteiro)</em> - Quantidade de sensores de medição obtida do arquivo config.json</li>
-<li><strong>nDigital</strong> <em>(inteiro)</em> - Quantidade de sensores discretos obtida do arquivo config.json</li>
+<li><p><strong>data</strong> <em>(objeto)</em> - Objeto contendo os dados do parser serial;</p></li>
+<li><p><strong>nAnalog</strong> <em>(inteiro)</em> - Quantidade de sensores de medição obtida do arquivo config.json</p></li>
+<li><p><strong>nDigital</strong> <em>(inteiro)</em> - Quantidade de sensores discretos obtida do arquivo config.json</p></li>
 </ol>
 </div>
 <div class="section" id="getanalogarray">
@@ -512,22 +512,22 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <h3>DatabaseHandler<a class="headerlink" href="#databasehandler" title="Link permanente para este título">¶</a></h3>
 <p>Lida com as operações de banco de dados</p>
 <div class="admonition warning">
-<p class="first admonition-title">Aviso</p>
-<p class="last">Esta classe ainda está sendo implementada e portanto é sujeita a mudanças significativas em um futuro próximo. Garanta que seu código está atualizado!</p>
+<p class="admonition-title">Aviso</p>
+<p>Esta classe ainda está sendo implementada e portanto é sujeita a mudanças significativas em um futuro próximo. Garanta que seu código está atualizado!</p>
 </div>
 <div class="section" id="id7">
 <h4>Uso<a class="headerlink" href="#id7" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id8">
 <h4>Exemplo<a class="headerlink" href="#id8" title="Link permanente para este título">¶</a></h4>
 <p>Este exemplo imprime um vetor com todos os valores do sensor de medição nº 0 disponíveis no banco de dados</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">db</span><span class="p">.</span><span class="nx">getSensorArray</span><span class="p">(</span><span class="s2">&quot;A&quot;</span> <span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">DatabaseHandler</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./js/DatabaseHandler&#39;</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DatabaseHandler</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">db</span><span class="p">.</span><span class="nx">getSensorArray</span><span class="p">(</span><span class="s2">&quot;A&quot;</span> <span class="p">,</span> <span class="mf">0</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -540,8 +540,8 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <p>Retorna um vetor de inteiros com todos os valores do sensor disponíveis no banco de dados</p>
 <p><strong>Argumentos:</strong></p>
 <ol class="arabic simple">
-<li><strong>sensorType</strong> <em>(string)</em> - «A» = sensor de medição ; «D» = sensor discreto</li>
-<li><strong>sensorCode</strong> <em>(inteiro)</em> - id do sensor (consultar config.json em caso de dúvida)</li>
+<li><p><strong>sensorType</strong> <em>(string)</em> - «A» = sensor de medição ; «D» = sensor discreto</p></li>
+<li><p><strong>sensorCode</strong> <em>(inteiro)</em> - id do sensor (consultar config.json em caso de dúvida)</p></li>
 </ol>
 </div>
 <div class="section" id="insertintodatabase">
@@ -549,8 +549,8 @@ e inspirada na classe <a class="reference external" href="https://github.com/Tes
 <p>Insere dados no banco de dados.</p>
 <p><strong>Argumentos:</strong></p>
 <ol class="arabic simple">
-<li><strong>analogSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores de medição</li>
-<li><strong>digitalSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores discretos</li>
+<li><p><strong>analogSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores de medição</p></li>
+<li><p><strong>digitalSensor</strong> <em>(vetor de inteiros)</em> - vetor contendo valores dos sensores discretos</p></li>
 </ol>
 </div>
 </div>
