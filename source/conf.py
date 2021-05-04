@@ -30,7 +30,11 @@ author = 'Caio Tacito'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+<<<<<<< HEAD
     "sphinx_rtd_theme"
+=======
+    "sphinx_rtd_theme"  
+>>>>>>> 8457f191d8528fea70df61c36ca2b830df09bcfa
 ]
 
 
