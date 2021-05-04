@@ -23,10 +23,17 @@ Acelerômetro e Giroscópio
 Descrição
 ------------
 
+<<<<<<< HEAD
 Nesse módulo GY-521 você tem em uma mesma placa um acelerômetro e um giroscópio de alta precisão, tudo isso controlado por um 
 único CI, o MPU-6050. São 3 eixos para o acelerômetro e 3 eixos para o giroscópio, sendo ao todo 6 graus de liberdade (6DOF). 
 Além disso esta placa tem um sensor de temperatura embutido no CI, permitindo medições entre -40 e +85 ºC. Possui alta precisão
 devido ao conversor analógico digital de 16-bits para cada canal. Portanto o sensor captura os canais X, Y e Z ao mesmo tempo. 
+=======
+Nesse módulo GY-521 você tem em uma mesma placa um acelerômetro e um giroscópio de alta precisão, tudo isso controlado por um
+único CI, o MPU-6050. São 3 eixos para o acelerômetro e 3 eixos para o giroscópio, sendo ao todo 6 graus de liberdade (6DOF).
+Além disso esta placa tem um sensor de temperatura embutido no CI, permitindo medições entre -40 e +85 ºC. Possui alta precisão
+devido ao conversor analógico digital de 16-bits para cada canal. Portanto o sensor captura os canais X, Y e Z ao mesmo tempo.
+>>>>>>> a09ee96f8e0676d801ee947d03c1dbd3f57ef1e9
 Essa placa utiliza o protocolo I2C para transmissão de dados.
 
 **Especificações e características**
@@ -41,15 +48,25 @@ Essa placa utiliza o protocolo I2C para transmissão de dados.
 Uso
 -----
 
+<<<<<<< HEAD
 A comunicação com o microcontrolador usa a interface I2C, por meio dos pinos SCL e SDA do sensor. Nos pinos XDA e XCL você pode 
 ligar outros dispositivos I2C. A alimentação do módulo pode variar entre 3 e 5v, mas para melhores resultados e precisão recomenda-se 
+=======
+A comunicação com o microcontrolador usa a interface I2C, por meio dos pinos SCL e SDA do sensor. Nos pinos XDA e XCL você pode
+ligar outros dispositivos I2C. A alimentação do módulo pode variar entre 3 e 5v, mas para melhores resultados e precisão recomenda-se
+>>>>>>> a09ee96f8e0676d801ee947d03c1dbd3f57ef1e9
 utilizar 5v.
 
 Objetivo
 ------------
 
+<<<<<<< HEAD
 Utilizamos o giroscópio para o monitoramento da orientação, direção, movimentação angular e rotação do veículo. 
 O acelerômetro terá a finalidade de medir a aceleração, ângulo de inclinação, rotação, vibração, colisão e gravidade do veículo. 
+=======
+Utilizamos o giroscópio para o monitoramento da orientação, direção, movimentação angular e rotação do veículo.
+O acelerômetro terá a finalidade de medir a aceleração, ângulo de inclinação, rotação, vibração, colisão e gravidade do veículo.
+>>>>>>> a09ee96f8e0676d801ee947d03c1dbd3f57ef1e9
 
 
 Temperatura - Dutos de ar
@@ -105,6 +122,7 @@ Código de teste (Arduino IDE)
     delay(250);//INTERVALO DE 250 MILISSEGUNDOS
   }
 
+
 Objetivo
 ------------
 
@@ -118,6 +136,46 @@ comparando com dados de simulações. No segundo teste os sensores serão coloca
 nas laterais da caixa de bateria, onde incide o ar vindo dos dutos. Assim serão
 coletados os dados de temperatura da caixa de baterias com e sem dutos. Dessa
 forma sendo verificada a eficiência dos dutos no carro.
+
+Sensor HALL
+======================
+
+Descrição
+------------
+
+Há no carro 1 sensor hall modelo DHAB S/118,basicamente transdutor que ficar posicionado próximos dos AIR´s.
+
+
+**Especificações e características**
+
+* `Datasheet <https://res.cloudinary.com/fastron-electronics/image/upload/v1534659891/LEM/Datasheets/dhab_s_137.pdf>`__
+* Sensor transdutor
+* Saída: 0.25 - 4.75V (2.5Vref)
+* Temperatura operacional: -40°C - 70°C
+* Precisão CH1 @ 25 Deg C: 15%(0A),0,7%(25A),1,3%(75A)
+* Precisão CH2 @ 25 Deg C: 3%(0A),9%(500A),15%(900A),20%(1000A)
+* Tensão de operação: 5 VDC
+
+
+
+Uso
+-----
+
+Falar sobre a implementação no Cheetah aqui
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+
+
+Objetivo
+------------
+O objetivo deste sensor é identificar a corrente positiva, funcionando com um transdutor que,quando sob a aplicação de um campo magnético,
+responde com uma variação em sua tensão de saída.Esta variação de corrente fornecida pela bateria induz um campo magnético, que  induz corrente
+no sensor hall.
 
 
 Temperatura - Freios
@@ -162,11 +220,7 @@ Código de teste (Arduino IDE)
   #include <Wire.h>
   #include <Adafruit_MLX90614.h>
   Adafruit_MLX90614 mlx = Adafruit_MLX90614();
-  //Define o endereco I2C do display e qtde de colunas e linhas
-  LiquidCrystal_I2C lcd(0x3B, 16, 2);
-  //Array que desenha o simbolo de grau
-  byte grau[8] = {B00110, B01001, B01001, B00110,
-                  B00000, B00000, B00000, B00000,};
+
   double temp_amb;
   double temp_obj;
   void setup()
@@ -191,6 +245,7 @@ Código de teste (Arduino IDE)
     //Aguarda 1 segundo ate nova leitura
     delay(1000);
   }
+
 
 Objetivo
 ------------
@@ -295,6 +350,7 @@ Código de teste (Arduino IDE)
     delay(2);
   }
 
+
 Objetivo
 ------------
 
@@ -370,7 +426,6 @@ Código de teste (Arduino IDE)
     delay (1000);
   }
 
-
 Objetivo
 ------------
 
@@ -417,103 +472,7 @@ Uso
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  // Programa : Teste Giroscopio L3G4200D
-  // Adaptacoes : Arduino e Cia
-  #include <Wire.h>
-  #define CTRL_REG1 0x20
-  #define CTRL_REG2 0x21
-  #define CTRL_REG3 0x22
-  #define CTRL_REG4 0x23
-  #define CTRL_REG5 0x24
-  //Endereco I2C do L3G4200D
-  int L3G4200D_Address = 105;
-  int x;
-  int y;
-  int z;
-  void setup()
-  {
-    Wire.begin();
-    Serial.begin(9600);
-    Serial.println("Inicializando o L3G4200D");
-    // Configura o L3G4200 para 200, 500 ou 2000 graus/seg
-    setupL3G4200D(2000);
-    // Aguarda a resposta do sensor
-    delay(1500);
-  }
-  void loop()
-  {
-    // Atualiza os valores de X, Y e Z
-    getGyroValues();
-    // Mostra os valores no serial monitor
-    Serial.print("X:");
-    Serial.print(x);
-    Serial.print(" Y:");
-    Serial.print(y);
-    Serial.print(" Z:");
-    Serial.println(z);
-    // Aguarda 100ms e reinicia o processo
-    delay(100);
-  }
-  void getGyroValues()
-  {
-    // Rotina para leitura dos valores de X, Y e Z
-    byte xMSB = readRegister(L3G4200D_Address, 0x29);
-    byte xLSB = readRegister(L3G4200D_Address, 0x28);
-    x = ((xMSB << 8) | xLSB);
-    byte yMSB = readRegister(L3G4200D_Address, 0x2B);
-    byte yLSB = readRegister(L3G4200D_Address, 0x2A);
-    y = ((yMSB << 8) | yLSB);
-    byte zMSB = readRegister(L3G4200D_Address, 0x2D);
-    byte zLSB = readRegister(L3G4200D_Address, 0x2C);
-    z = ((zMSB << 8) | zLSB);
-  }
-  int setupL3G4200D(int scale)
-  {
-    //From  Jim Lindblom of Sparkfun's code
-    // Enable x, y, z and turn off power down:
-    writeRegister(L3G4200D_Address, CTRL_REG1, 0b00001111);
-    // If you'd like to adjust/use the HPF, you can edit the line below to configure CTRL_REG2:
-    writeRegister(L3G4200D_Address, CTRL_REG2, 0b00000000);
-    // Configure CTRL_REG3 to generate data ready interrupt on INT2
-    // No interrupts used on INT1, if you'd like to configure INT1
-    // or INT2 otherwise, consult the datasheet:
-    writeRegister(L3G4200D_Address, CTRL_REG3, 0b00001000);
-    // CTRL_REG4 controls the full-scale range, among other things:
-    if(scale == 250){
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00000000);
-    }else if(scale == 500){
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00010000);
-    }else{
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00110000);
-    }
-    // CTRL_REG5 controls high-pass filtering of outputs, use it
-    // if you'd like:
-    writeRegister(L3G4200D_Address, CTRL_REG5, 0b00000000);
-  }
-  void writeRegister(int deviceAddress, byte address, byte val)
-  {
-      Wire.beginTransmission(deviceAddress); // start transmission to device
-      Wire.write(address);       // send register address
-      Wire.write(val);         // send value to write
-      Wire.endTransmission();     // end transmission
-  }
-  int readRegister(int deviceAddress, byte address)
-  {
-      int v;
-      Wire.beginTransmission(deviceAddress);
-      Wire.write(address); // register to read
-      Wire.endTransmission();
-      Wire.requestFrom(deviceAddress, 1); // read a byte
-      while(!Wire.available())
-      {
-          // waiting
-      }
-      v = Wire.read();
-      return v;
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/imu.cpp>`__
 
 Objetivo
 ------------
@@ -547,8 +506,10 @@ Pinos utilizados são: Vcc 5V ; GND; SCL; SDA.
 Código de teste (Arduino IDE)
 --------------------------------
 
+
 .. code-block:: c++
   :linenos:
+
 
 Objetivo
 ------------
@@ -590,6 +551,48 @@ Código de teste (Arduino IDE)
 .. code-block:: c++
   :linenos:
 
+  //Biblioteca
+  //.h
+  #ifndef PRESSAOFREIOS_H	//Verificar a existencia de outra biblioteca com esse nome
+  #define PRESSAOFREIOS_H	//Definir o nome da biblioteca como "PressaoFreios"
+  #include "Arduino.h" //Incluir biblioteca do arduino para ser ultilizada
+  #include "math.h"
+
+  class TesteFreios{
+
+    private:
+      int _PIN;	//Objeto criado (Sensor de Pressao de Freios)
+      float map(float x, float min, float max, float out_min, float out_max);
+
+    public:
+	    TesteFreios();	//Criação do objeto
+	    TesteFreios(int);	//Criação do objeto com parametros
+
+	    float getPress(); //Função para calcular a pressao
+	    int getAnalog();
+  };
+  #endif
+  //.cpp
+  #include "PressaoFreios.h"
+
+  TesteFreios::TesteFreios(int PIN) { //recebendo informações da biblioteca TesteFreios.h
+   _PIN = PIN;
+    pinMode (_PIN, INPUT);	//Inicio do sinal _PIN como INPUT
+  }
+
+  float TesteFreios::map(float x, float min, float max, float out_min, float out_max) {
+	  return (x - min) * (out_max - out_min) / (max - min) + out_min;
+  }
+  float TesteFreios::getPress(){
+	  float getPress = map((float)analogRead(_PIN), 102.3, 920.7, 0.0, 80.0);
+	  getPress = constrain(getPress, 0.0, 80.0);
+		return getPress;
+	}
+
+  int TesteFreios::getAnalog(){
+    return analogRead(_PIN);
+  }
+
 Objetivo
 ------------
 
@@ -620,10 +623,43 @@ Código de teste (Arduino IDE)
 .. code-block:: c++
   :linenos:
 
+
 Objetivo
 ------------
 
 Objetivo do sensor é cruzar informações junto com o sensor de pressão de freios, para validar e relacionar a força que é aplicada com a pressão que a linha chega, já que temos a relação de pedal e o diâmetro do êmbolo do CM.
+
+SD
+==========================
+
+Descrição
+------------
+
+Modelo do modulo do sensor SD genérico, com micro SD da SanDisk. Comunicação pela interface SPI, pinos MOSI, MISO, SCLK e CS. Como o modulo vai direto na placa central, não se utiliza conector.
+
+**Especificações e características**
+
+https://www.embarcados.com.br/modulo-tiny-rtc-i2c-parte-1/ (Datasheet do modelo semelhante)
+
+
+
+Uso
+-----
+
+O modulo funciona com uma tensão de 5V..
+Pinos utilizados são: Vcc 5V; GND; MOSI; MISO; SCLK; CS(SS). Cada microcontrolador tem pinos pré-selecionado, o indicador no código da serie(grupo) dos pinos é indicada pelo CS.
+
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+Objetivo
+------------
+
+O cartão SD é utilizado na armazenarão de dados. Apesar de não ser o meio mais rápido, eficiente e rápido de se armazenar, é o método mais seguro. Mesmo com a utilização em paralelo de outros métodos, o SD com o modulo é uma medida de precaução, coso aconteça algo com os dados recolhidos nos outros meios, os dados armazenados no SD estão seguros. Inicialmente sendo um plano de segurança.
 
 GPS
 ==========================
@@ -653,10 +689,184 @@ Código de teste (Arduino IDE)
 .. code-block:: c++
   :linenos:
 
+
 Objetivo
 ------------
 
 O GPS fornece diversos dados para serem coletados, o modulo é um receptor de dados do NMEA. Podemos obter o tempo(ano,  mês, dia, hora, minuto e segundo). Além da localização(latitude, longitude, altitude e ângulo), em que podemos mapear o percurso do veiculo. Também é medido a velocidade  em knots.
+
+Encoder
+==========================
+
+Descrição
+------------
+
+Encoder é um sensores eletro-mecânicos, cuja funcionalidade é transformar movimento mecânico angular ou linear em uma série de pulsos analógicos ou digitais elétricos.
+
+**Especificações e características**
+
+
+* `Datasheet <as>`__
+
+Uso
+-----
+
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+
+Objetivo
+------------
+
+Com a utilização de encoders, é possível quantizar distâncias, controlar velocidades, medir ângulos, número de rotações, realizar posicionamentos, rotacionar braços robóticos e etc.
+Como exemplo no Cheetah medimos o angulo de rotação do volante do carro.
+
+
+TPS
+==========================
+
+Descrição
+------------
+
+O Sensor de Posição da Borboleta (Throttle Position Sensor – TPS) é utilizado para monitorar a posição do acelerador em um veículo.
+Através do TPS, o inversor obtém informações instantâneas da posição da borboleta permitindo à central identificar a potência que o condutor está requerendo.
+Essas informações são utilizadas para determinar o torque requerido do motor, a proporção de frenagem regenerativa aplicada e para o brake pedal plausability test.
+
+Foto
+------------
+
+.. image:: images/tps.jpg
+  :align: center
+  :width: 300px
+
+**Especificações e características**
+
+* `Datasheet <https://www.ds.ind.br/media/linhas/08/04/1_64e828aa0007739df167c3c58a5293e9.pdf>`__
+
+Uso
+-----
+
+O TPS envia as informações para um microcontrolador, e tem o sinal convertido para o barramento CAN.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+  /*
+  Analog input, analog output, serial output
+
+  Reads an analog input pin, maps the result to a range from 0 to 255 and uses
+  the result to set the pulse width modulation (PWM) of an output pin.
+  Also prints the results to the Serial Monitor.
+
+  The circuit:
+  - potentiometer connected to analog pin 0.
+    Center pin of the potentiometer goes to the analog pin.
+    side pins of the potentiometer go to +5V and ground
+  - LED connected from digital pin 9 to ground
+
+  created 29 Dec. 2008
+  modified 9 Apr 2012
+  by Tom Igoe
+
+  This example code is in the public domain.
+
+  http://www.arduino.cc/en/Tutorial/AnalogInOutSerial
+  */
+
+  // These constants won't change. They're used to give names to the pins used:
+  const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+  const int analogOutPin = 9; // Analog output pin that the LED is attached to
+
+  int sensorValue = 0;        // value read from the pot
+  int outputValue = 0;        // value output to the PWM (analog out)
+
+  void setup() {
+    // initialize serial communications at 9600 bps:
+    Serial.begin(9600);
+  }
+
+  void loop() {
+    // read the analog in value:
+    sensorValue = analogRead(analogInPin);
+    // map it to the range of the analog out:
+    outputValue = map(sensorValue, 0, 1023, 0, 255);
+    // change the analog out value:
+    analogWrite(analogOutPin, outputValue);
+
+    // print the results to the Serial Monitor:
+    Serial.print("sensor = ");
+    Serial.print(sensorValue);
+    Serial.print("\t output = ");
+    Serial.println(outputValue);
+
+    // wait 2 milliseconds before the next loop for the analog-to-digital
+    // converter to settle after the last reading:
+    delay(2);
+  }
+
+
+Strain Gauge
+==========================
+
+Descrição
+------------
+
+O extensômetro ou strain gauge é um sensor colocado na superfície de uma peça, responsável por medir a deformação diante da aplicação de um carregamento.
+Essa técnica é muito utilizada para a verificação dos níveis de tensão atuante diante da condição de operação de um equipamento ou máquina. A resistência
+elétrica de um strain gauge varia proporcionalmente com o valor da deformação do corpo de prova. Esse sensor é formado por um fio muito fino ou, mais
+comumente, por folhas metálicas dispostas em um padrão de grade. O padrão de grade maximiza a extensão dos fios ou folhas metálicas sujeitas à deformação
+na direção paralela. A grade é colada a um suporte fino, denominado base, que é fixado diretamente no corpo de prova. Dessa forma, a deformação sofrida
+pelo corpo de prova é transferida diretamente ao strain gauge, que responde com uma variação linear de sua resistência elétrica
+
+Foto
+------------
+
+.. image:: images/strain1.jpg
+  :align: center
+  :width: 300px
+
+**Especificações e características**
+
+  Não definido ainda - aguardando estruturas
+
+* `N/A <asd>`__
+
+Uso
+-----
+
+O strain gauge é usado para validar as cargas nos componentes desenvolvidos pela subequipe de estruturas.
+
+Funcionamento
+---------------
+
+Definição
++++++++++++++
+
+As alterações físicas experimentadas por um material devido à aplicação de uma força são denominadas deformação. A deformação é a relação
+entre a variação de comprimento de um material com relação ao seu comprimento original, antes de ter sido afetado . A deformação pode ser positiva
+(tração) ou negativa (compressão).
+
+Tipos de deformação
++++++++++++++++++++++
+
+Existem 4 tipos de deformação: axial, de flexão, de cisalhamento e de torção. A deformação axial mede o alongamento ou a compressão de um material resultante de uma força linear na direção
+longitudinal. A deformação por flexão mede a deformação de um lado do material e a contração de seu lado oposto, provocadas por uma força linear aplicada na direção transversal. A deformação
+por cisalhamento mede o valor da deformação provocada por uma força linear que tem componentes nas direções horizontal e vertical. A deformação de torção mede uma força circular que tem
+componentes nas direções horizontal e vertical.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
 
 
 Diagrama de conexões
@@ -664,6 +874,7 @@ Diagrama de conexões
 
 .. image:: images/diagrama.png
   :align: center
+
 
 Referências
 ================
@@ -674,3 +885,4 @@ Referências
 * https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/
 * https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/
 * https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/
+* https://ensus.com.br/extensometria-strain-gauge-o-que-e-quando-utilizar/

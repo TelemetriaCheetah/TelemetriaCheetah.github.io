@@ -24,9 +24,6 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -34,6 +31,10 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/translations.js"></script>
+<<<<<<< HEAD
+=======
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+>>>>>>> a09ee96f8e0676d801ee947d03c1dbd3f57ef1e9
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -92,6 +93,7 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supervisorio.html">Supervisório</a></li>
+<li class="toctree-l1"><a class="reference internal" href="micro.html">Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a></li>
 </ul>
 
@@ -167,12 +169,15 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Introdução</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#modos-de-operacao">Modos de operação</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro.html#dados-coletados">Dados coletados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#comunicacao-can">Comunicação CAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#diagrama-de-blocos">Diagrama de blocos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="sensores.html">Sensores</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#bibliotecas-arduino">Bibliotecas (Arduino)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#acelerometro-e-giroscopio">Acelerômetro e Giroscópio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#temperatura-dutos-de-ar">Temperatura - Dutos de ar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensores.html#sensor-hall">Sensor HALL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#temperatura-freios">Temperatura - Freios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#indutivo">Indutivo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#relogio-de-tempo-real">Relógio de tempo real</a></li>
@@ -180,7 +185,11 @@
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#display-lcd">Display LCD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#pressao-de-freios">Pressão de freios</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#sensor-de-carga">Sensor de carga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensores.html#sd">SD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#gps">GPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensores.html#encoder">Encoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensores.html#tps">TPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensores.html#strain-gauge">Strain Gauge</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#diagrama-de-conexoes">Diagrama de conexões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sensores.html#referencias">Referências</a></li>
 </ul>
@@ -191,6 +200,10 @@
 <li class="toctree-l2"><a class="reference internal" href="supervisorio.html#instalando-o-mysql">Instalando o MySQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supervisorio.html#tutoriais-de-programacao">Tutoriais de programação</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supervisorio.html#servidor">Servidor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="micro.html">Hardware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="micro.html#testes">Testes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Manual do usuário</a><ul>
