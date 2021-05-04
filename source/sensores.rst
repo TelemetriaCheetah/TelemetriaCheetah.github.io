@@ -83,6 +83,46 @@ nas laterais da caixa de bateria, onde incide o ar vindo dos dutos. Assim serão
 coletados os dados de temperatura da caixa de baterias com e sem dutos. Dessa
 forma sendo verificada a eficiência dos dutos no carro.
 
+Sensor HALL
+======================
+
+Descrição
+------------
+
+Há no carro 1 sensor hall modelo DHAB S/118,basicamente transdutor que ficar posicionado próximos dos AIR´s.
+
+
+**Especificações e características**
+
+* `Datasheet <https://res.cloudinary.com/fastron-electronics/image/upload/v1534659891/LEM/Datasheets/dhab_s_137.pdf>`__
+* Sensor transdutor
+* Saída: 0.25 - 4.75V (2.5Vref)
+* Temperatura operacional: -40°C - 70°C
+* Precisão CH1 @ 25 Deg C: 15%(0A),0,7%(25A),1,3%(75A)
+* Precisão CH2 @ 25 Deg C: 3%(0A),9%(500A),15%(900A),20%(1000A)
+* Tensão de operação: 5 VDC
+
+
+
+Uso
+-----
+
+Falar sobre a implementação no Cheetah aqui
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+
+
+Objetivo
+------------
+O objetivo deste sensor é identificar a corrente positiva, funcionando com um transdutor que,quando sob a aplicação de um campo magnético,
+responde com uma variação em sua tensão de saída.Esta variação de corrente fornecida pela bateria induz um campo magnético, que  induz corrente
+no sensor hall.
+
 
 Temperatura - Freios
 ======================
