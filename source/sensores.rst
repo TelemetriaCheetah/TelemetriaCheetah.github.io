@@ -16,6 +16,42 @@ a extração dos arquivos que devem ser baixados nos links abaixo para a pasta A
 * `DallasTemperature <https://blogmasterwalkershop.com.br/arquivos/libs/DallasTemperature.zip>`_
 * `Adafruit-MLX90614 <https://github.com/adafruit/Adafruit-MLX90614-Library/tree/1.1.1>`_
 
+
+Acelerômetro e Giroscópio
+==========================
+
+Descrição
+------------
+
+Nesse módulo GY-521 você tem em uma mesma placa um acelerômetro e um giroscópio de alta precisão, tudo isso controlado por um 
+único CI, o MPU-6050. São 3 eixos para o acelerômetro e 3 eixos para o giroscópio, sendo ao todo 6 graus de liberdade (6DOF). 
+Além disso esta placa tem um sensor de temperatura embutido no CI, permitindo medições entre -40 e +85 ºC. Possui alta precisão
+devido ao conversor analógico digital de 16-bits para cada canal. Portanto o sensor captura os canais X, Y e Z ao mesmo tempo. 
+Essa placa utiliza o protocolo I2C para transmissão de dados.
+
+**Especificações e características**
+
+* `Datasheet <https://cdn.awsli.com.br/945/945993/arquivos/MPU-6050_DataSheet_V3%204.pdf>`__
+* Tensão de Operação: 3-5V
+* Conversor AD 16 bits
+* Faixa do Giroscópio: ±250, 500, 1000, 2000°/s
+* Faixa do Acelerômetro: ±2, ±4, ±8, ±16g
+* Dimensões: 20 x 16 x 2 mm
+
+Uso
+-----
+
+A comunicação com o microcontrolador usa a interface I2C, por meio dos pinos SCL e SDA do sensor. Nos pinos XDA e XCL você pode 
+ligar outros dispositivos I2C. A alimentação do módulo pode variar entre 3 e 5v, mas para melhores resultados e precisão recomenda-se 
+utilizar 5v.
+
+Objetivo
+------------
+
+Utilizamos o giroscópio para o monitoramento da orientação, direção, movimentação angular e rotação do veículo. 
+O acelerômetro terá a finalidade de medir a aceleração, ângulo de inclinação, rotação, vibração, colisão e gravidade do veículo. 
+
+
 Temperatura - Dutos de ar
 ==========================
 
@@ -178,7 +214,7 @@ Descrição
 
 * `Datasheet <https://www.sense.com.br/produtos/detalhes/10398/por/1/1/sensores/sensores-indutivos-tubulares-standard/PS2-12GI50-E2-Ex>`__
 * Tensão de alimentação: 10 a 30Vcc
-* Ripple: ±12 %
+* Ripple: ±10 %
 * Corrente de consumo: <10 mA
 * Diâmetro: 	M12
 * Distancia sensora: 2 mm
