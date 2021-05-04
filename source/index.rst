@@ -12,4 +12,5 @@ Bem vindo à Wiki do Cheetah E-Racing!
     intro
     sensores
     supervisorio
+    micro
     manual
