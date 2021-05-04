@@ -248,11 +248,7 @@ var Search = {
       // results left, load the summary and display it
       if (results.length) {
         var item = results.pop();
-<<<<<<< HEAD
         var listItem = $('<li style="display:none"></li>');
-=======
-        var listItem = $('<li></li>');
->>>>>>> 8457f191d8528fea70df61c36ca2b830df09bcfa
         var requestUrl = "";
         var linkUrl = "";
         if (DOCUMENTATION_OPTIONS.BUILDER === 'dirhtml') {
@@ -277,9 +273,9 @@ var Search = {
         if (item[3]) {
           listItem.append($('<span> (' + item[3] + ')</span>'));
           Search.output.append(listItem);
-          setTimeout(function() {
+          listItem.slideDown(5, function() {
             displayNextItem();
-          }, 5);
+          });
         } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
           $.ajax({url: requestUrl,
                   dataType: "text",
@@ -289,16 +285,16 @@ var Search = {
                       listItem.append(Search.makeSearchSummary(data, searchterms, hlterms));
                     }
                     Search.output.append(listItem);
-                    setTimeout(function() {
+                    listItem.slideDown(5, function() {
                       displayNextItem();
-                    }, 5);
+                    });
                   }});
         } else {
           // no source available, just display title
           Search.output.append(listItem);
-          setTimeout(function() {
+          listItem.slideDown(5, function() {
             displayNextItem();
-          }, 5);
+          });
         }
       }
       // search finished, update title and status message
@@ -384,13 +380,6 @@ var Search = {
   },
 
   /**
-   * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
-   */
-  escapeRegExp : function(string) {
-    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
-  },
-
-  /**
    * search for full-text terms in the index
    */
   performTermsSearch : function(searchterms, excluded, terms, titleterms) {
@@ -413,23 +402,13 @@ var Search = {
       ];
       // add support for partial matches
       if (word.length > 2) {
-<<<<<<< HEAD
         for (var w in terms) {
           if (w.match(word) && !terms[word]) {
-=======
-        var word_regex = this.escapeRegExp(word);
-        for (var w in terms) {
-          if (w.match(word_regex) && !terms[word]) {
->>>>>>> 8457f191d8528fea70df61c36ca2b830df09bcfa
             _o.push({files: terms[w], score: Scorer.partialTerm})
           }
         }
         for (var w in titleterms) {
-<<<<<<< HEAD
           if (w.match(word) && !titleterms[word]) {
-=======
-          if (w.match(word_regex) && !titleterms[word]) {
->>>>>>> 8457f191d8528fea70df61c36ca2b830df09bcfa
               _o.push({files: titleterms[w], score: Scorer.partialTitle})
           }
         }
