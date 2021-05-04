@@ -42,32 +42,7 @@ Falar sobre a implementação no Cheetah aqui
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  #include <OneWire.h> //INCLUSÃO DE BIBLIOTECA
-  #include <DallasTemperature.h> //INCLUSÃO DE BIBLIOTECA
-
-  #define DS18B20 7 //DEFINE O PINO DIGITAL UTILIZADO PELO SENSOR
-
-  OneWire ourWire(DS18B20); //CONFIGURA UMA INSTÂNCIA ONEWIRE PARA SE COMUNICAR COM O SENSOR
-  DallasTemperature sensors(&ourWire); //BIBLIOTECA DallasTemperature UTILIZA A OneWire
-
-  void setup()
-  {
-    Serial.begin(9600); //INICIALIZA A SERIAL
-    sensors.begin(); //INICIA O SENSOR
-    delay(1000); //INTERVALO DE 1 SEGUNDO
-  }
-
-  void loop()
-  {
-    sensors.requestTemperatures();//SOLICITA QUE A FUNÇÃO INFORME A TEMPERATURA DO SENSOR
-    Serial.print("Temperatura: "); //IMPRIME O TEXTO NA SERIAL
-    Serial.print(sensors.getTempCByIndex(0)); //IMPRIME NA SERIAL O VALOR DE TEMPERATURA MEDIDO
-    Serial.println("*C"); //IMPRIME O TEXTO NA SERIAL
-    delay(250);//INTERVALO DE 250 MILISSEGUNDOS
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/temperatura-ar.cpp>`__
 
 Objetivo
 ------------
@@ -851,6 +826,62 @@ Código de teste (Arduino IDE)
     delay(2);
   }
 
+Strain Gauge
+==========================
+
+Descrição
+------------
+
+O extensômetro ou strain gauge é um sensor colocado na superfície de uma peça, responsável por medir a deformação diante da aplicação de um carregamento.
+Essa técnica é muito utilizada para a verificação dos níveis de tensão atuante diante da condição de operação de um equipamento ou máquina. A resistência
+elétrica de um strain gauge varia proporcionalmente com o valor da deformação do corpo de prova. Esse sensor é formado por um fio muito fino ou, mais
+comumente, por folhas metálicas dispostas em um padrão de grade. O padrão de grade maximiza a extensão dos fios ou folhas metálicas sujeitas à deformação
+na direção paralela. A grade é colada a um suporte fino, denominado base, que é fixado diretamente no corpo de prova. Dessa forma, a deformação sofrida
+pelo corpo de prova é transferida diretamente ao strain gauge, que responde com uma variação linear de sua resistência elétrica
+
+Foto
+------------
+
+.. image:: images/strain1.jpg
+  :align: center
+  :width: 300px
+
+**Especificações e características**
+
+  Não definido ainda - aguardando estruturas
+
+* `N/A <asd>`__
+
+Uso
+-----
+
+O strain gauge é usado para validar as cargas nos componentes desenvolvidos pela subequipe de estruturas.
+
+Funcionamento
+---------------
+
+Definição
++++++++++++++
+
+As alterações físicas experimentadas por um material devido à aplicação de uma força são denominadas deformação. A deformação é a relação
+entre a variação de comprimento de um material com relação ao seu comprimento original, antes de ter sido afetado . A deformação pode ser positiva
+(tração) ou negativa (compressão).
+
+Tipos de deformação
++++++++++++++++++++++
+
+Existem 4 tipos de deformação: axial, de flexão, de cisalhamento e de torção. A deformação axial mede o alongamento ou a compressão de um material resultante de uma força linear na direção
+longitudinal. A deformação por flexão mede a deformação de um lado do material e a contração de seu lado oposto, provocadas por uma força linear aplicada na direção transversal. A deformação
+por cisalhamento mede o valor da deformação provocada por uma força linear que tem componentes nas direções horizontal e vertical. A deformação de torção mede uma força circular que tem
+componentes nas direções horizontal e vertical.
+
+Código de teste (Arduino IDE)
+--------------------------------
+
+.. code-block:: c++
+  :linenos:
+
+  sad
 
 
 
@@ -870,3 +901,4 @@ Referências
 * https://www.arduinoecia.com.br/sensor-de-temperatura-mlx90614-arduino/
 * https://www.filipeflop.com/produto/sensor-de-temperatura-ir-mlx90614/
 * https://www.filipeflop.com/blog/relogio-rtc-ds1307-arduino/
+* https://ensus.com.br/extensometria-strain-gauge-o-que-e-quando-utilizar/
