@@ -87,9 +87,7 @@ Falar sobre a implementação no Cheetah aqui
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/hall.cpp>`__
 
 
 Objetivo
@@ -133,43 +131,7 @@ Falar sobre a implementação no Cheetah aqui
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  //Programa: Sensor de temperatura I2C MLX90614 Arduino
-  //Autor: Arduino e Cia
-  #include <Wire.h>
-  #include <Adafruit_MLX90614.h>
-  Adafruit_MLX90614 mlx = Adafruit_MLX90614();
-  //Define o endereco I2C do display e qtde de colunas e linhas
-  LiquidCrystal_I2C lcd(0x3B, 16, 2);
-  //Array que desenha o simbolo de grau
-  byte grau[8] = {B00110, B01001, B01001, B00110,
-                  B00000, B00000, B00000, B00000,};
-  double temp_amb;
-  double temp_obj;
-  void setup()
-  {
-    Serial.begin(9600);
-    Serial.println("Sensor de temperatura MLX90614");
-    //Inicializa o MLX90614
-    mlx.begin();
-  }
-  void loop()
-  {
-    //Leitura da temperatura ambiente e do objeto
-    //(para leitura dos valores em Fahrenheit, utilize
-    //mlx.readAmbientTempF() e mlx.readObjectTempF() )
-    temp_amb = mlx.readAmbientTempC();
-    temp_obj = mlx.readObjectTempC();
-    //Mostra as informacoes no Serial Monitor
-    Serial.print("Ambiente = ");
-    Serial.print(temp_amb);
-    Serial.print("*CtObjeto = ");
-    Serial.print(temp_obj); Serial.println("*C");
-    //Aguarda 1 segundo ate nova leitura
-    delay(1000);
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/temperatura-freio.cpp>`__
 
 Objetivo
 ------------
@@ -218,61 +180,7 @@ Mas no programa usamos a velocidade a partir de funções de tempo.
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-    /*
-    Analog input, analog output, serial output
-
-    Reads an analog input pin, maps the result to a range from 0 to 255 and uses
-    the result to set the pulse width modulation (PWM) of an output pin.
-    Also prints the results to the Serial Monitor.
-
-    The circuit:
-    - potentiometer connected to analog pin 0.
-      Center pin of the potentiometer goes to the analog pin.
-      side pins of the potentiometer go to +5V and ground
-    - LED connected from digital pin 9 to ground
-
-    created 29 Dec. 2008
-    modified 9 Apr 2012
-    by Tom Igoe
-
-    This example code is in the public domain.
-
-    http://www.arduino.cc/en/Tutorial/AnalogInOutSerial
-  */
-
-  // These constants won't change. They're used to give names to the pins used:
-  const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
-  const int analogOutPin = 9; // Analog output pin that the LED is attached to
-
-  int sensorValue = 0;        // value read from the pot
-  int outputValue = 0;        // value output to the PWM (analog out)
-
-  void setup() {
-    // initialize serial communications at 9600 bps:
-    Serial.begin(9600);
-  }
-
-  void loop() {
-    // read the analog in value:
-    sensorValue = analogRead(analogInPin);
-    // map it to the range of the analog out:
-    outputValue = map(sensorValue, 0, 1023, 0, 255);
-    // change the analog out value:
-    analogWrite(analogOutPin, outputValue);
-
-    // print the results to the Serial Monitor:
-    Serial.print("sensor = ");
-    Serial.print(sensorValue);
-    Serial.print("\t output = ");
-    Serial.println(outputValue);
-
-    // wait 2 milliseconds before the next loop for the analog-to-digital
-    // converter to settle after the last reading:
-    delay(2);
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/indutivo.cpp>`__
 
 Objetivo
 ------------
@@ -304,51 +212,7 @@ Uso
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  //Programa : Relogio com modulo RTC DS1307
-  //Autor : FILIPEFLOP
-
-  //Carrega a biblioteca do RTC DS1307
-  #include <DS1307.h>
-
-  //Modulo RTC DS1307 ligado as portas A4 e A5 do Arduino
-  DS1307 rtc(A4, A5);
-
-  void setup()
-  {
-    //Aciona o relogio
-    rtc.halt(false);
-
-    //As linhas abaixo setam a data e hora do modulo
-    //e podem ser comentada apos a primeira utilizacao
-    rtc.setDOW(FRIDAY);      //Define o dia da semana
-    rtc.setTime(20, 37, 0);     //Define o horario
-    rtc.setDate(6, 6, 2014);   //Define o dia, mes e ano
-
-    //Definicoes do pino SQW/Out
-    rtc.setSQWRate(SQW_RATE_1);
-    rtc.enableSQW(true);
-
-    Serial.begin(9600);
-  }
-
-  void loop()
-  {
-    //Mostra as informações no Serial Monitor
-    Serial.print("Hora : ");
-    Serial.print(rtc.getTimeStr());
-    Serial.print(" ");
-    Serial.print("Data : ");
-    Serial.print(rtc.getDateStr(FORMAT_SHORT));
-    Serial.print(" ");
-    Serial.println(rtc.getDOWStr(FORMAT_SHORT));
-
-    //Aguarda 1 segundo e repete o processo
-    delay (1000);
-  }
-
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/rtc.cpp>`__
 
 Objetivo
 ------------
@@ -396,103 +260,7 @@ Uso
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  // Programa : Teste Giroscopio L3G4200D
-  // Adaptacoes : Arduino e Cia
-  #include <Wire.h>
-  #define CTRL_REG1 0x20
-  #define CTRL_REG2 0x21
-  #define CTRL_REG3 0x22
-  #define CTRL_REG4 0x23
-  #define CTRL_REG5 0x24
-  //Endereco I2C do L3G4200D
-  int L3G4200D_Address = 105;
-  int x;
-  int y;
-  int z;
-  void setup()
-  {
-    Wire.begin();
-    Serial.begin(9600);
-    Serial.println("Inicializando o L3G4200D");
-    // Configura o L3G4200 para 200, 500 ou 2000 graus/seg
-    setupL3G4200D(2000);
-    // Aguarda a resposta do sensor
-    delay(1500);
-  }
-  void loop()
-  {
-    // Atualiza os valores de X, Y e Z
-    getGyroValues();
-    // Mostra os valores no serial monitor
-    Serial.print("X:");
-    Serial.print(x);
-    Serial.print(" Y:");
-    Serial.print(y);
-    Serial.print(" Z:");
-    Serial.println(z);
-    // Aguarda 100ms e reinicia o processo
-    delay(100);
-  }
-  void getGyroValues()
-  {
-    // Rotina para leitura dos valores de X, Y e Z
-    byte xMSB = readRegister(L3G4200D_Address, 0x29);
-    byte xLSB = readRegister(L3G4200D_Address, 0x28);
-    x = ((xMSB << 8) | xLSB);
-    byte yMSB = readRegister(L3G4200D_Address, 0x2B);
-    byte yLSB = readRegister(L3G4200D_Address, 0x2A);
-    y = ((yMSB << 8) | yLSB);
-    byte zMSB = readRegister(L3G4200D_Address, 0x2D);
-    byte zLSB = readRegister(L3G4200D_Address, 0x2C);
-    z = ((zMSB << 8) | zLSB);
-  }
-  int setupL3G4200D(int scale)
-  {
-    //From  Jim Lindblom of Sparkfun's code
-    // Enable x, y, z and turn off power down:
-    writeRegister(L3G4200D_Address, CTRL_REG1, 0b00001111);
-    // If you'd like to adjust/use the HPF, you can edit the line below to configure CTRL_REG2:
-    writeRegister(L3G4200D_Address, CTRL_REG2, 0b00000000);
-    // Configure CTRL_REG3 to generate data ready interrupt on INT2
-    // No interrupts used on INT1, if you'd like to configure INT1
-    // or INT2 otherwise, consult the datasheet:
-    writeRegister(L3G4200D_Address, CTRL_REG3, 0b00001000);
-    // CTRL_REG4 controls the full-scale range, among other things:
-    if(scale == 250){
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00000000);
-    }else if(scale == 500){
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00010000);
-    }else{
-      writeRegister(L3G4200D_Address, CTRL_REG4, 0b00110000);
-    }
-    // CTRL_REG5 controls high-pass filtering of outputs, use it
-    // if you'd like:
-    writeRegister(L3G4200D_Address, CTRL_REG5, 0b00000000);
-  }
-  void writeRegister(int deviceAddress, byte address, byte val)
-  {
-      Wire.beginTransmission(deviceAddress); // start transmission to device
-      Wire.write(address);       // send register address
-      Wire.write(val);         // send value to write
-      Wire.endTransmission();     // end transmission
-  }
-  int readRegister(int deviceAddress, byte address)
-  {
-      int v;
-      Wire.beginTransmission(deviceAddress);
-      Wire.write(address); // register to read
-      Wire.endTransmission();
-      Wire.requestFrom(deviceAddress, 1); // read a byte
-      while(!Wire.available())
-      {
-          // waiting
-      }
-      v = Wire.read();
-      return v;
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/imu.cpp>`__
 
 Objetivo
 ------------
@@ -526,8 +294,7 @@ Pinos utilizados são: Vcc 5V ; GND; SCL; SDA.
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/lcd.cpp>`__
 
 Objetivo
 ------------
@@ -566,50 +333,7 @@ Ele funciona com VCC de 5v, GND e Sinal, pode-se saber o valor da pressão usand
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  //Biblioteca
-  //.h
-  #ifndef PRESSAOFREIOS_H	//Verificar a existencia de outra biblioteca com esse nome
-  #define PRESSAOFREIOS_H	//Definir o nome da biblioteca como "PressaoFreios"
-  #include "Arduino.h" //Incluir biblioteca do arduino para ser ultilizada
-  #include "math.h"
-
-  class TesteFreios{
-
-    private:
-      int _PIN;	//Objeto criado (Sensor de Pressao de Freios)
-      float map(float x, float min, float max, float out_min, float out_max);
-
-    public:
-	    TesteFreios();	//Criação do objeto
-	    TesteFreios(int);	//Criação do objeto com parametros
-
-	    float getPress(); //Função para calcular a pressao
-	    int getAnalog();
-  };
-  #endif
-  //.cpp
-  #include "PressaoFreios.h"
-
-  TesteFreios::TesteFreios(int PIN) { //recebendo informações da biblioteca TesteFreios.h
-   _PIN = PIN;
-    pinMode (_PIN, INPUT);	//Inicio do sinal _PIN como INPUT
-  }
-
-  float TesteFreios::map(float x, float min, float max, float out_min, float out_max) {
-	  return (x - min) * (out_max - out_min) / (max - min) + out_min;
-  }
-  float TesteFreios::getPress(){
-	  float getPress = map((float)analogRead(_PIN), 102.3, 920.7, 0.0, 80.0);
-	  getPress = constrain(getPress, 0.0, 80.0);
-		return getPress;
-	}
-
-  int TesteFreios::getAnalog(){
-    return analogRead(_PIN);
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/pressao-freio.cpp>`__
 
 Objetivo
 ------------
@@ -638,8 +362,8 @@ Uso
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/celula-carga.cpp>`__
+
 
 Objetivo
 ------------
@@ -670,8 +394,7 @@ Pinos utilizados são: Vcc 5V; GND; MOSI; MISO; SCLK; CS(SS). Cada microcontrola
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/cartao-sd.cpp>`__
 
 Objetivo
 ------------
@@ -703,15 +426,15 @@ Para a melhor recepção do sinal no modulo, se utiliza uma antena externa. Por�
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/gps.cpp>`__
+
 
 Objetivo
 ------------
 
 O GPS fornece diversos dados para serem coletados, o modulo é um receptor de dados do NMEA. Podemos obter o tempo(ano,  mês, dia, hora, minuto e segundo). Além da localização(latitude, longitude, altitude e ângulo), em que podemos mapear o percurso do veiculo. Também é medido a velocidade  em knots.
 
-Encolder
+Encoder
 ==========================
 
 Descrição
@@ -731,8 +454,8 @@ Uso
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/encoder.cpp>`__
+
 
 Objetivo
 ------------
@@ -770,61 +493,7 @@ O TPS envia as informações para um microcontrolador, e tem o sinal convertido 
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  /*
-  Analog input, analog output, serial output
-
-  Reads an analog input pin, maps the result to a range from 0 to 255 and uses
-  the result to set the pulse width modulation (PWM) of an output pin.
-  Also prints the results to the Serial Monitor.
-
-  The circuit:
-  - potentiometer connected to analog pin 0.
-    Center pin of the potentiometer goes to the analog pin.
-    side pins of the potentiometer go to +5V and ground
-  - LED connected from digital pin 9 to ground
-
-  created 29 Dec. 2008
-  modified 9 Apr 2012
-  by Tom Igoe
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/AnalogInOutSerial
-  */
-
-  // These constants won't change. They're used to give names to the pins used:
-  const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
-  const int analogOutPin = 9; // Analog output pin that the LED is attached to
-
-  int sensorValue = 0;        // value read from the pot
-  int outputValue = 0;        // value output to the PWM (analog out)
-
-  void setup() {
-    // initialize serial communications at 9600 bps:
-    Serial.begin(9600);
-  }
-
-  void loop() {
-    // read the analog in value:
-    sensorValue = analogRead(analogInPin);
-    // map it to the range of the analog out:
-    outputValue = map(sensorValue, 0, 1023, 0, 255);
-    // change the analog out value:
-    analogWrite(analogOutPin, outputValue);
-
-    // print the results to the Serial Monitor:
-    Serial.print("sensor = ");
-    Serial.print(sensorValue);
-    Serial.print("\t output = ");
-    Serial.println(outputValue);
-
-    // wait 2 milliseconds before the next loop for the analog-to-digital
-    // converter to settle after the last reading:
-    delay(2);
-  }
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/tps.cpp>`__
 
 Strain Gauge
 ==========================
@@ -878,11 +547,7 @@ componentes nas direções horizontal e vertical.
 Código de teste (Arduino IDE)
 --------------------------------
 
-.. code-block:: c++
-  :linenos:
-
-  sad
-
+`Acessar fonte <https://github.com/caiotbc/TelemetriaCheetah.github.io/tree/main/source/src/strain.cpp>`__
 
 
 Diagrama de conexões
