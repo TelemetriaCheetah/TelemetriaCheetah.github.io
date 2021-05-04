@@ -31,7 +31,6 @@ author = 'Caio Tacito'
 # ones.
 extensions = [
     "sphinx_rtd_theme"
-    
 ]
 
 
