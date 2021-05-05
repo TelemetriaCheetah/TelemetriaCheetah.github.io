@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 
 project = 'Wiki Cheetah'
 copyright = '2021, Cheetah E-Racing'
-author = 'Caio Tacito'
+author = 'Caio Tácito, Henrique Vale, Nicolas Ribeiro e Vitor Jun'
 
 
 # -- General configuration ---------------------------------------------------
