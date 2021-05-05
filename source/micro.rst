@@ -14,3 +14,7 @@ Teste para validação da comunicação CAN entre os microcontroladores e transc
 * **Autor:** Caio Tácito Borges da Costa
 * **Relatório:** :download:`Baixar relatório em PDF </docs/teste_can.pdf>`
 * **Código Fonte:** :download:`Baixar código fonte em ZIP </docs/src.zip>`
+
+STM32
+================
+Em construção - biblioteca stm32
