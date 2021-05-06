@@ -73,3 +73,5 @@ Teste para validação da comunicação CAN entre os microcontroladores e transc
 
 Referências
 ==================
+
+NASCIMENTO, Lucas de Camargo. PROTOCOLO DE COMUNICAÇÃO CAN E SUAS APLICAÇÕES NA INDÚSTRIA AUTOMOBILÍSTICA. Orientador: André Luís Faustino da Silva. 2006. TCC (Engenharia Elétrica - Graduação) - Universidade São Francisco de Itatiba - SP, [S. l.], 2006.
