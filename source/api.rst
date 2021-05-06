@@ -102,3 +102,41 @@ Inicia uma rotina de calibração e teste da célula de carga conectada.
 .. cpp:function:: uint16_t readCellValue()
 
 Retorna o valor com tara lido da célula de carga.
+
+
+Cheetah (stm32)
+=======================
+
+A biblioteca Cheetah para stm32 será utilizada nos microcontroladores stm32 encontrados nas placas de
+conjunto de rodas e dos pedais do piloto. É composta por funções de comunicação CAN e de interface com
+um sensor de temperatura I²C.
+
+CheetahCANstm32
+++++++++++++++++++
+
+.. c:function:: void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *CanHandle)
+
+Essa função configura as ações que ocorrem quando uma mensagem CAN é detectada na interrupção CANRX0.
+
+.. cpp:var:: uint8_t TxData[8]
+
+Buffer de transmissão CAN
+
+.. cpp:var:: uint8_t RxData[8]
+
+Buffer de recepção CAN
+
+.. cpp:var:: CAN_TxHeaderTypeDef   TxHeader
+
+Configuração de envio de mensagens CAN.
+
+.. cpp:var:: CAN_RxHeaderTypeDef   RxHeader
+
+Configuração de recepção de mensagens CAN.
+
+MLX90614
+++++++++++++++++++
+
+.. cpp:var:: uint16_t MLX90614_ReadTemp(uint8_t devAddr, uint8_t regAddr) 
+
+Retorna a temperatura atual lida pelo sensor MLX90614
