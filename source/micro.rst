@@ -56,10 +56,6 @@ ao grupo de protocolos “in-bit-response”. Em seguida vem o bit delimitador q
 Entre  dois  quadros  o barramento deve permanecer no mínimo três bits recessivos. Se nenhum nó quiser mais transmitir, o barramento permanece no estado de repouso (Bus Idle). 
 
 
-.. cpp:type:: MyType
-
-      Some type
-
 Testes
 =========================
 
