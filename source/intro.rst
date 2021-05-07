@@ -428,6 +428,11 @@ A tabela abaixo lista todos os sensores registrados:
     - Cebolinha
     - Saída do cebolinha
     - Circuito de segurança
+  * - SA77
+    - POST
+    - Estado do self test
+    - Circuito de segurança
+
 
 Comunicação CAN
 ====================
@@ -490,7 +495,7 @@ Comunicação CAN
     - Circuito de Segurança
     - Cebolinha (SA74)
     - Sensor Hall (SA75)
-    - N/A
+    - Estado do Self Test (SA77)
     - N/A
   * - 0x08
     - BMS
