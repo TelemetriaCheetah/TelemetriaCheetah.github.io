@@ -448,38 +448,38 @@ Comunicação CAN
     - TPS 1 (SA1)
     - TPS 2 (SA2)
     - BSE (SA3)
-    - -
+    - N/A
 
   * - 0x01
     - Roda Frontal Esquerda
     - Temperatura Roda (SA10)
     - Temperatura Roda (SA11)
     - Rotação (SA5)
-    - -
+    - N/A
   * - 0x02
     - Roda Frontal Direita
     - Temperatura Roda (SA8)
     - Temperatura Roda (SA9)
     - Rotação (SA4)
-    - -
+    - N/A
   * - 0x03
     - Roda Traseira Esquerda
     - Temperatura Roda (SA14)
     - Temperatura Roda (SA15)
     - Rotação (SA7)
-    - -
+    - N/A
   * - 0x04
     - Roda Traseira Direita
     - Temperatura Roda (SA12)
     - Temperatura Roda (SA13)
     - Rotação (SA6)
-    - -
+    - N/A
   * - 0x05
     - Telemetria Frontal
     - SD1 + SD2 + SD17
     - Volante (SA16)
     - Cebolinha Frontal (SA76)
-    - -
+    - N/A
   * - 0x06
     - Circuito de Segurança
     - SD3 ... SD10
@@ -490,8 +490,8 @@ Comunicação CAN
     - Circuito de Segurança
     - Cebolinha (SA74)
     - Sensor Hall (SA75)
-    - -
-    - -
+    - N/A
+    - N/A
   * - 0x08
     - BMS
     - Corrente (SA31)
@@ -550,8 +550,140 @@ Comunicação CAN
     - Inversor
     - Falha Atual (SA68)
     - Falha Anterior (SA69)
-    - -
-    - -
+    - N/A
+    - N/A
+
+Placas
+=============================
+
+Descrição em construção! - Lembrar de adicionar (caiotbc)
+
+.. list-table::
+  :widths: 1 1 1 1
+  :header-rows: 1
+
+  * - Código
+    - Nome
+    - Descrição
+    - Micro
+  * - TEL01
+    - Telemetria traseira
+    - Placa de aquisição principal
+    - ESP32
+  * - TEL02
+    - Telemetria frontal
+    - Placa de aquisição frontal
+    - ESP32
+  * - TEL03
+    - Placa TPS
+    - Coleta de dados dos TPS e BSE
+    - STM32F103C8T6
+  * - TEL04
+    - Conjunto de Rodas 1
+    - Sensores da roda frontal esquerda
+    - STM32F103C8T6
+  * - TEL05
+    - Conjunto de Rodas 2
+    - Sensores da roda frontal direita
+    - STM32F103C8T6
+  * - TEL06
+    - Conjunto de Rodas 3
+    - Sensores da roda traseira esquerda
+    - STM32F103C8T6
+  * - TEL07
+    - Conjunto de Rodas 4
+    - Sensores da roda traseira direita
+    - STM32F103C8T6
+  * - TEL08
+    - Isolação inversor
+    - Placa de isolação do inversor
+    - STM32F103C8T6
+  
+
+Características elétricas
+=============================
+
+A tabela abaixo detalha o consumo elétrico dos sensores e placas do subsistema de telemetria:
+
+.. list-table:: Placas
+  :widths: 1 1 1 1 1
+  :header-rows: 1
+
+  * - Placa
+    - Localização 
+    - Tensão de alimentação 
+    - Corrente nominal 
+    - Potência nominal 
+  * - TEL01 - Telemetria traseira
+    - Caixa de tele traseira
+    - 12V
+    - 1 A * EM ESTUDO 
+    - 12W
+  * - TEL02 - Telemetria frontal
+    - Atrás do painel
+    - 12V
+    - 1 A * EM ESTUDO 
+    - 12 W
+  * - TEL03 - TPS
+    - Perto dos pedais
+    - 5V
+    - 200 mA
+    - 1 W
+  * - TEL04 a TEL 07 - Rodas
+    - Na manga
+    - 5V
+    - 200 mA
+    - 1 W
+  * - TEL08 - Isolação inversor
+    - Caixa de isolação
+    - 12V
+    - 300 mA
+    - 3,6 W
+    
+.. list-table:: Sensores
+  :widths: 1 1 1 1 1
+  :header-rows: 1
+
+  * - Sensor
+    - Placa
+    - Tensão de alimentação 
+    - Corrente nominal 
+    - Potência nominal 
+  * - SA76 - Cebolinha frontal
+    - TEL02 - Telemetria frontal
+    - 5V
+    - 20 mA
+    - 100 mW
+  * - SA74 - Cebolinha traseiro
+    - Circuito de segurança
+    - 5V
+    - 20 mA
+    - 100 mW
+  * - SA1 - TPS 1
+    - TEL03 - TPS
+    - 5V
+    - Não tem , estimado 20mA
+    - 100 mW
+  * - SA2 - TPS 2
+    - TEL03 - TPS
+    - 5V
+    - Não tem , estimado 20mA
+    - 100 mW
+  * - SA3 - BSE
+    - TEL03 - TPS
+    - 5V
+    - Não tem , estimado 20mA
+    - 100 mW
+  * - SA70 - Hall GLV
+    - TEL01 - Telemetria traseira
+    - 5V
+    - 15 mA
+    - 75 mW
+  * - SA16 - Encoder volante
+    - TEL02 - Telemetria frontal
+    - 5V
+    - 5 mA
+    - 25 mW
 
 Diagrama de blocos
 ==========================

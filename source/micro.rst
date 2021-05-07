@@ -120,9 +120,7 @@ Teste para validação da comunicação CAN entre os microcontroladores e o BMS 
       serial.sendPayload();
     }
   }
-
-
-
+  
 
 Referências
 ==================
