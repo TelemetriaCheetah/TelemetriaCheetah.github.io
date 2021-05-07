@@ -573,28 +573,24 @@ Descrição em construção! - Lembrar de adicionar (caiotbc)
   * - TEL02
     - Telemetria frontal
     - Placa de aquisição frontal
-    - ESP32
+    - ESP32 e STM32F103C8T6
   * - TEL03
-    - Placa TPS
-    - Coleta de dados dos TPS e BSE
-    - STM32F103C8T6
-  * - TEL04
     - Conjunto de Rodas 1
     - Sensores da roda frontal esquerda
     - STM32F103C8T6
-  * - TEL05
+  * - TEL04
     - Conjunto de Rodas 2
     - Sensores da roda frontal direita
     - STM32F103C8T6
-  * - TEL06
+  * - TEL05
     - Conjunto de Rodas 3
     - Sensores da roda traseira esquerda
     - STM32F103C8T6
-  * - TEL07
+  * - TEL06
     - Conjunto de Rodas 4
     - Sensores da roda traseira direita
     - STM32F103C8T6
-  * - TEL08
+  * - TEL07
     - Isolação inversor
     - Placa de isolação do inversor
     - STM32F103C8T6
@@ -624,17 +620,12 @@ A tabela abaixo detalha o consumo elétrico dos sensores e placas do subsistema 
     - 12V
     - 1 A * EM ESTUDO 
     - 12 W
-  * - TEL03 - TPS
-    - Perto dos pedais
-    - 5V
-    - 200 mA
-    - 1 W
-  * - TEL04 a TEL 07 - Rodas
+  * - TEL03 a TEL 06 - Rodas
     - Na manga
     - 5V
     - 200 mA
     - 1 W
-  * - TEL08 - Isolação inversor
+  * - TEL07 - Isolação inversor
     - Caixa de isolação
     - 12V
     - 300 mA
@@ -660,17 +651,17 @@ A tabela abaixo detalha o consumo elétrico dos sensores e placas do subsistema 
     - 20 mA
     - 100 mW
   * - SA1 - TPS 1
-    - TEL03 - TPS
+    - TEL02 - Telemetria frontal
     - 5V
     - Não tem , estimado 20mA
     - 100 mW
   * - SA2 - TPS 2
-    - TEL03 - TPS
+    - TEL02 - Telemetria frontal
     - 5V
     - Não tem , estimado 20mA
     - 100 mW
   * - SA3 - BSE
-    - TEL03 - TPS
+    - TEL02 - Telemetria frontal
     - 5V
     - Não tem , estimado 20mA
     - 100 mW
