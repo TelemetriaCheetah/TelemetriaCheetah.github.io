@@ -15,3 +15,4 @@ Bem vindo à Wiki do Cheetah E-Racing!
     micro
     api 
     manual
+    comunicacao
