@@ -17,6 +17,7 @@ Está é a forma da estrutura:
 
 .. image:: images/i2c.png
   :align: center
+  
 O barramento de comunicação I2C pode ser dividido em duas formas:
 ->SDA (Serial Data), o qual, é responsável pela troca de dados entre os dispositivos do arranjo
 ->SCL (Serial Clock), possui a função de sincronizar os dispositivos e garantir a confiabilidade do sistema.
