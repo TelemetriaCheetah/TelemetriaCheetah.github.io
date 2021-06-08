@@ -425,14 +425,21 @@ A tabela abaixo lista todos os sensores registrados:
     - Saída do sensor hall
     - Circuito de segurança
   * - SA76
-    - Cebolinha
-    - Saída do cebolinha
-    - Circuito de segurança
+    - Pressão de freios 2
+    - Pressão do cilindro mestre 1
+    - Telemetria
   * - SA77
     - POST
     - Estado do self test
     - Circuito de segurança
-
+  * - SA78
+    - Pressão de freios 3
+    - Pressão do cilindro mestre 2
+    - Telemetria
+  * - SA79
+    - Pressão de freios 4
+    - Pressão na linha de freios frontal
+    - Telemetria
 
 Comunicação CAN
 ====================
@@ -452,7 +459,7 @@ Comunicação CAN
     - TPS
     - TPS 1 (SA1)
     - TPS 2 (SA2)
-    - BSE (SA3)
+    - Pressão dos freios (SA78)
     - N/A
 
   * - 0x01
@@ -483,8 +490,8 @@ Comunicação CAN
     - Telemetria Frontal
     - SD1 + SD2 + SD17
     - Volante (SA16)
-    - Cebolinha Frontal (SA76)
-    - N/A
+    - Pressão de freios (SA76)
+    - Pressão de freios (SA78)
   * - 0x06
     - Circuito de Segurança
     - SD3 ... SD10
@@ -555,6 +562,12 @@ Comunicação CAN
     - Inversor
     - Falha Atual (SA68)
     - Falha Anterior (SA69)
+    - N/A
+    - N/A
+  * - 0x18
+    - Telemetria Frontal
+    - Pressão de freios (SA79)
+    - N/A
     - N/A
     - N/A
 
@@ -661,11 +674,6 @@ A tabela abaixo detalha o consumo elétrico dos sensores e placas do subsistema 
     - Não tem , estimado 20mA
     - 100 mW
   * - SA2 - TPS 2
-    - TEL02 - Telemetria frontal
-    - 5V
-    - Não tem , estimado 20mA
-    - 100 mW
-  * - SA3 - BSE
     - TEL02 - Telemetria frontal
     - 5V
     - Não tem , estimado 20mA
