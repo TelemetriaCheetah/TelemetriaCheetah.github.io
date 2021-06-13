@@ -456,10 +456,10 @@ Comunicação CAN
     - Mensagem 4
 
   * - 0x00
-    - TPS
+    - Telemetria Frontal
     - TPS 1 (SA1)
     - TPS 2 (SA2)
-    - Pressão dos freios (SA78)
+    - Pressão dos freios (SA76)
     - N/A
 
   * - 0x01
@@ -490,8 +490,8 @@ Comunicação CAN
     - Telemetria Frontal
     - SD1 + SD2 + SD17
     - Volante (SA16)
-    - Pressão de freios (SA76)
     - Pressão de freios (SA78)
+    - Pressão de freios (SA79)
   * - 0x06
     - Circuito de Segurança
     - SD3 ... SD10
@@ -562,12 +562,6 @@ Comunicação CAN
     - Inversor
     - Falha Atual (SA68)
     - Falha Anterior (SA69)
-    - N/A
-    - N/A
-  * - 0x18
-    - Telemetria Frontal
-    - Pressão de freios (SA79)
-    - N/A
     - N/A
     - N/A
 
