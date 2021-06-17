@@ -128,10 +128,6 @@ A tabela abaixo lista todos os sensores registrados:
     - Throttle Position Sensor
     - Porcentagem de atuação do pedal do acelerador
     - Powertrain
-  * - SA3
-    - Brake System Encoder
-    - Porcentagem de atuação do pedal de freio
-    - Powertrain
   * - SA4
     - Sensor reflexivo infravermelho
     - Rotação da roda frontal direita
