@@ -16,3 +16,4 @@ Bem vindo à Wiki do Cheetah E-Racing!
     api 
     manual
     comunicacao
+    tutoriais
