@@ -236,22 +236,43 @@ O App.jsx é o arquivo principal da interface, e desenha os componentes das barr
 Dashboard
 ----------------
 
+O Dashboard é a página de entrada da interface, e mostra apenas algumas informações num layout minimalista.
+
 .. image:: images/interface-web-dashboard.png
-  :width: 320
+  :width: 600
   :align: center
 
 
 Eletrônica
 ----------------------
 
+.. image:: images/interface-web-eletronica.png
+  :width: 600
+  :align: center
+
+
 Mecânica 
 ------------
+
+.. image:: images/interface-web-mecanica.png
+  :width: 600
+  :align: center
+
 
 Mapa
 ---------------
 
+.. image:: images/interface-web-mapa.png
+  :width: 600
+  :align: center
+
+
 Controle de Teste
 ----------------------
+
+.. image:: images/interface-web-teste.png
+  :width: 600
+  :align: center
 
 
 Display Painel
@@ -259,3 +280,7 @@ Display Painel
 
 Dashboard 
 ---------------
+
+.. image:: images/interface-tablet-dashboard.png
+  :width: 600
+  :align: center
