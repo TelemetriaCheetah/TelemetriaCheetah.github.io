@@ -560,6 +560,24 @@ Comunicação CAN
     - Falha Anterior (SA69)
     - N/A
     - N/A
+  * - 0x18
+    - SMS
+    - Pressão da célula (SB01)
+    - Tensão da célula (SB02)
+    - Corrente da célula (SB03)
+    - Temp da célula (SB04)
+  * - 0x19
+    - SMS
+    - Temp da célula (SB04)
+    - Temp da célula (SB05)
+    - Temp da célula (SB06)
+    - Temp da célula (SB07)
+  * - 0x20
+    - SMS
+    - Temp da célula (SB08)
+    - Temp da célula (SB09)
+    - Temp da célula (SB010)
+    - Temp da célula (SB011)
 
 Placas
 =============================
