@@ -1,6 +1,32 @@
-Tutoriais
-*****************
-    
+Gestão de Conhecimento
+************************
+
+Playlists de eletrônica
+============================
+
+* `Playlist 1 - Eletrônica Aplicada (assistir até aula 14 somente). <https://www.youtube.com/watch?v=0BosSTan8bI&list=PLxI8Can9yAHevRkQnSgviIgnzCH3Nss_Y&ab_channel=UNIVESP>`_
+* `Playlist 2 - All Electronics (assistir as aulas de 1 a 7 e a aula 13). <https://www.youtube.com/watch?v=-cXIfO1kJZw&list=PLQ4bYmp0mquJr08drIvwxmS9K7z86jf6Z&index=2&ab_channel=AllElectronics>`_
+* `Revisão circuito RC básico. <https://www.youtube.com/watch?v=tphxc6DoKZ4&ab_channel=MeSalva%21ENEM2021>`_
+
+Playlists de programação
+====================================
+
+A maior parte da programação embarcada utiliza a linguagem C aplicada a HAL do STM32. Conhecimento da linguagem C/C++ Arduino é útil para prototipagem rápida.
+O sistema supervisório é escrito utilizando javascript para o frontend e backend, portanto javascript é a linguagem que deve ser o foco dos estudos. Para
+a formatação do site é utilizado o framework React JS, e portanto é necessário possuir conhecimento dessa tecnologia também. Além disso,
+os dados coletados são armazenados em um banco de dados MySQL, e familiaridade com queries SQL é bastante útil. Seguem abaixo alguns links relevantes sobre os assuntos:
+
+* `URI Online Judge - para treinar algoritmos e básico de programação. <https://www.youtube.com/watch?v=tphxc6DoKZ4&ab_channel=MeSalva%21ENEM2021>`_
+* `JavaScript básico - documentação da Mozilla. <https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics>`_
+* `Curso javascript básico - youtube. <https://www.youtube.com/watch?v=vrSEt5J4q2Y&list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp>`_
+* `Introdução ao node.js - youtube. <https://www.youtube.com/watch?v=CjQMi8mv2Do>`_
+* `Introdução ao MySQL - youtube. <https://www.youtube.com/watch?v=BhJu05tUo-M>`_
+* `Introdução HTML5 e CSS - youtube. <https://www.youtube.com/watch?v=Em0R3csNMVE&list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R>`_
+* `Crash course de React js - youtube. <https://www.youtube.com/watch?v=w7ejDZ8SWv8>`_
+* `Crash course de C++ - youtube. <https://www.youtube.com/watch?v=1v_4dL8l8pQ>`_
+* `Playlist INSANA do Wr Kits de Arduino - youtube. <https://www.youtube.com/watch?v=S34PnG143sE&list=PLZ8dBTV2_5HSyOXhJ77d-iyt5Z_v_1DPM>`_
+* `Projetos e exemplos de STM32 HAL - deepbluembedded. <https://deepbluembedded.com/stm32-arm-programming-tutorials/>`_
+
 Git
 ===================
 O primeiro passo para trabalhar no sistema supervisório é obter o código. É possível baixar como um .zip no github
@@ -170,17 +196,3 @@ Windows
 
 No Windows, é possível baixar pacotes que incluem todas as ferramentas necessárias para rodar um servidor apache com MySQL/MariaDB e php
 em um único executável. Um exemplo recomendado é o WAMP (Windows Apache MySQL PHP) server, que pode ser baixado no link: https://www.wampserver.com/en/
-
-Tutoriais de programação
-====================================
-
-O sistema supervisório é escrito utilizando javascript para o frontend e backend, portanto javascript é a linguagem que deve ser o foco dos estudos. Para
-a formatação do site são utilizados HTML5 e CSS, e portanto é necessário possuir conhecimento dessas linguagens também. Além disso,
-os dados coletados são armazenados em um banco de dados MySQL, e familiaridade com queries SQL é bastante útil. Seguem abaixo alguns links relevantes sobre os assuntos:
-
-* https://www.urionlinejudge.com.br URI Online Judge - para treinar algoritmos e básico de programação
-* https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/JavaScript_basics JavaScript básico - documentação da Mozilla
-* https://www.youtube.com/watch?v=vrSEt5J4q2Y&list=PLbA-jMwv0cuWbas947cygrzfzHIc7esmp Curso javascript básico - youtube
-* https://www.youtube.com/watch?v=CjQMi8mv2Do Introdução ao node.js - youtube
-* https://www.youtube.com/watch?v=BhJu05tUo-M Introdução ao MySQL - youtube
-* https://www.youtube.com/watch?v=Em0R3csNMVE&list=PLhkO7OMKgT_p3VoB47VHdLGpYTzxYTv8R Introdução HTML5 e CSS - youtube
