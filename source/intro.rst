@@ -1,7 +1,7 @@
 Introdução
 ************************
 
-O sistema de telemetria do CE-21 é projetado para receber, interpretar e visualizar dados diagnósticos do veículo da equipe durante os testes e competições.
+O sistema de telemetria do CE-21 TESTE é projetado para receber, interpretar e visualizar dados diagnósticos do veículo da equipe durante os testes e competições.
 O hardware é composto por 6 placas de circuito:
 
 #. **Telemetria frontal:** Montada no painel do carro. É responsável por coletar dados de sensores da região frontal e é conectada ao display LCD;
