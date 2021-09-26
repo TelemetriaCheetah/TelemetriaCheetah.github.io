@@ -196,3 +196,21 @@ Windows
 
 No Windows, é possível baixar pacotes que incluem todas as ferramentas necessárias para rodar um servidor apache com MySQL/MariaDB e php
 em um único executável. Um exemplo recomendado é o WAMP (Windows Apache MySQL PHP) server, que pode ser baixado no link: https://www.wampserver.com/en/
+
+
+Instalando Sphinx e Read the Docs
+=========================================
+
+Para instalar o Sphinx é necessário ter o python 3 configurado nas variáveis de ambiente.
+
+O Python pode ser baixado em: 
+* `Link. <https://www.python.org/downloads/>`_
+
+Comandos: 
+
+.. code-block:: bash
+  :linenos:
+
+  pip3 install sphinx
+  pip3 install sphinx-rtd-theme
+

@@ -69,7 +69,7 @@ html_css_files = [
     'custom.css',
 ]
 
-html_logo = 'images/cheetah251.png'
+html_logo = 'images/cheetah252.png'
 
 html_theme_options = {
     'logo_only': True,
