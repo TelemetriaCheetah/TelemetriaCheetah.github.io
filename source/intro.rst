@@ -603,6 +603,24 @@ Flags inversor
     - N/A
   * - Bit 06
     - N/A
+  * - Bit 07
+    - N/A
+  * - Bit 08
+    - N/A
+  * - Bit 09
+    - N/A
+  * - Bit 10
+    - N/A
+  * - Bit 11
+    - N/A
+  * - Bit 12
+    - N/A
+  * - Bit 13
+    - N/A
+  * - Bit 14
+    - N/A
+  * - Bit 15
+    - N/A
 
 Placas
 =============================
