@@ -456,8 +456,7 @@ Comunicação CAN
     - TPS 1 (SA1)
     - TPS 2 (SA2)
     - Pressão dos freios (SA76)
-    - N/A
-
+    - Flags Inversor (Especial)
   * - 0x01
     - Roda Frontal Esquerda
     - Temperatura Roda (SA10)
@@ -578,6 +577,32 @@ Comunicação CAN
     - Temp da célula (SB09)
     - Temp da célula (SB010)
     - Temp da célula (SB011)
+
+Flags inversor
+====================
+
+  Configuração da flag de comandos para o inversor. Observar ordem dos bits (Little-endian).
+
+.. list-table:: 
+  :widths: 1 1
+  :header-rows: 1
+  
+  * - Posição 
+    - Valor
+  * - Bit 00
+    - Acelerador
+  * - Bit 01
+    - Freio
+  * - Bit 02
+    - Ready to Drive
+  * - Bit 03
+    - Botão Brian
+  * - Bit 04
+    - N/A
+  * - Bit 05
+    - N/A
+  * - Bit 06
+    - N/A
 
 Placas
 =============================
