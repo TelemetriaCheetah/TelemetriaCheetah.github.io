@@ -27,6 +27,33 @@ os dados coletados são armazenados em um banco de dados MySQL, e familiaridade 
 * `Playlist INSANA do Wr Kits de Arduino - youtube. <https://www.youtube.com/watch?v=S34PnG143sE&list=PLZ8dBTV2_5HSyOXhJ77d-iyt5Z_v_1DPM>`_
 * `Projetos e exemplos de STM32 HAL - deepbluembedded. <https://deepbluembedded.com/stm32-arm-programming-tutorials/>`_
 
+Exercícios de nivelamento
+=================================
+
+Os exercícios abaixo foram escolhidos para introduzir as linguagens de programação usadas no cheetah. Para isso, utilizaramos a plataforma beecrowd (antigo URI Online Judge) para
+corrigir automaticamente os problemas resolvidos. Após criar a conta na plataforma, você deve resolver:
+
+Usando C, C++ e javascript
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Cada exercício deverá ser resolvido nas 3 linguagens. Utilize as funções de leitura padrão da respectiva linguagem:
+
+* `1001 - Extremamente Básico <https://www.beecrowd.com.br/judge/pt/problems/view/1001>`_
+* `1002 - Área do Círculo <https://www.beecrowd.com.br/judge/pt/problems/view/1002>`_
+* `1003 - Soma Simples <https://www.beecrowd.com.br/judge/pt/problems/view/1003>`_
+* `1004 - Produto Simples <https://www.beecrowd.com.br/judge/pt/problems/view/1004>`_
+* `1017 - Gasto de Combustível <https://www.beecrowd.com.br/judge/pt/problems/view/1017>`_
+* `1020 - Idade em dias <https://www.beecrowd.com.br/judge/pt/problems/view/1020>`_
+* `1036 - Fórmula de Bhaskara <https://www.beecrowd.com.br/judge/pt/problems/view/1036>`_
+* `1059 - Números Pares <https://www.beecrowd.com.br/judge/pt/problems/view/1059>`_
+* `1073 - Quadrado de Pares <https://www.beecrowd.com.br/judge/pt/problems/view/1073>`_
+* `1134 - Tipo de Combustível <https://www.beecrowd.com.br/judge/pt/problems/view/1134>`_
+* `1172 - Substituição em Vetor I <https://www.beecrowd.com.br/judge/pt/problems/view/1172>`_
+* `1176 - Fibonacci em Vetor <https://www.beecrowd.com.br/judge/pt/problems/view/1176>`_
+* `1181 - Linha na Matriz <https://www.beecrowd.com.br/judge/pt/problems/view/1181>`_
+* `1182 - Coluna na Matriz <https://w´ww.beecrowd.com.br/judge/pt/problems/view/1182>`_
+* `1435 - Matriz Quadrada I <https://www.beecrowd.com.br/judge/pt/problems/view/1435>`_
+
 Git
 ===================
 O primeiro passo para trabalhar no sistema supervisório é obter o código. É possível baixar como um .zip no github
