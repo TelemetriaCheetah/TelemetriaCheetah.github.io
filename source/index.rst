@@ -9,6 +9,7 @@ Bem vindo à Wiki do Cheetah E-Racing!
 .. toctree::
     :maxdepth: 2
 
+    design
     intro
     sensores
     supervisorio
