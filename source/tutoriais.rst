@@ -38,6 +38,9 @@ Usando C, C++ e javascript
 
 Cada exercício deverá ser resolvido nas 3 linguagens. Utilize as funções de leitura padrão da respectiva linguagem:
 
+Semana 1
+-----------------------------
+
 * `1001 - Extremamente Básico <https://www.beecrowd.com.br/judge/pt/problems/view/1001>`_
 * `1002 - Área do Círculo <https://www.beecrowd.com.br/judge/pt/problems/view/1002>`_
 * `1003 - Soma Simples <https://www.beecrowd.com.br/judge/pt/problems/view/1003>`_
@@ -53,6 +56,18 @@ Cada exercício deverá ser resolvido nas 3 linguagens. Utilize as funções de 
 * `1181 - Linha na Matriz <https://www.beecrowd.com.br/judge/pt/problems/view/1181>`_
 * `1182 - Coluna na Matriz <https://w´ww.beecrowd.com.br/judge/pt/problems/view/1182>`_
 * `1435 - Matriz Quadrada I <https://www.beecrowd.com.br/judge/pt/problems/view/1435>`_
+
+Semana 2
+-----------------------------
+
+* `1397 - Jogo do Maior <https://www.beecrowd.com.br/judge/pt/problems/view/1397>`_
+* `1871 - Zero vale Zero <https://www.beecrowd.com.br/judge/pt/problems/view/1871>`_
+* `2242 - Huaauhahhuahau <https://www.beecrowd.com.br/judge/pt/problems/view/2242>`_
+* `1873 - Pedra-papel-tesoura-lagarto-Spock <https://www.beecrowd.com.br/judge/pt/problems/view/1873>`_
+* `1241 - Encaixa ou Não II <https://www.beecrowd.com.br/judge/pt/problems/view/1241>`_
+* `2060 - Desafio de Bino <https://www.beecrowd.com.br/judge/pt/problems/view/2060>`_
+* Baixar e rodar o sistema supervisório
+* Baixar e rodar a interface de telemetria
 
 Git
 ===================
