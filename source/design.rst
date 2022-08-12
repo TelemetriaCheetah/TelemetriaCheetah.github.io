@@ -1,4 +1,4 @@
-2020 Design Summary
+2022 Design Summary
 ************************
 
 Posicionamento de Placas
@@ -29,6 +29,7 @@ Alimentação
 
 * Bateria 4s5p 14,8V 10Ah
 * 3x conversor DC-DC 150 W
+* Duraçao: 1hr e 36 min
 
 Circuito de Segurança
 =========================
